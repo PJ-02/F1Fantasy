@@ -134,9 +134,63 @@ def calculate_fantasy_points(df):
     return df
 
 
+def calculate_constructor_points(driver_df):
+    # Group by constructor
+    grouped = driver_df.groupby('constructor_name')
+
+    constructor_rows = []
+
+    for constructor, group in grouped:
+        entry = {'constructor_name': constructor}
+
+        # Combine driver-level fantasy points
+        entry['driver_points_total'] = group['fantasy_points_total'].sum()
+
+        # Qualifying Bonuses
+        q2_count = group['qualifying_pos'].apply(lambda x: x <= 15 if pd.notna(x) else False).sum()
+        q3_count = group['qualifying_pos'].apply(lambda x: x <= 10 if pd.notna(x) else False).sum()
+
+        if q2_count == 0:
+            qual_bonus = -1
+        elif q2_count == 1:
+            qual_bonus = 1
+        else:
+            qual_bonus = 3
+
+        if q3_count == 1:
+            qual_bonus += 5
+        elif q3_count == 2:
+            qual_bonus += 10
+
+        entry['qualifying_bonus'] = qual_bonus
+
+        # Pitstop performance (mock for now) need to account for later
+        entry['pitstop_points'] = 10  # e.g., a decent 2.1s pitstop
+        entry['fastest_pitstop_bonus'] = 0  # Optional 5 if they win
+        entry['world_record_bonus'] = 0      # Optional 15
+
+        # Constructor penalties (e.g., DQs)
+        dq_count = group['status'].apply(lambda x: 'DSQ' in x).sum()
+        entry['dq_penalty'] = dq_count * -10
+
+        # Final Constructor Fantasy Points
+        entry['constructor_fantasy_points'] = (
+            entry['driver_points_total'] +
+            entry['qualifying_bonus'] +
+            entry['pitstop_points'] +
+            entry['fastest_pitstop_bonus'] +
+            entry['world_record_bonus'] +
+            entry['dq_penalty']
+        )
+
+        constructor_rows.append(entry)
+
+    return pd.DataFrame(constructor_rows)
+
+
 def main():
-    season = 2023
-    round_no = 4  # Example race
+    season = 2024
+    round_no = 23  # Example race
 
     race_df = get_race_results(season, round_no)
     if race_df.empty:
@@ -150,7 +204,7 @@ def main():
     # Merge qualifying data
     merged_df = race_df.merge(qual_df, on="driver_id", how="left")
 
-    # ✅ Only merge sprint if it has data
+    # Only merge sprint if it has data
     if not sprint_df.empty and 'driver_id' in sprint_df.columns:
         merged_df = merged_df.merge(sprint_df, on="driver_id", how="left")
     else:
@@ -163,12 +217,16 @@ def main():
     # Preprocess combined data
     clean_data = preprocess_driver_data(merged_df)
 
-    # ✅ Add Fantasy Points Calculation
+    # Add Fantasy Points Calculation
     final_data = calculate_fantasy_points(clean_data)
 
-    # Save final data
+    # Calculate constructor fantasy points
+    constructor_data = calculate_constructor_points(final_data)
+
+    # Save both files
     final_data.to_excel("f1_driver_data_with_fantasy_points.xlsx", index=False)
-    print("✅ Data saved to f1_driver_data_with_fantasy_points.xlsx")
+    constructor_data.to_excel("f1_constructor_fantasy_points.xlsx", index=False)
+    print("✅ Driver and constructor fantasy points saved!")
 
 
 # Run the pipeline
