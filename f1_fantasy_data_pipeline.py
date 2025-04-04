@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 
+
 def get_race_results(season, round_no):
     # API URL for a specific season and race
     url = f"https://ergast.com/api/f1/{season}/{round_no}/results.json"
@@ -44,6 +45,7 @@ def preprocess_driver_data(df):
 
     return df
 
+
 def get_qualifying_results(season, round_no):
     url = f"https://ergast.com/api/f1/{season}/{round_no}/qualifying.json"
     response = requests.get(url)
@@ -63,6 +65,7 @@ def get_qualifying_results(season, round_no):
         qual_data.append(entry)
 
     return pd.DataFrame(qual_data)
+
 
 def get_sprint_results(season, round_no):
     url = f"https://ergast.com/api/f1/{season}/{round_no}/sprint.json"
@@ -87,9 +90,53 @@ def get_sprint_results(season, round_no):
     return pd.DataFrame(sprint_data)
 
 
+def calculate_fantasy_points(df):
+    # --- Qualifying Points ---
+    quali_points_map = {1: 10, 2: 9, 3: 8, 4: 7, 5: 6, 6: 5, 7: 4, 8: 3, 9: 2, 10: 1}
+    df['qualifying_points'] = df['qualifying_pos'].map(quali_points_map).fillna(0)
+
+    # Penalty for no time or DQ (mock: if quali_pos is NaN)
+    df.loc[df['qualifying_pos'].isna(), 'qualifying_points'] = -5
+
+    # --- Sprint Points ---
+    sprint_points_map = {1: 8, 2: 7, 3: 6, 4: 5, 5: 4, 6: 3, 7: 2, 8: 1}
+    df['sprint_points'] = df['sprint_pos'].map(sprint_points_map).fillna(0)
+
+    df['sprint_gain_points'] = df['sprint_positions_gained']  # 1 pt per position gained/lost
+    df['sprint_dnf_penalty'] = df['sprint_dnf'] * -20
+
+    # --- Race Points ---
+    race_points_map = {1: 25, 2: 18, 3: 15, 4: 12, 5: 10, 6: 8, 7: 6, 8: 4, 9: 2, 10: 1}
+    df['race_points'] = df['position'].map(race_points_map).fillna(0)
+
+    df['race_gain_points'] = df['positions_gained']  # 1 pt per position gained/lost
+    df['fastest_lap_bonus'] = df['fastest_lap'].apply(lambda x: 10 if x else 0)
+
+    # Mocking DOTD for now (you can set one manually or with real data later)
+    df['dotd_bonus'] = 0
+    df.loc[df['driver_name'] == "Max Verstappen", 'dotd_bonus'] = 10
+
+    df['race_dnf_penalty'] = df['DNF'] * -20
+
+    # --- Total Fantasy Score ---
+    df['fantasy_points_total'] = (
+        df['qualifying_points'] +
+        df['sprint_points'] +
+        df['sprint_gain_points'] +
+        df['sprint_dnf_penalty'] +
+        df['race_points'] +
+        df['race_gain_points'] +
+        df['fastest_lap_bonus'] +
+        df['dotd_bonus'] +
+        df['race_dnf_penalty']
+    )
+
+    return df
+
+
 def main():
     season = 2023
-    round_no = 6  # Example race
+    round_no = 4  # Example race
 
     race_df = get_race_results(season, round_no)
     if race_df.empty:
@@ -116,10 +163,12 @@ def main():
     # Preprocess combined data
     clean_data = preprocess_driver_data(merged_df)
 
-    # Save final data
-    clean_data.to_excel("f1_driver_data_with_sprint_qual.xlsx", index=False)
-    print("✅ Data saved to f1_driver_data_with_sprint_qual.xlsx")
+    # ✅ Add Fantasy Points Calculation
+    final_data = calculate_fantasy_points(clean_data)
 
+    # Save final data
+    final_data.to_excel("f1_driver_data_with_fantasy_points.xlsx", index=False)
+    print("✅ Data saved to f1_driver_data_with_fantasy_points.xlsx")
 
 
 # Run the pipeline
