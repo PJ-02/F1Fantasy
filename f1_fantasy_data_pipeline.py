@@ -1,6 +1,10 @@
 import requests
 import pandas as pd
+import fastf1
 
+from race_calendars import races_2024
+
+fastf1.Cache.enable_cache('f1_cache')  # this creates cache for speed
 
 def get_race_results(season, round_no):
     # API URL for a specific season and race
@@ -90,6 +94,23 @@ def get_sprint_results(season, round_no):
     return pd.DataFrame(sprint_data)
 
 
+def get_team_fastest_pitstops(year, gp_name): 
+    session = fastf1.get_session(year, gp_name, 'R')
+    session.load()
+
+    # Get pitstop durations
+    pitstops = session.laps[['Driver', 'PitInTime', 'PitOutTime']].dropna()
+    pitstops['PitStopDuration'] = (pitstops['PitOutTime'] - pitstops['PitInTime']).dt.total_seconds()
+
+    # Merge with driver-to-team mapping
+    driver_teams = session.laps[['Driver', 'Team']].drop_duplicates()
+    pitstops = pitstops.merge(driver_teams, on='Driver', how='left')
+
+    # Get fastest pitstop per team
+    team_fastest = pitstops.groupby('Team')['PitStopDuration'].min().reset_index()
+    return team_fastest.rename(columns={'Team': 'constructor_name', 'PitStopDuration': 'fastest_pitstop_time'})
+
+
 def calculate_fantasy_points(df):
     # --- Qualifying Points ---
     quali_points_map = {1: 10, 2: 9, 3: 8, 4: 7, 5: 6, 6: 5, 7: 4, 8: 3, 9: 2, 10: 1}
@@ -134,7 +155,7 @@ def calculate_fantasy_points(df):
     return df
 
 
-def calculate_constructor_points(driver_df):
+def calculate_constructor_points(driver_df, pitstop_df):
     # Group by constructor
     grouped = driver_df.groupby('constructor_name')
 
@@ -164,16 +185,34 @@ def calculate_constructor_points(driver_df):
 
         entry['qualifying_bonus'] = qual_bonus
 
-        # Pitstop performance (mock for now) need to account for later
-        entry['pitstop_points'] = 10  # e.g., a decent 2.1s pitstop
-        entry['fastest_pitstop_bonus'] = 0  # Optional 5 if they win
-        entry['world_record_bonus'] = 0      # Optional 15
+        # Pitstop time from FastF1
+        pitstop_points = 0
+        if pitstop_df is not None and constructor in pitstop_df['constructor_name'].values:
+            p_time = pitstop_df.loc[pitstop_df['constructor_name'] == constructor, 'fastest_pitstop_time'].values[0]
+            entry['fastest_pitstop_time'] = p_time
+
+            if p_time < 2.0:
+                pitstop_points = 20
+            elif 2.0 <= p_time < 2.2:
+                pitstop_points = 10
+            elif 2.2 <= p_time < 2.5:
+                pitstop_points = 5
+            elif 2.5 <= p_time < 3.0:
+                pitstop_points = 2
+            else:
+                pitstop_points = 0
+        else:
+            entry['fastest_pitstop_time'] = None
+        entry['pitstop_points'] = pitstop_points
 
         # Constructor penalties (e.g., DQs)
         dq_count = group['status'].apply(lambda x: 'DSQ' in x).sum()
         entry['dq_penalty'] = dq_count * -10
 
         # Final Constructor Fantasy Points
+        entry['fastest_pitstop_bonus'] = 0
+        entry['world_record_bonus'] = 0
+
         entry['constructor_fantasy_points'] = (
             entry['driver_points_total'] +
             entry['qualifying_bonus'] +
@@ -188,45 +227,70 @@ def calculate_constructor_points(driver_df):
     return pd.DataFrame(constructor_rows)
 
 
+def process_race(season, round_no, gp_name):
+    try:
+        race_df = get_race_results(season, round_no)
+        if race_df.empty:
+            print(f"Skipping Round {round_no}: No race data found.")
+            return None, None
+
+        qual_df = get_qualifying_results(season, round_no)
+        sprint_df = get_sprint_results(season, round_no)
+        merged_df = race_df.merge(qual_df, on="driver_id", how="left")
+
+        if not sprint_df.empty and 'driver_id' in sprint_df.columns:
+            merged_df = merged_df.merge(sprint_df, on="driver_id", how="left")
+        else:
+            merged_df['sprint_pos'] = None
+            merged_df['sprint_status'] = ""
+            merged_df['sprint_grid'] = None
+
+        clean_data = preprocess_driver_data(merged_df)
+        final_data = calculate_fantasy_points(clean_data)
+
+        # Pitstop data
+        pitstop_df = get_team_fastest_pitstops(season, round_no)
+        constructor_data = calculate_constructor_points(final_data, pitstop_df)
+
+        # Add metadata
+        final_data['season'] = season
+        final_data['round'] = round_no
+        constructor_data['season'] = season
+        constructor_data['round'] = round_no
+
+        print(f"Processed Round {round_no}: {gp_name}")
+        return final_data, constructor_data
+
+    except Exception as e:
+        print(f"Error in Round {round_no} - {gp_name}: {e}")
+        return None, None
+
+
+def run_full_season(season, races):
+    all_driver_data = []
+    all_constructor_data = []
+
+    for round_no, gp_name in races:
+        driver_df, constructor_df = process_race(season, round_no, gp_name)
+        if driver_df is not None:
+            all_driver_data.append(driver_df)
+        if constructor_df is not None:
+            all_constructor_data.append(constructor_df)
+
+    if all_driver_data:
+        full_driver_df = pd.concat(all_driver_data, ignore_index=True)
+        full_driver_df.to_excel(f"{season}_fantasy_driver_data.xlsx", index=False)
+        print(f"Saved full season driver data: {season}_fantasy_driver_data.xlsx")
+
+    if all_constructor_data:
+        full_constructor_df = pd.concat(all_constructor_data, ignore_index=True)
+        full_constructor_df.to_excel(f"{season}_fantasy_constructor_data.xlsx", index=False)
+        print(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")
+
+
 def main():
     season = 2024
-    round_no = 23  # Example race
-
-    race_df = get_race_results(season, round_no)
-    if race_df.empty:
-        print("No race data found.")
-        return
-
-    # Fetch qualifying and sprint
-    qual_df = get_qualifying_results(season, round_no)
-    sprint_df = get_sprint_results(season, round_no)
-
-    # Merge qualifying data
-    merged_df = race_df.merge(qual_df, on="driver_id", how="left")
-
-    # Only merge sprint if it has data
-    if not sprint_df.empty and 'driver_id' in sprint_df.columns:
-        merged_df = merged_df.merge(sprint_df, on="driver_id", how="left")
-    else:
-        print("⚠️ No Sprint data found, skipping Sprint merge.")
-        # Add empty columns so your preprocessing doesn't break
-        merged_df['sprint_pos'] = None
-        merged_df['sprint_status'] = ""
-        merged_df['sprint_grid'] = None
-
-    # Preprocess combined data
-    clean_data = preprocess_driver_data(merged_df)
-
-    # Add Fantasy Points Calculation
-    final_data = calculate_fantasy_points(clean_data)
-
-    # Calculate constructor fantasy points
-    constructor_data = calculate_constructor_points(final_data)
-
-    # Save both files
-    final_data.to_excel("f1_driver_data_with_fantasy_points.xlsx", index=False)
-    constructor_data.to_excel("f1_constructor_fantasy_points.xlsx", index=False)
-    print("✅ Driver and constructor fantasy points saved!")
+    run_full_season(season, races_2024)
 
 
 # Run the pipeline
