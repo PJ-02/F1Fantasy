@@ -4,10 +4,11 @@ import fastf1
 import logging
 import os
 import json
+import time
 
 from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024
 
-fastf1.Cache.enable_cache('f1_cache')  # this creates cache for speed
+fastf1.Cache.enable_cache('cache/f1_cache')  # this creates cache for speed
 
 logging.basicConfig(
     level=logging.INFO,
@@ -43,6 +44,7 @@ SEASON_RACE_MAP = {
 }
 
 
+
 def get_race_results(season, round_no):
 
     cache_file = f"race_{season}_round_{round_no}.json"
@@ -52,6 +54,7 @@ def get_race_results(season, round_no):
         # API URL for a specific season and race
         url = f"https://ergast.com/api/f1/{season}/{round_no}/results.json"
         response = requests.get(url)
+        time.sleep(2)  # wait between calls to avoid spikes
         data = response.json()
         save_json(data, cache_file)
 
@@ -334,6 +337,7 @@ def run_full_season(season, races):
             all_driver_data.append(driver_df)
         if constructor_df is not None:
             all_constructor_data.append(constructor_df)
+        time.sleep(5)  # delay of 5 seconds between race API calls
 
     if all_driver_data:
         full_driver_df = pd.concat(all_driver_data, ignore_index=True)
@@ -366,8 +370,8 @@ def main():
         logger.info(f"Starting season {season}...")
         run_full_season(season, races)
     
-    combine_all_seasons(file_prefix="fantasy_driver_data")
-    combine_all_seasons(file_prefix="fantasy_constructor_data")
+    combine_all_seasons("GeneratedSpreadsheets",file_prefix="fantasy_driver_data")
+    combine_all_seasons("GeneratedSpreadsheets",file_prefix="fantasy_constructor_data")
 
 
 
