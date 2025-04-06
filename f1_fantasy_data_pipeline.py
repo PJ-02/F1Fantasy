@@ -33,6 +33,15 @@ def load_json(filename):
     return None
 
 
+SEASON_RACE_MAP = {
+    2019: races_2019,
+    2020: races_2020,
+    2021: races_2021,
+    2022: races_2022,
+    2023: races_2023,
+    2024: races_2024,
+}
+
 
 def get_race_results(season, round_no):
 
@@ -337,9 +346,29 @@ def run_full_season(season, races):
         logger.info(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")
 
 
+def combine_all_seasons(output_folder=".", file_prefix="fantasy_driver_data"):
+    all_dfs = []
+    for season in SEASON_RACE_MAP:
+        file = f"{output_folder}/{season}_{file_prefix}.xlsx"
+        if os.path.exists(file):
+            df = pd.read_excel(file)
+            all_dfs.append(df)
+
+    if all_dfs:
+        combined = pd.concat(all_dfs, ignore_index=True)
+        output_file = f"{output_folder}/all_seasons_{file_prefix}.xlsx"
+        combined.to_excel(output_file, index=False)
+        logger.info(f" Combined file saved: {output_file}")
+
+
 def main():
-    season = 2024
-    run_full_season(season, races_2024)
+    for season, races in SEASON_RACE_MAP.items():
+        logger.info(f"Starting season {season}...")
+        run_full_season(season, races)
+    
+    combine_all_seasons(file_prefix="fantasy_driver_data")
+    combine_all_seasons(file_prefix="fantasy_constructor_data")
+
 
 
 # Run the pipeline
