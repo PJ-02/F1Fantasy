@@ -1,20 +1,54 @@
 import requests
 import pandas as pd
 import fastf1
+import logging
+import os
+import json
 
-from race_calendars import races_2024
+from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024
 
 fastf1.Cache.enable_cache('f1_cache')  # this creates cache for speed
 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s:%(message)s',
+    handlers=[
+        logging.FileHandler("pipeline.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+def save_json(data, filename):
+    os.makedirs("cache/json", exist_ok=True)
+    with open(f"cache/json/{filename}", "w") as f:
+        json.dump(data, f, indent=2)
+
+def load_json(filename):
+    path = f"cache/json/{filename}"
+    if os.path.exists(path):
+        logger.info(f"Loaded cached file: {filename}")
+        with open(path, "r") as f:
+            return json.load(f)
+    return None
+
+
+
 def get_race_results(season, round_no):
-    # API URL for a specific season and race
-    url = f"https://ergast.com/api/f1/{season}/{round_no}/results.json"
-    response = requests.get(url)
-    data = response.json()
+
+    cache_file = f"race_{season}_round_{round_no}.json"
+    data = load_json(cache_file)
+
+    if data is None:
+        # API URL for a specific season and race
+        url = f"https://ergast.com/api/f1/{season}/{round_no}/results.json"
+        response = requests.get(url)
+        data = response.json()
+        save_json(data, cache_file)
 
     # Check if race exists
     if not data['MRData']['RaceTable']['Races']:
-        print("Race data not found.")
+        logger.warning("Race data not found.")
         return pd.DataFrame()
 
     results = data['MRData']['RaceTable']['Races'][0]['Results']
@@ -51,12 +85,17 @@ def preprocess_driver_data(df):
 
 
 def get_qualifying_results(season, round_no):
-    url = f"https://ergast.com/api/f1/{season}/{round_no}/qualifying.json"
-    response = requests.get(url)
-    data = response.json()
+    cache_file = f"qualifying_{season}_{round_no}.json"
+    data = load_json(cache_file)
+
+    if data is None:
+        url = f"https://ergast.com/api/f1/{season}/{round_no}/qualifying.json"
+        response = requests.get(url)
+        data = response.json()
+        save_json(data, cache_file)
 
     if not data['MRData']['RaceTable']['Races']:
-        print("No qualifying data found.")
+        logger.warning("No qualifying data found.")
         return pd.DataFrame()
 
     qualifying = data['MRData']['RaceTable']['Races'][0]['QualifyingResults']
@@ -72,12 +111,17 @@ def get_qualifying_results(season, round_no):
 
 
 def get_sprint_results(season, round_no):
-    url = f"https://ergast.com/api/f1/{season}/{round_no}/sprint.json"
-    response = requests.get(url)
-    data = response.json()
+    cache_file = f"sprint_{season}_{round_no}.json"
+    data = load_json(cache_file)
+
+    if data is None:
+        url = f"https://ergast.com/api/f1/{season}/{round_no}/sprint.json"
+        response = requests.get(url)
+        data = response.json()
+        save_json(data,cache_file)
 
     if not data['MRData']['RaceTable']['Races']:
-        print("No sprint data found.")
+        logger.warning("No sprint data found.")
         return pd.DataFrame()
 
     sprints = data['MRData']['RaceTable']['Races'][0]['SprintResults']
@@ -231,7 +275,7 @@ def process_race(season, round_no, gp_name):
     try:
         race_df = get_race_results(season, round_no)
         if race_df.empty:
-            print(f"Skipping Round {round_no}: No race data found.")
+            logger.warning(f"Skipping Round {round_no}: No race data found.")
             return None, None
 
         qual_df = get_qualifying_results(season, round_no)
@@ -258,11 +302,16 @@ def process_race(season, round_no, gp_name):
         constructor_data['season'] = season
         constructor_data['round'] = round_no
 
-        print(f"Processed Round {round_no}: {gp_name}")
+        # Saving data to cache
+        os.makedirs("cache/pickles", exist_ok=True)
+        final_data.to_pickle(f"cache/pickles/driver_{season}_r{round_no}.pkl")
+        constructor_data.to_pickle(f"cache/pickles/constructor_{season}_r{round_no}.pkl")
+
+        logger.info(f"Processed Round {round_no}: {gp_name}")
         return final_data, constructor_data
 
     except Exception as e:
-        print(f"Error in Round {round_no} - {gp_name}: {e}")
+        logger.warning(f"Error in Round {round_no} - {gp_name}: {e}")
         return None, None
 
 
@@ -280,12 +329,12 @@ def run_full_season(season, races):
     if all_driver_data:
         full_driver_df = pd.concat(all_driver_data, ignore_index=True)
         full_driver_df.to_excel(f"{season}_fantasy_driver_data.xlsx", index=False)
-        print(f"Saved full season driver data: {season}_fantasy_driver_data.xlsx")
+        logger.info(f"Saved full season driver data: {season}_fantasy_driver_data.xlsx")
 
     if all_constructor_data:
         full_constructor_df = pd.concat(all_constructor_data, ignore_index=True)
         full_constructor_df.to_excel(f"{season}_fantasy_constructor_data.xlsx", index=False)
-        print(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")
+        logger.info(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")
 
 
 def main():
