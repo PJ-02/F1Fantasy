@@ -1,0 +1,42 @@
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+.venv/
+venv/
+env/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Pipenv, poetry, virtualenv
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+
+# Project cache and data
+cache/
+cache/json/
+cache/pickles/
+cache/f1cache/
+
+# Excel outputs
+GeneratedSpreadsheets/
+
+# Logs
+*.log
+
+# Jupyter notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Misc
+*.bak
+*.swp
