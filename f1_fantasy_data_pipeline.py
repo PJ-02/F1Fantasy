@@ -97,7 +97,7 @@ def preprocess_driver_data(df):
 
 
 def get_qualifying_results(season, round_no):
-    cache_file = f"qualifying_{season}_{round_no}.json"
+    cache_file = f"qualifying_{season}_round_{round_no}.json"
     data = load_json(cache_file)
 
     if data is None:
@@ -123,7 +123,7 @@ def get_qualifying_results(season, round_no):
 
 
 def get_sprint_results(season, round_no):
-    cache_file = f"sprint_{season}_{round_no}.json"
+    cache_file = f"sprint_{season}_round_{round_no}.json"
     data = load_json(cache_file)
 
     if data is None:
@@ -156,6 +156,12 @@ def get_team_fastest_pitstops(year, gp_name):
 
     # Get pitstop durations
     pitstops = session.laps[['Driver', 'PitInTime', 'PitOutTime']].dropna()
+    # Drop corrupted or non-timestamp rows
+    pitstops = pitstops[
+        pitstops['PitInTime'].apply(lambda x: isinstance(x, pd.Timestamp)) &
+        pitstops['PitOutTime'].apply(lambda x: isinstance(x, pd.Timestamp))
+    ]
+
     pitstops['PitStopDuration'] = (pitstops['PitOutTime'] - pitstops['PitInTime']).dt.total_seconds()
 
     # Merge with driver-to-team mapping
@@ -346,7 +352,7 @@ def run_full_season(season, races):
 
     if all_constructor_data:
         full_constructor_df = pd.concat(all_constructor_data, ignore_index=True)
-        full_constructor_df.to_excel(f"{season}_fantasy_constructor_data.xlsx", index=False)
+        full_constructor_df.to_excel(f"GeneratedSpreadsheets/{season}_fantasy_constructor_data.xlsx", index=False)
         logger.info(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")
 
 
