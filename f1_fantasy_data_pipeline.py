@@ -54,7 +54,7 @@ def get_race_results(season, round_no):
         # API URL for a specific season and race
         url = f"https://ergast.com/api/f1/{season}/{round_no}/results.json"
         response = requests.get(url)
-        time.sleep(2)  # wait between calls to avoid spikes
+        time.sleep(10)  # wait between calls to avoid spikes
         data = response.json()
         save_json(data, cache_file)
 
@@ -343,7 +343,7 @@ def run_full_season(season, races):
             all_driver_data.append(driver_df)
         if constructor_df is not None:
             all_constructor_data.append(constructor_df)
-        time.sleep(5)  # delay of 5 seconds between race API calls
+        time.sleep(20)  # delay of 5 seconds between race API calls
 
     if all_driver_data:
         full_driver_df = pd.concat(all_driver_data, ignore_index=True)
