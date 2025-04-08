@@ -37,10 +37,10 @@ def load_json(filename):
 SEASON_RACE_MAP = {
     2019: races_2019,
     2020: races_2020,
-    2021: races_2021,
-    2022: races_2022,
-    2023: races_2023,
-    2024: races_2024,
+    # 2021: races_2021,
+    # 2022: races_2022,
+    # 2023: races_2023,
+    # 2024: races_2024,
 }
 
 
@@ -154,23 +154,24 @@ def get_team_fastest_pitstops(year, gp_name):
     session = fastf1.get_session(year, gp_name, 'R')
     session.load()
 
-    # Get pitstop durations
     pitstops = session.laps[['Driver', 'PitInTime', 'PitOutTime']].dropna()
-    # Drop corrupted or non-timestamp rows
-    pitstops = pitstops[
-        pitstops['PitInTime'].apply(lambda x: isinstance(x, pd.Timestamp)) &
-        pitstops['PitOutTime'].apply(lambda x: isinstance(x, pd.Timestamp))
-    ]
+
+    # Convert to timestamps and check validity
+    pitstops['PitInTime'] = pd.to_datetime(pitstops['PitInTime'], errors='coerce')
+    pitstops['PitOutTime'] = pd.to_datetime(pitstops['PitOutTime'], errors='coerce')
+
+    # Filter out invalid rows
+    mask = pitstops['PitInTime'].notna() & pitstops['PitOutTime'].notna()
+    pitstops = pitstops[mask]
 
     pitstops['PitStopDuration'] = (pitstops['PitOutTime'] - pitstops['PitInTime']).dt.total_seconds()
 
-    # Merge with driver-to-team mapping
     driver_teams = session.laps[['Driver', 'Team']].drop_duplicates()
     pitstops = pitstops.merge(driver_teams, on='Driver', how='left')
 
-    # Get fastest pitstop per team
     team_fastest = pitstops.groupby('Team')['PitStopDuration'].min().reset_index()
     return team_fastest.rename(columns={'Team': 'constructor_name', 'PitStopDuration': 'fastest_pitstop_time'})
+
 
 
 def calculate_fantasy_points(df):
@@ -343,7 +344,7 @@ def run_full_season(season, races):
             all_driver_data.append(driver_df)
         if constructor_df is not None:
             all_constructor_data.append(constructor_df)
-        time.sleep(20)  # delay of 5 seconds between race API calls
+        time.sleep(20)  # delay of 20 seconds between race API calls
 
     if all_driver_data:
         full_driver_df = pd.concat(all_driver_data, ignore_index=True)
