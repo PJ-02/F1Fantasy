@@ -1,12 +1,10 @@
-import requests
 import pandas as pd
 import fastf1
 import logging
 import os
-import json
 import time
 
-from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024
+from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024, test_races
 
 fastf1.Cache.enable_cache('cache/f1_cache')  # this creates cache for speed
 
@@ -20,71 +18,49 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def save_json(data, filename):
-    os.makedirs("cache/json", exist_ok=True)
-    with open(f"cache/json/{filename}", "w") as f:
-        json.dump(data, f, indent=2)
-
-def load_json(filename):
-    path = f"cache/json/{filename}"
-    if os.path.exists(path):
-        logger.info(f"Loaded cached file: {filename}")
-        with open(path, "r") as f:
-            return json.load(f)
-    return None
-
 
 SEASON_RACE_MAP = {
-    2019: races_2019,
-    2020: races_2020,
+    # 2019: races_2019,
+    # 2020: races_2020,
     # 2021: races_2021,
     # 2022: races_2022,
     # 2023: races_2023,
     # 2024: races_2024,
+    2024:test_races,
 }
 
 
-
-def get_race_results(season, round_no):
-
-    cache_file = f"race_{season}_round_{round_no}.json"
-    data = load_json(cache_file)
-
-    if data is None:
-        # API URL for a specific season and race
-        url = f"https://ergast.com/api/f1/{season}/{round_no}/results.json"
-        response = requests.get(url)
-        time.sleep(10)  # wait between calls to avoid spikes
-        data = response.json()
-        save_json(data, cache_file)
-
-    # Check if race exists
-    if not data['MRData']['RaceTable']['Races']:
-        logger.warning("Race data not found.")
+def get_race_results_fastf1(season, round_no):
+    try:
+        session = fastf1.get_session(season, round_no, 'R')
+        session.load()
+    except Exception as e:
+        logger.warning(f"Could not load race session for round {round_no}: {e}")
         return pd.DataFrame()
 
-    results = data['MRData']['RaceTable']['Races'][0]['Results']
-    race_data = []
+    results = session.results
+    if results is None or results.empty:
+        logger.warning("No race results found.")
+        return pd.DataFrame()
 
-    for r in results:
-        entry = {
-            'driver_id': r['Driver']['driverId'],
-            'driver_name': f"{r['Driver']['givenName']} {r['Driver']['familyName']}",
-            'constructor_name': r['Constructor']['name'],
-            'grid': int(r['grid']),
-            'position': int(r['position']) if r['position'].isdigit() else None,
-            'status': r['status'],
-            'fastest_lap_rank': int(r['FastestLap']['rank']) if 'FastestLap' in r else None,
-            'fastest_lap_time': r['FastestLap']['Time']['time'] if 'FastestLap' in r else None
-        }
-        race_data.append(entry)
+    results = results.copy()
+    results['driver_name'] = results['FullName']
+    results['driver_id'] = results['Abbreviation'].str.lower()  # Normalize
+    results['position'] = results['Position']
+    results['grid'] = results['GridPosition']
+    results['status'] = results['Status']
+    results['constructor_name'] = results['TeamName']
+    
+    # Fastest lap info
+    flaps = session.laps.pick_fastest()
+    results['fastest_lap'] = results['Abbreviation'] == flaps.Driver
+    results['fastest_lap_time'] = flaps.LapTime.total_seconds()
 
-    return pd.DataFrame(race_data)
+    return results[['driver_id', 'driver_name', 'constructor_name', 'grid', 'position', 'status', 'fastest_lap', 'fastest_lap_time']]
 
 
 def preprocess_driver_data(df):
     df['DNF'] = df['status'].apply(lambda x: 1 if 'Accident' in x or 'Retired' in x else 0)
-    df['fastest_lap'] = df['fastest_lap_rank'].apply(lambda x: True if x == 1 else False)
     df['positions_gained'] = df['grid'] - df['position']
     df['positions_gained'] = df['positions_gained'].fillna(0)
 
@@ -96,62 +72,47 @@ def preprocess_driver_data(df):
     return df
 
 
-def get_qualifying_results(season, round_no):
-    cache_file = f"qualifying_{season}_round_{round_no}.json"
-    data = load_json(cache_file)
-
-    if data is None:
-        url = f"https://ergast.com/api/f1/{season}/{round_no}/qualifying.json"
-        response = requests.get(url)
-        data = response.json()
-        save_json(data, cache_file)
-
-    if not data['MRData']['RaceTable']['Races']:
-        logger.warning("No qualifying data found.")
+def get_qualifying_results_fastf1(season, round_no):
+    try:
+        session = fastf1.get_session(season, round_no, 'Q')
+        session.load()
+    except Exception as e:
+        logger.warning(f"Could not load qualifying session for round {round_no}: {e}")
         return pd.DataFrame()
 
-    qualifying = data['MRData']['RaceTable']['Races'][0]['QualifyingResults']
-    qual_data = []
-    for q in qualifying:
-        entry = {
-            'driver_id': q['Driver']['driverId'],
-            'qualifying_pos': int(q['position'])
-        }
-        qual_data.append(entry)
-
-    return pd.DataFrame(qual_data)
-
-
-def get_sprint_results(season, round_no):
-    cache_file = f"sprint_{season}_round_{round_no}.json"
-    data = load_json(cache_file)
-
-    if data is None:
-        url = f"https://ergast.com/api/f1/{season}/{round_no}/sprint.json"
-        response = requests.get(url)
-        data = response.json()
-        save_json(data,cache_file)
-
-    if not data['MRData']['RaceTable']['Races']:
-        logger.warning("No sprint data found.")
+    results = session.results
+    if results is None or results.empty:
+        logger.warning("No qualifying results found.")
         return pd.DataFrame()
 
-    sprints = data['MRData']['RaceTable']['Races'][0]['SprintResults']
-    sprint_data = []
-    for s in sprints:
-        entry = {
-            'driver_id': s['Driver']['driverId'],
-            'sprint_pos': int(s['position']),
-            'sprint_status': s['status'],
-            'sprint_grid': int(s['grid'])  # Sprint grid start
-        }
-        sprint_data.append(entry)
-
-    return pd.DataFrame(sprint_data)
+    df = results[['Abbreviation', 'Position']].copy()
+    df.columns = ['driver_id', 'qualifying_pos']
+    df['driver_id'] = df['driver_id'].str.lower()
+    return df
 
 
-def get_team_fastest_pitstops(year, gp_name): 
-    session = fastf1.get_session(year, gp_name, 'R')
+def get_sprint_results_fastf1(season, round_no):
+    try:
+        session = fastf1.get_session(season, round_no, 'S')  # Sprint session
+        session.load()
+    except Exception as e:
+        logger.info(f"No sprint session for {round_no}")
+        return pd.DataFrame()
+
+    results = session.results
+    if results is None or results.empty:
+        logger.info(f"No sprint results for {round_no}")
+        return pd.DataFrame()
+
+    results = results.copy()
+    results['driver_id'] = results['Abbreviation'].str.lower()
+    df = results[['driver_id', 'Position', 'GridPosition', 'Status']]
+    df.columns = ['driver_id', 'sprint_pos', 'sprint_grid', 'sprint_status']
+    return df
+
+
+def get_team_fastest_pitstops(year, round_no): 
+    session = fastf1.get_session(year, round_no, 'R')
     session.load()
 
     pitstops = session.laps[['Driver', 'PitInTime', 'PitOutTime']].dropna()
@@ -171,7 +132,6 @@ def get_team_fastest_pitstops(year, gp_name):
 
     team_fastest = pitstops.groupby('Team')['PitStopDuration'].min().reset_index()
     return team_fastest.rename(columns={'Team': 'constructor_name', 'PitStopDuration': 'fastest_pitstop_time'})
-
 
 
 def calculate_fantasy_points(df):
@@ -290,16 +250,16 @@ def calculate_constructor_points(driver_df, pitstop_df):
     return pd.DataFrame(constructor_rows)
 
 
-def process_race(season, round_no, gp_name):
+def process_race(season, round_no):
     try:
-        race_df = get_race_results(season, round_no)
+        race_df = get_race_results_fastf1(season, round_no)
         if race_df.empty:
             logger.warning(f"Skipping Round {round_no}: No race data found.")
             return None, None
 
-        qual_df = get_qualifying_results(season, round_no)
-        sprint_df = get_sprint_results(season, round_no)
-        merged_df = race_df.merge(qual_df, on="driver_id", how="left")
+        quali_df = get_qualifying_results_fastf1(season, round_no)
+        sprint_df = get_sprint_results_fastf1(season, round_no)
+        merged_df = race_df.merge(quali_df, on="driver_id", how="left")
 
         if not sprint_df.empty and 'driver_id' in sprint_df.columns:
             merged_df = merged_df.merge(sprint_df, on="driver_id", how="left")
@@ -326,11 +286,11 @@ def process_race(season, round_no, gp_name):
         final_data.to_pickle(f"cache/pickles/driver_{season}_r{round_no}.pkl")
         constructor_data.to_pickle(f"cache/pickles/constructor_{season}_r{round_no}.pkl")
 
-        logger.info(f"Processed Round {round_no}: {gp_name}")
+        logger.info(f"Processed Round {round_no}")
         return final_data, constructor_data
 
     except Exception as e:
-        logger.warning(f"Error in Round {round_no} - {gp_name}: {e}")
+        logger.warning(f"Error in Round {round_no}: {e}")
         return None, None
 
 
@@ -338,8 +298,8 @@ def run_full_season(season, races):
     all_driver_data = []
     all_constructor_data = []
 
-    for round_no, gp_name in races:
-        driver_df, constructor_df = process_race(season, round_no, gp_name)
+    for round_no in races:
+        driver_df, constructor_df = process_race(season, round_no)
         if driver_df is not None:
             all_driver_data.append(driver_df)
         if constructor_df is not None:
