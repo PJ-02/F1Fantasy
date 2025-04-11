@@ -19,21 +19,29 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+
 SEASON_RACE_MAP = {
     # 2019: races_2019,
     # 2020: races_2020,
     # 2021: races_2021,
     # 2022: races_2022,
     # 2023: races_2023,
-    # 2024: races_2024,
-    2024:test_races,
+    2024: races_2024,
 }
 
+def is_race_cached(season, round_no):
+    try:
+        session = fastf1.get_session(season, round_no, 'R')
+        session.load(telemetry=False, laps=False)
+        return session._data_loaded
+    except:
+        return False
 
 def get_race_results_fastf1(season, round_no):
     try:
         session = fastf1.get_session(season, round_no, 'R')
         session.load()
+        verify_session_data(session, ['FullName', 'Abbreviation', 'Position', 'GridPosition', 'TeamName'], context="Race")
     except Exception as e:
         logger.warning(f"Could not load race session for round {round_no}: {e}")
         return pd.DataFrame()
@@ -59,6 +67,7 @@ def get_race_results_fastf1(season, round_no):
     return results[['driver_id', 'driver_name', 'constructor_name', 'grid', 'position', 'status', 'fastest_lap', 'fastest_lap_time']]
 
 
+
 def preprocess_driver_data(df):
     df['DNF'] = df['status'].apply(lambda x: 1 if 'Accident' in x or 'Retired' in x else 0)
     df['positions_gained'] = df['grid'] - df['position']
@@ -76,6 +85,7 @@ def get_qualifying_results_fastf1(season, round_no):
     try:
         session = fastf1.get_session(season, round_no, 'Q')
         session.load()
+        verify_session_data(session, ['Abbreviation', 'Position'], context="Qualifying")
     except Exception as e:
         logger.warning(f"Could not load qualifying session for round {round_no}: {e}")
         return pd.DataFrame()
@@ -91,10 +101,12 @@ def get_qualifying_results_fastf1(season, round_no):
     return df
 
 
+
 def get_sprint_results_fastf1(season, round_no):
     try:
         session = fastf1.get_session(season, round_no, 'S')  # Sprint session
         session.load()
+        verify_session_data(session, ['Abbreviation', 'Position', 'GridPosition', 'Status'], context="Sprint")
     except Exception as e:
         logger.info(f"No sprint session for {round_no}")
         return pd.DataFrame()
@@ -109,6 +121,7 @@ def get_sprint_results_fastf1(season, round_no):
     df = results[['driver_id', 'Position', 'GridPosition', 'Status']]
     df.columns = ['driver_id', 'sprint_pos', 'sprint_grid', 'sprint_status']
     return df
+
 
 
 def get_team_fastest_pitstops(year, round_no): 
@@ -132,6 +145,7 @@ def get_team_fastest_pitstops(year, round_no):
 
     team_fastest = pitstops.groupby('Team')['PitStopDuration'].min().reset_index()
     return team_fastest.rename(columns={'Team': 'constructor_name', 'PitStopDuration': 'fastest_pitstop_time'})
+
 
 
 def calculate_fantasy_points(df):
@@ -176,6 +190,7 @@ def calculate_fantasy_points(df):
     )
 
     return df
+
 
 
 def calculate_constructor_points(driver_df, pitstop_df):
@@ -250,11 +265,15 @@ def calculate_constructor_points(driver_df, pitstop_df):
     return pd.DataFrame(constructor_rows)
 
 
+
 def process_race(season, round_no):
     try:
+        event = fastf1.get_event(season, round_no)
+        gp_name = event['EventName']
+
         race_df = get_race_results_fastf1(season, round_no)
         if race_df.empty:
-            logger.warning(f"Skipping Round {round_no}: No race data found.")
+            logger.warning(f"Skipping Round {round_no} - {gp_name}: No race data found.")
             return None, None
 
         quali_df = get_qualifying_results_fastf1(season, round_no)
@@ -286,12 +305,13 @@ def process_race(season, round_no):
         final_data.to_pickle(f"cache/pickles/driver_{season}_r{round_no}.pkl")
         constructor_data.to_pickle(f"cache/pickles/constructor_{season}_r{round_no}.pkl")
 
-        logger.info(f"Processed Round {round_no}")
+        logger.info(f"Processed Round {round_no} - {gp_name}")
         return final_data, constructor_data
 
     except Exception as e:
-        logger.warning(f"Error in Round {round_no}: {e}")
+        logger.warning(f"Error in Round {round_no} - {gp_name if 'gp_name' in locals() else 'Unknown GP'}: {e}")
         return None, None
+
 
 
 def run_full_season(season, races):
@@ -299,16 +319,19 @@ def run_full_season(season, races):
     all_constructor_data = []
 
     for round_no in races:
+        if is_race_cached(season, round_no):
+            logger.info(f"Skipping round {round_no} - already cached.")
+            continue
         driver_df, constructor_df = process_race(season, round_no)
         if driver_df is not None:
             all_driver_data.append(driver_df)
         if constructor_df is not None:
             all_constructor_data.append(constructor_df)
-        time.sleep(20)  # delay of 20 seconds between race API calls
+        time.sleep(60)  # delay of 60 seconds between race API calls
 
     if all_driver_data:
         full_driver_df = pd.concat(all_driver_data, ignore_index=True)
-        full_driver_df.to_excel(f"{season}_fantasy_driver_data.xlsx", index=False)
+        full_driver_df.to_excel(f"GeneratedSpreadsheets/{season}_fantasy_driver_data.xlsx", index=False)
         logger.info(f"Saved full season driver data: {season}_fantasy_driver_data.xlsx")
 
     if all_constructor_data:
@@ -317,7 +340,8 @@ def run_full_season(season, races):
         logger.info(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")
 
 
-def combine_all_seasons(output_folder=".", file_prefix="fantasy_driver_data"):
+
+def combine_all_seasons(output_folder="./GeneratedSpreadsheets", file_prefix="fantasy_driver_data"):
     all_dfs = []
     for season in SEASON_RACE_MAP:
         file = f"{output_folder}/{season}_{file_prefix}.xlsx"
@@ -330,6 +354,30 @@ def combine_all_seasons(output_folder=".", file_prefix="fantasy_driver_data"):
         output_file = f"{output_folder}/all_seasons_{file_prefix}.xlsx"
         combined.to_excel(output_file, index=False)
         logger.info(f" Combined file saved: {output_file}")
+
+
+
+def verify_session_data(session, expected_columns=None, context=""):
+    if session.results is None or session.results.empty:
+        logger.warning(f"[{context}] Empty or missing results.")
+        return False
+
+    num_drivers = len(session.results)
+    if num_drivers < 18:
+        logger.warning(f"[{context}] Unexpected number of drivers: {num_drivers}")
+
+    if expected_columns:
+        missing = [col for col in expected_columns if col not in session.results or session.results[col].isna().all()]
+        if missing:
+            logger.warning(f"[{context}] Missing or all-null columns: {missing}")
+
+    if context == "Race":
+        if 'PitInTime' not in session.laps.columns or session.laps['PitInTime'].isna().all():
+            logger.warning(f"[{context}] Pit stop data is missing or empty.")
+    
+    logger.info(f"[{context}] Data verification complete.")
+    return True    
+
 
 
 def main():
