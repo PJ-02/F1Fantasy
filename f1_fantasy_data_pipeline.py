@@ -380,7 +380,6 @@ def calculate_constructor_points(driver_df, pitstop_df):
             entry['fastest_pitstop_time'] = None
         entry['pitstop_points'] = pitstop_points
 
-        entry['fastest_pitstop_bonus'] = 0
         if constructor == fastest_team:
             entry['fastest_pitstop_bonus'] += 5
             if p_time < WORLD_RECORD_TIME:
@@ -396,9 +395,6 @@ def calculate_constructor_points(driver_df, pitstop_df):
 
 
         # Final Constructor Fantasy Points
-        entry['fastest_pitstop_bonus'] = 0
-        entry['world_record_bonus'] = 0
-
         entry['constructor_fantasy_points'] = (
         entry['driver_points_total'] +
         entry['qualifying_bonus'] +
@@ -444,6 +440,18 @@ def process_race(season, round_no):
         telemetry_df = get_driver_telemetry(session)
         final_data = final_data.merge(telemetry_df, on='driver_id', how='left')
 
+        # Weather data
+        weather_df = session.weather_data
+        weather_df['session_time'] = weather_df['Time'].dt.total_seconds()
+        avg_weather = {
+            'track_temp_avg': weather_df['TrackTemp'].mean(),
+            'air_temp_avg': weather_df['AirTemp'].mean(),
+            'humidity_avg': weather_df['Humidity'].mean(),
+            'pressure_avg': weather_df['Pressure'].mean(),
+            'rainfall_avg': weather_df['Rainfall'].mean(),
+            'wind_speed_avg': weather_df['WindSpeed'].mean(),
+            'wind_direction_avg': weather_df['WindDirection'].mean()
+        }
 
         # Pitstop data
         pitstop_df = get_team_fastest_pitstops(season, round_no)
@@ -452,8 +460,15 @@ def process_race(season, round_no):
         # Add metadata
         final_data['season'] = season
         final_data['round'] = round_no
+        final_data['event_name'] = gp_name
+
         constructor_data['season'] = season
         constructor_data['round'] = round_no
+        constructor_data['event_name'] = gp_name
+
+        for k, v in avg_weather.items():
+            final_data[k] = v
+            constructor_data[k] = v
 
         # Saving data to cache
         os.makedirs("cache/pickles", exist_ok=True)
