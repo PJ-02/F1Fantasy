@@ -1,8 +1,12 @@
+import fastf1.req
 import pandas as pd
 import fastf1
 import logging
 import os
 import time
+import functools
+import random
+from tqdm import tqdm
 
 from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024, test_races
 
@@ -29,18 +33,51 @@ SEASON_RACE_MAP = {
     2024: races_2024,
 }
 
+
+
+def retry_on_rate_limit(max_retries = 5, base_delay = 60):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            for attempt in range(max_retries):
+                try:
+                    return func(*args, **kwargs)
+                except fastf1.req.RateLimitExceededError as e:
+                    delay = base_delay * (2 ** attempt) + random.randint(1,10)
+                    logger.warning(f"Rate limit hit. Retrying in {delay} seconds... (Attempt {attempt + 1})")
+                    time.sleep(delay)
+            logger.error(f"Max retries exceeded for {func.__name__}")
+            return None
+        return wrapper
+    return decorator
+
+
+
+@retry_on_rate_limit()
+def get_session_with_retry(season, round_no, session_type):
+    return fastf1.get_session(season, round_no, session_type)
+
+@retry_on_rate_limit()
+def load_session_with_retry(session, telemetry=True, laps=True):
+    session.load(telemetry=telemetry, laps=laps)
+    return session
+
+
+
+
 def is_race_cached(season, round_no):
     try:
-        session = fastf1.get_session(season, round_no, 'R')
-        session.load(telemetry=False, laps=False)
+        session = get_session_with_retry(season, round_no, 'R')
+        session = load_session_with_retry(session, telemetry=False, laps=False)
+
         return session._data_loaded
     except:
         return False
 
 def get_race_results_fastf1(season, round_no):
     try:
-        session = fastf1.get_session(season, round_no, 'R')
-        session.load()
+        session = get_session_with_retry(season, round_no, 'R')
+        session = load_session_with_retry(session)
         verify_session_data(session, ['FullName', 'Abbreviation', 'Position', 'GridPosition', 'TeamName'], context="Race")
     except Exception as e:
         logger.warning(f"Could not load race session for round {round_no}: {e}")
@@ -75,16 +112,19 @@ def preprocess_driver_data(df):
 
     # Sprint fantasy features
     df['sprint_positions_gained'] = df['sprint_grid'] - df['sprint_pos']
-    df['sprint_positions_gained'] = df['sprint_positions_gained'].fillna(0)
+    df['sprint_positions_gained'] = df['sprint_positions_gained'].fillna(0).astype(int)
     df['sprint_dnf'] = df['sprint_status'].apply(lambda x: 1 if 'Accident' in x or 'Retired' in x else 0)
+    df['sprint_disqualified'] = df['sprint_status'].apply(lambda x: 1 if 'DSQ' in str(x).upper() else 0)
+    df['qualifying_disqualified'] = df['qualifying_pos'].apply(lambda x: 1 if str(x).upper() == 'DSQ' else 0)
+
 
     return df
 
 
 def get_qualifying_results_fastf1(season, round_no):
     try:
-        session = fastf1.get_session(season, round_no, 'Q')
-        session.load()
+        session = get_session_with_retry(season, round_no, 'Q')
+        session = load_session_with_retry(session)
         verify_session_data(session, ['Abbreviation', 'Position'], context="Qualifying")
     except Exception as e:
         logger.warning(f"Could not load qualifying session for round {round_no}: {e}")
@@ -104,8 +144,8 @@ def get_qualifying_results_fastf1(season, round_no):
 
 def get_sprint_results_fastf1(season, round_no):
     try:
-        session = fastf1.get_session(season, round_no, 'S')  # Sprint session
-        session.load()
+        session = get_session_with_retry(season, round_no, 'S')  # Sprint session
+        session = load_session_with_retry(session)
         verify_session_data(session, ['Abbreviation', 'Position', 'GridPosition', 'Status'], context="Sprint")
     except Exception as e:
         logger.info(f"No sprint session for {round_no}")
@@ -118,15 +158,20 @@ def get_sprint_results_fastf1(season, round_no):
 
     results = results.copy()
     results['driver_id'] = results['Abbreviation'].str.lower()
-    df = results[['driver_id', 'Position', 'GridPosition', 'Status']]
-    df.columns = ['driver_id', 'sprint_pos', 'sprint_grid', 'sprint_status']
+
+    # Add fastest lap flag
+    flaps = session.laps.pick_fastest()
+    results['sprint_fastest_lap'] = results['Abbreviation'] == flaps.Driver
+
+    df = results[['driver_id', 'Position', 'GridPosition', 'Status', 'sprint_fastest_lap']]
+    df.columns = ['driver_id', 'sprint_pos', 'sprint_grid', 'sprint_status', 'sprint_fastest_lap']
     return df
 
 
 
 def get_team_fastest_pitstops(year, round_no): 
-    session = fastf1.get_session(year, round_no, 'R')
-    session.load()
+    session = get_session_with_retry(year, round_no, 'R')
+    session = load_session_with_retry(session)
 
     pitstops = session.laps[['Driver', 'PitInTime', 'PitOutTime']].dropna()
 
@@ -148,52 +193,144 @@ def get_team_fastest_pitstops(year, round_no):
 
 
 
+def get_driver_telemetry(session):
+    telemetry_data = []
+    pos_data = session.laps[['Driver', 'LapNumber', 'Position']]
+
+    for drv in session.drivers:
+        try:
+            driver_laps = pos_data[pos_data['Driver'] == drv]
+            driver_laps = driver_laps.sort_values('LapNumber')
+
+            overtakes = 0
+            prev_pos = None
+            for _, row in driver_laps.iterrows():
+                current_pos = row['Position']
+                if prev_pos and current_pos < prev_pos:
+                    overtakes += 1
+                prev_pos = current_pos
+            
+            fastest_lap = session.laps.pick_drivers(drv).pick_fastest()
+            if fastest_lap is None or fastest_lap.empty:
+                continue
+            car_data = fastest_lap.get_car_data().add_distance()
+            telemetry_data.append({
+                'driver_id':drv.lower(),
+                'top_speed': car_data['Speed'].max(),
+                'avg_throttle': car_data['Throttle'].mean(),
+                'brake_usage': car_data['Brake'].mean(),
+                'overtakes': overtakes
+            })
+
+        except Exception as e:
+            logger.warning(f"Failed to load telemetry for driver {drv}: {e}")
+            continue
+    return pd.DataFrame(telemetry_data)
+
+
+
 def calculate_fantasy_points(df):
     # --- Qualifying Points ---
     quali_points_map = {1: 10, 2: 9, 3: 8, 4: 7, 5: 6, 6: 5, 7: 4, 8: 3, 9: 2, 10: 1}
     df['qualifying_points'] = df['qualifying_pos'].map(quali_points_map).fillna(0)
 
     # Penalty for no time or DQ (mock: if quali_pos is NaN)
-    df.loc[df['qualifying_pos'].isna(), 'qualifying_points'] = -5
+    df['qualifying_points'] = df['qualifying_pos'].map(quali_points_map).fillna(0)
+
+    # Apply -5 penalty for No Time (Q1) but NOT for DSQ
+    df.loc[(df['qualifying_pos'].isna()) & (df['qualifying_disqualified'] == 0), 'qualifying_points'] = -5
+
+    # Apply DSQ penalty
+    df.loc[df['qualifying_disqualified'] == 1, 'qualifying_points'] = -5
+
 
     # --- Sprint Points ---
     sprint_points_map = {1: 8, 2: 7, 3: 6, 4: 5, 5: 4, 6: 3, 7: 2, 8: 1}
     df['sprint_points'] = df['sprint_pos'].map(sprint_points_map).fillna(0)
 
-    df['sprint_gain_points'] = df['sprint_positions_gained']  # 1 pt per position gained/lost
-    df['sprint_dnf_penalty'] = df['sprint_dnf'] * -20
+    # Positions Gained / Lost
+    df['sprint_gain_points'] = df['sprint_positions_gained'].fillna(0)
+
+    # Fastest lap in sprint (if column exists, else default False)
+    if 'sprint_fastest_lap' in df.columns:
+        df['sprint_fastest_lap_bonus'] = df['sprint_fastest_lap'].apply(lambda x: 5 if x else 0)
+    else:
+        df['sprint_fastest_lap_bonus'] = 0
+
+    # Sprint Overtakes
+    df['sprint_overtakes'] = df.get('sprint_overtakes', 0)
+    df['sprint_overtake_points'] = df['sprint_overtakes'].fillna(0) * 1
+
+    # Penalty for DNF/Not Classified
+    df['sprint_dnf_penalty'] = df['sprint_status'].apply(
+        lambda x: -20 if str(x).lower() in ['retired', 'accident', 'not classified', 'nc', 'dnf'] else 0
+    )
+    # Penalty for Disqualified in Sprint
+    df['sprint_dsq_penalty'] = df['sprint_disqualified'] * -20
+
+
+    # Total sprint score
+    df['sprint_total'] = (
+        df['sprint_points'] +
+        df['sprint_gain_points'] +
+        df['sprint_overtake_points'] +
+        df['sprint_fastest_lap_bonus'] +
+        df['sprint_dnf_penalty'] +
+        df['sprint_dsq_penalty']
+    )
+
 
     # --- Race Points ---
     race_points_map = {1: 25, 2: 18, 3: 15, 4: 12, 5: 10, 6: 8, 7: 6, 8: 4, 9: 2, 10: 1}
     df['race_points'] = df['position'].map(race_points_map).fillna(0)
 
-    df['race_gain_points'] = df['positions_gained']  # 1 pt per position gained/lost
-    df['fastest_lap_bonus'] = df['fastest_lap'].apply(lambda x: 10 if x else 0)
+    df['overtakes'] = df.get('overtakes', 0)
 
-    # Mocking DOTD for now (you can set one manually or with real data later)
+    # Positions Gained / Lost
+    df['race_gain_points'] = df['positions_gained'].fillna(0)
+
+    # Fastest Lap
+    df['race_fastest_lap_bonus'] = df['fastest_lap'].apply(lambda x: 10 if x else 0)
+
+    # Driver of the Day (for now, still mock it)
     df['dotd_bonus'] = 0
     df.loc[df['driver_name'] == "Max Verstappen", 'dotd_bonus'] = 10
 
-    df['race_dnf_penalty'] = df['DNF'] * -20
+    # Overtakes
+    df['overtakes'] = df.get('overtakes', 0)
+    df['race_overtake_points'] = df['overtakes'] * 1
+
+    # DNF / NC / DSQ
+    df['race_dnf_penalty'] = df['status'].apply(
+        lambda x: -20 if str(x).lower() in ['retired', 'accident', 'not classified', 'nc', 'dnf'] else 0
+    )
+
 
     # --- Total Fantasy Score ---
     df['fantasy_points_total'] = (
-        df['qualifying_points'] +
-        df['sprint_points'] +
-        df['sprint_gain_points'] +
-        df['sprint_dnf_penalty'] +
-        df['race_points'] +
-        df['race_gain_points'] +
-        df['fastest_lap_bonus'] +
-        df['dotd_bonus'] +
-        df['race_dnf_penalty']
+    df['qualifying_points'] +
+    df['sprint_total'] +
+    df['race_points'] +
+    df['race_gain_points'] +
+    df['race_overtake_points'] +
+    df['race_fastest_lap_bonus'] +
+    df['dotd_bonus'] +
+    df['race_dnf_penalty']
     )
+
 
     return df
 
 
 
 def calculate_constructor_points(driver_df, pitstop_df):
+    # Detect fastest pitstop of the race
+    fastest_pitstop = pitstop_df['fastest_pitstop_time'].min()
+    fastest_team = pitstop_df.loc[pitstop_df['fastest_pitstop_time'] == fastest_pitstop, 'constructor_name'].iloc[0]
+
+    # World record benchmark
+    WORLD_RECORD_TIME = 1.80
+
     # Group by constructor
     grouped = driver_df.groupby('constructor_name')
 
@@ -243,22 +380,33 @@ def calculate_constructor_points(driver_df, pitstop_df):
             entry['fastest_pitstop_time'] = None
         entry['pitstop_points'] = pitstop_points
 
-        # Constructor penalties (e.g., DQs)
-        dq_count = group['status'].apply(lambda x: 'DSQ' in x).sum()
-        entry['dq_penalty'] = dq_count * -10
+        entry['fastest_pitstop_bonus'] = 0
+        if constructor == fastest_team:
+            entry['fastest_pitstop_bonus'] += 5
+            if p_time < WORLD_RECORD_TIME:
+                entry['fastest_pitstop_bonus'] += 15
+
+
+        # Constructor penalties (Sprint DSQ + Race DSQ)
+        sprint_dsq_count = group['sprint_disqualified'].sum()
+        race_dsq_count = group['status'].apply(lambda x: 'DSQ' in str(x).upper()).sum()
+
+        total_dsq = sprint_dsq_count + race_dsq_count
+        entry['disqualification_penalty'] = total_dsq * -10
+
 
         # Final Constructor Fantasy Points
         entry['fastest_pitstop_bonus'] = 0
         entry['world_record_bonus'] = 0
 
         entry['constructor_fantasy_points'] = (
-            entry['driver_points_total'] +
-            entry['qualifying_bonus'] +
-            entry['pitstop_points'] +
-            entry['fastest_pitstop_bonus'] +
-            entry['world_record_bonus'] +
-            entry['dq_penalty']
+        entry['driver_points_total'] +
+        entry['qualifying_bonus'] +
+        entry['pitstop_points'] +
+        entry['fastest_pitstop_bonus'] +
+        entry['disqualification_penalty']
         )
+
 
         constructor_rows.append(entry)
 
@@ -290,6 +438,13 @@ def process_race(season, round_no):
         clean_data = preprocess_driver_data(merged_df)
         final_data = calculate_fantasy_points(clean_data)
 
+        #Telemetry data
+        session = get_session_with_retry(season, round_no, 'R')
+        session = load_session_with_retry(session)
+        telemetry_df = get_driver_telemetry(session)
+        final_data = final_data.merge(telemetry_df, on='driver_id', how='left')
+
+
         # Pitstop data
         pitstop_df = get_team_fastest_pitstops(season, round_no)
         constructor_data = calculate_constructor_points(final_data, pitstop_df)
@@ -318,7 +473,7 @@ def run_full_season(season, races):
     all_driver_data = []
     all_constructor_data = []
 
-    for round_no in races:
+    for round_no in tqdm(races, desc=f"Processing {season} season"):
         if is_race_cached(season, round_no):
             logger.info(f"Skipping round {round_no} - already cached.")
             continue
