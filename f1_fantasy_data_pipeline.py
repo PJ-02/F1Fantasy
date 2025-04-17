@@ -8,7 +8,7 @@ import functools
 import random
 from tqdm import tqdm
 
-from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024, test_races
+from race_calendars import races_2019, races_2020, races_2021, races_2022, races_2023, races_2024, races_2025
 
 fastf1.Cache.enable_cache('cache/f1_cache')  # this creates cache for speed
 
@@ -25,12 +25,13 @@ logger = logging.getLogger(__name__)
 
 
 SEASON_RACE_MAP = {
-    # 2019: races_2019,
-    # 2020: races_2020,
-    # 2021: races_2021,
-    # 2022: races_2022,
-    # 2023: races_2023,
+    2019: races_2019,
+    2020: races_2020,
+    2021: races_2021,
+    2022: races_2022,
+    2023: races_2023,
     2024: races_2024,
+    2025: races_2025
 }
 
 
@@ -66,13 +67,10 @@ def load_session_with_retry(session, telemetry=True, laps=True):
 
 
 def is_race_cached(season, round_no):
-    try:
-        session = get_session_with_retry(season, round_no, 'R')
-        session = load_session_with_retry(session, telemetry=False, laps=False)
+    driver_path = f"cache/pickles/driver_{season}_r{round_no}.pkl"
+    constructor_path = f"cache/pickles/constructor_{season}_r{round_no}.pkl"
+    return os.path.exists(driver_path) and os.path.exists(constructor_path)
 
-        return session._data_loaded
-    except:
-        return False
 
 def get_race_results_fastf1(season, round_no):
     try:
@@ -326,7 +324,13 @@ def calculate_fantasy_points(df):
 def calculate_constructor_points(driver_df, pitstop_df):
     # Detect fastest pitstop of the race
     fastest_pitstop = pitstop_df['fastest_pitstop_time'].min()
-    fastest_team = pitstop_df.loc[pitstop_df['fastest_pitstop_time'] == fastest_pitstop, 'constructor_name'].iloc[0]
+    if pitstop_df.empty or 'fastest_pitstop_time' not in pitstop_df.columns:
+        fastest_team = None
+    else:
+        fastest_pitstop = pitstop_df['fastest_pitstop_time'].min()
+        fastest_team_rows = pitstop_df.loc[pitstop_df['fastest_pitstop_time'] == fastest_pitstop, 'constructor_name']
+        fastest_team = fastest_team_rows.iloc[0] if not fastest_team_rows.empty else None
+
 
     # World record benchmark
     WORLD_RECORD_TIME = 1.80
@@ -380,10 +384,13 @@ def calculate_constructor_points(driver_df, pitstop_df):
             entry['fastest_pitstop_time'] = None
         entry['pitstop_points'] = pitstop_points
 
+        entry['fastest_pitstop_bonus'] = 0  # Always initialize first
+
         if constructor == fastest_team:
             entry['fastest_pitstop_bonus'] += 5
-            if p_time < WORLD_RECORD_TIME:
+            if p_time is not None and p_time < WORLD_RECORD_TIME:
                 entry['fastest_pitstop_bonus'] += 15
+
 
 
         # Constructor penalties (Sprint DSQ + Race DSQ)
@@ -414,6 +421,7 @@ def process_race(season, round_no):
     try:
         event = fastf1.get_event(season, round_no)
         gp_name = event['EventName']
+        logger.info(f"\n===== Starting Processing for Round {round_no} - {gp_name} =====")
 
         race_df = get_race_results_fastf1(season, round_no)
         if race_df.empty:
@@ -479,7 +487,7 @@ def process_race(season, round_no):
         return final_data, constructor_data
 
     except Exception as e:
-        logger.warning(f"Error in Round {round_no} - {gp_name if 'gp_name' in locals() else 'Unknown GP'}: {e}")
+        logger.exception(f"Exception in Round {round_no} - {gp_name if 'gp_name' in locals() else 'Unknown GP'}")
         return None, None
 
 
@@ -500,11 +508,20 @@ def run_full_season(season, races):
         time.sleep(60)  # delay of 60 seconds between race API calls
 
     if all_driver_data:
+        os.makedirs("GeneratedSpreadsheets", exist_ok=True)
         full_driver_df = pd.concat(all_driver_data, ignore_index=True)
+
+        expected_rounds = set(races)
+        processed_rounds = set(full_driver_df['round'].unique())
+        missing_rounds = expected_rounds - processed_rounds
+        if missing_rounds:
+            logger.warning(f"Missing rounds in season {season}: {sorted(missing_rounds)}")
+
         full_driver_df.to_excel(f"GeneratedSpreadsheets/{season}_fantasy_driver_data.xlsx", index=False)
         logger.info(f"Saved full season driver data: {season}_fantasy_driver_data.xlsx")
 
     if all_constructor_data:
+        os.makedirs("GeneratedSpreadsheets", exist_ok=True)
         full_constructor_df = pd.concat(all_constructor_data, ignore_index=True)
         full_constructor_df.to_excel(f"GeneratedSpreadsheets/{season}_fantasy_constructor_data.xlsx", index=False)
         logger.info(f"Saved full season constructor data: {season}_fantasy_constructor_data.xlsx")

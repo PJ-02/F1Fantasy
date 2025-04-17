@@ -24,8 +24,8 @@ poetry.lock
 
 # Project cache and data
 cache/
-cache/json/
 cache/pickles/
+*.pkl
 cache/f1_cache/
 
 # Excel outputs

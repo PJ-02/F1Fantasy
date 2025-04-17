@@ -1,1741 +1,264 @@
-2025-04-11 01:09:45,877 INFO:Starting season 2024...
-2025-04-11 01:09:46,085 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
-2025-04-11 01:09:46,085 INFO:Using cached data for session_info
-2025-04-11 01:09:46,086 INFO:Using cached data for driver_info
-2025-04-11 01:09:46,098 INFO:Using cached data for weather_data
-2025-04-11 01:09:46,099 INFO:Using cached data for race_control_messages
-2025-04-11 01:09:46,100 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '63', '4', '44', '81', '14', '18', '24', '20', '3', '22', '23', '27', '31', '10', '77', '2']
-2025-04-11 01:09:46,111 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
-2025-04-11 01:09:46,111 INFO:Using cached data for session_info
-2025-04-11 01:09:46,111 INFO:Using cached data for driver_info
-2025-04-11 01:09:46,119 INFO:Using cached data for session_status_data
-2025-04-11 01:09:46,120 INFO:Using cached data for lap_count
-2025-04-11 01:09:46,120 INFO:Using cached data for track_status_data
-2025-04-11 01:09:46,124 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:09:46,125 INFO:Using cached data for timing_app_data
-2025-04-11 01:09:46,125 INFO:Processing timing data...
-2025-04-11 01:09:46,445 INFO:Using cached data for car_data
-2025-04-11 01:09:46,478 INFO:Using cached data for position_data
-2025-04-11 01:09:46,967 INFO:Using cached data for weather_data
-2025-04-11 01:09:46,968 INFO:Using cached data for race_control_messages
-2025-04-11 01:09:46,988 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '63', '4', '44', '81', '14', '18', '24', '20', '3', '22', '23', '27', '31', '10', '77', '2']
-2025-04-11 01:09:46,988 INFO:[Race] Data verification complete.
-2025-04-11 01:09:46,994 INFO:Loading data for Bahrain Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:09:46,995 INFO:Using cached data for session_info
-2025-04-11 01:09:46,995 INFO:Using cached data for driver_info
-2025-04-11 01:09:47,003 INFO:Using cached data for session_status_data
-2025-04-11 01:09:47,004 INFO:Using cached data for track_status_data
-2025-04-11 01:09:47,005 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:09:47,005 INFO:Using cached data for timing_app_data
-2025-04-11 01:09:47,005 INFO:Processing timing data...
-2025-04-11 01:09:47,200 INFO:Using cached data for car_data
-2025-04-11 01:09:47,216 INFO:Using cached data for position_data
-2025-04-11 01:09:47,490 INFO:Using cached data for weather_data
-2025-04-11 01:09:47,491 INFO:Using cached data for race_control_messages
-2025-04-11 01:09:47,502 INFO:Finished loading data for 20 drivers: ['1', '16', '63', '55', '11', '14', '4', '81', '44', '27', '22', '18', '23', '3', '20', '77', '24', '2', '31', '10']
-2025-04-11 01:09:47,502 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:09:47,506 INFO:No sprint session for 1
-2025-04-11 01:09:47,513 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
-2025-04-11 01:09:47,513 INFO:Using cached data for session_info
-2025-04-11 01:09:47,513 INFO:Using cached data for driver_info
-2025-04-11 01:09:47,519 INFO:Using cached data for session_status_data
-2025-04-11 01:09:47,520 INFO:Using cached data for lap_count
-2025-04-11 01:09:47,520 INFO:Using cached data for track_status_data
-2025-04-11 01:09:47,522 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:09:47,522 INFO:Using cached data for timing_app_data
-2025-04-11 01:09:47,522 INFO:Processing timing data...
-2025-04-11 01:09:47,835 INFO:Using cached data for car_data
-2025-04-11 01:09:47,863 INFO:Using cached data for position_data
-2025-04-11 01:09:48,358 INFO:Using cached data for weather_data
-2025-04-11 01:09:48,359 INFO:Using cached data for race_control_messages
-2025-04-11 01:09:48,379 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '63', '4', '44', '81', '14', '18', '24', '20', '3', '22', '23', '27', '31', '10', '77', '2']
-2025-04-11 01:09:48,424 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
-2025-04-11 01:09:48,425 INFO:Using cached data for session_info
-2025-04-11 01:09:48,425 INFO:Using cached data for driver_info
-2025-04-11 01:09:48,431 INFO:Using cached data for session_status_data
-2025-04-11 01:09:48,431 INFO:Using cached data for lap_count
-2025-04-11 01:09:48,431 INFO:Using cached data for track_status_data
-2025-04-11 01:09:48,433 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:09:48,433 INFO:Using cached data for timing_app_data
-2025-04-11 01:09:48,433 INFO:Processing timing data...
-2025-04-11 01:09:48,742 INFO:Using cached data for car_data
-2025-04-11 01:09:48,770 INFO:Using cached data for position_data
-2025-04-11 01:09:49,263 INFO:Using cached data for weather_data
-2025-04-11 01:09:49,264 INFO:Using cached data for race_control_messages
-2025-04-11 01:09:49,284 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '63', '4', '44', '81', '14', '18', '24', '20', '3', '22', '23', '27', '31', '10', '77', '2']
-2025-04-11 01:09:49,288 INFO:Processed Round 1 - Bahrain Grand Prix
-2025-04-11 01:10:49,309 INFO:Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
-2025-04-11 01:10:49,310 INFO:Using cached data for session_info
-2025-04-11 01:10:49,311 INFO:Using cached data for driver_info
-2025-04-11 01:10:49,325 INFO:Using cached data for weather_data
-2025-04-11 01:10:49,326 INFO:Using cached data for race_control_messages
-2025-04-11 01:10:49,326 INFO:Finished loading data for 20 drivers: ['1', '11', '16', '81', '14', '63', '38', '4', '44', '27', '23', '20', '31', '2', '22', '3', '77', '24', '18', '10']
-2025-04-11 01:10:49,338 INFO:Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
-2025-04-11 01:10:49,338 INFO:Using cached data for session_info
-2025-04-11 01:10:49,338 INFO:Using cached data for driver_info
-2025-04-11 01:10:49,347 INFO:Using cached data for session_status_data
-2025-04-11 01:10:49,347 INFO:Using cached data for lap_count
-2025-04-11 01:10:49,348 INFO:Using cached data for track_status_data
-2025-04-11 01:10:49,351 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:10:49,351 INFO:Using cached data for timing_app_data
-2025-04-11 01:10:49,351 INFO:Processing timing data...
-2025-04-11 01:10:49,636 INFO:Using cached data for car_data
-2025-04-11 01:10:49,675 INFO:Using cached data for position_data
-2025-04-11 01:10:50,156 INFO:Using cached data for weather_data
-2025-04-11 01:10:50,157 INFO:Using cached data for race_control_messages
-2025-04-11 01:10:50,178 INFO:Finished loading data for 20 drivers: ['1', '11', '16', '81', '14', '63', '38', '4', '44', '27', '23', '20', '31', '2', '22', '3', '77', '24', '18', '10']
-2025-04-11 01:10:50,179 INFO:[Race] Data verification complete.
-2025-04-11 01:10:50,184 INFO:Loading data for Saudi Arabian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:10:50,185 INFO:Using cached data for session_info
-2025-04-11 01:10:50,186 INFO:Using cached data for driver_info
-2025-04-11 01:10:50,187 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:10:50,187 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:10:50,192 INFO:Using cached data for session_status_data
-2025-04-11 01:10:50,192 INFO:Using cached data for track_status_data
-2025-04-11 01:10:50,193 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:10:50,193 INFO:Using cached data for timing_app_data
-2025-04-11 01:10:50,193 INFO:Processing timing data...
-2025-04-11 01:10:50,369 INFO:Using cached data for car_data
-2025-04-11 01:10:50,386 INFO:Using cached data for position_data
-2025-04-11 01:10:50,683 INFO:Using cached data for weather_data
-2025-04-11 01:10:50,683 INFO:Using cached data for race_control_messages
-2025-04-11 01:10:50,694 INFO:Finished loading data for 20 drivers: ['1', '16', '11', '14', '81', '4', '63', '44', '22', '18', '38', '23', '20', '3', '27', '77', '31', '10', '2', '24']
-2025-04-11 01:10:50,694 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:10:50,699 INFO:No sprint session for 2
-2025-04-11 01:10:50,705 INFO:Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
-2025-04-11 01:10:50,705 INFO:Using cached data for session_info
-2025-04-11 01:10:50,705 INFO:Using cached data for driver_info
-2025-04-11 01:10:50,711 INFO:Using cached data for session_status_data
-2025-04-11 01:10:50,711 INFO:Using cached data for lap_count
-2025-04-11 01:10:50,711 INFO:Using cached data for track_status_data
-2025-04-11 01:10:50,713 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:10:50,714 INFO:Using cached data for timing_app_data
-2025-04-11 01:10:50,714 INFO:Processing timing data...
-2025-04-11 01:10:50,991 INFO:Using cached data for car_data
-2025-04-11 01:10:51,024 INFO:Using cached data for position_data
-2025-04-11 01:10:51,504 INFO:Using cached data for weather_data
-2025-04-11 01:10:51,504 INFO:Using cached data for race_control_messages
-2025-04-11 01:10:51,525 INFO:Finished loading data for 20 drivers: ['1', '11', '16', '81', '14', '63', '38', '4', '44', '27', '23', '20', '31', '2', '22', '3', '77', '24', '18', '10']
-2025-04-11 01:10:51,564 INFO:Loading data for Saudi Arabian Grand Prix - Race [v3.5.3]
-2025-04-11 01:10:51,564 INFO:Using cached data for session_info
-2025-04-11 01:10:51,564 INFO:Using cached data for driver_info
-2025-04-11 01:10:51,570 INFO:Using cached data for session_status_data
-2025-04-11 01:10:51,570 INFO:Using cached data for lap_count
-2025-04-11 01:10:51,570 INFO:Using cached data for track_status_data
-2025-04-11 01:10:51,573 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:10:51,573 INFO:Using cached data for timing_app_data
-2025-04-11 01:10:51,573 INFO:Processing timing data...
-2025-04-11 01:10:51,850 INFO:Using cached data for car_data
-2025-04-11 01:10:51,884 INFO:Using cached data for position_data
-2025-04-11 01:10:52,352 INFO:Using cached data for weather_data
-2025-04-11 01:10:52,353 INFO:Using cached data for race_control_messages
-2025-04-11 01:10:52,374 INFO:Finished loading data for 20 drivers: ['1', '11', '16', '81', '14', '63', '38', '4', '44', '27', '23', '20', '31', '2', '22', '3', '77', '24', '18', '10']
-2025-04-11 01:10:52,379 INFO:Processed Round 2 - Saudi Arabian Grand Prix
-2025-04-11 01:11:52,400 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
-2025-04-11 01:11:52,402 INFO:Using cached data for session_info
-2025-04-11 01:11:52,403 INFO:Using cached data for driver_info
-2025-04-11 01:11:53,175 DEBUG:Failed to parse timestamp '-1:57:37.891' in Ergastresponse.
-2025-04-11 01:11:53,187 INFO:Using cached data for weather_data
-2025-04-11 01:11:53,188 INFO:Using cached data for race_control_messages
-2025-04-11 01:11:53,189 INFO:Finished loading data for 19 drivers: ['55', '16', '4', '81', '11', '18', '22', '14', '27', '20', '23', '3', '10', '77', '24', '31', '63', '44', '1']
-2025-04-11 01:11:53,202 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
-2025-04-11 01:11:53,202 INFO:Using cached data for session_info
-2025-04-11 01:11:53,203 INFO:Using cached data for driver_info
-2025-04-11 01:11:53,205 DEBUG:Failed to parse timestamp '-1:57:37.891' in Ergastresponse.
-2025-04-11 01:11:53,212 INFO:Using cached data for session_status_data
-2025-04-11 01:11:53,212 INFO:Using cached data for lap_count
-2025-04-11 01:11:53,213 INFO:Using cached data for track_status_data
-2025-04-11 01:11:53,218 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:11:53,219 INFO:Using cached data for timing_app_data
-2025-04-11 01:11:53,219 INFO:Processing timing data...
-2025-04-11 01:11:53,883 INFO:Using cached data for car_data
-2025-04-11 01:11:53,918 INFO:Using cached data for position_data
-2025-04-11 01:11:54,389 INFO:Using cached data for weather_data
-2025-04-11 01:11:54,390 INFO:Using cached data for race_control_messages
-2025-04-11 01:11:54,411 INFO:Finished loading data for 19 drivers: ['55', '16', '4', '81', '11', '18', '22', '14', '27', '20', '23', '3', '10', '77', '24', '31', '63', '44', '1']
-2025-04-11 01:11:54,411 INFO:[Race] Data verification complete.
-2025-04-11 01:11:54,418 INFO:Loading data for Australian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:11:54,418 INFO:Using cached data for session_info
-2025-04-11 01:11:54,418 INFO:Using cached data for driver_info
-2025-04-11 01:11:55,012 INFO:Using cached data for session_status_data
-2025-04-11 01:11:55,012 INFO:Using cached data for track_status_data
-2025-04-11 01:11:55,013 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:11:55,014 INFO:Using cached data for timing_app_data
-2025-04-11 01:11:55,014 INFO:Processing timing data...
-2025-04-11 01:11:55,198 INFO:Using cached data for car_data
-2025-04-11 01:11:55,215 INFO:Using cached data for position_data
-2025-04-11 01:11:55,467 INFO:Using cached data for weather_data
-2025-04-11 01:11:55,468 INFO:Using cached data for race_control_messages
-2025-04-11 01:11:55,479 INFO:Finished loading data for 19 drivers: ['1', '55', '11', '4', '16', '81', '63', '22', '18', '14', '44', '23', '77', '20', '31', '27', '10', '3', '24']
-2025-04-11 01:11:55,479 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:11:55,483 INFO:No sprint session for 3
-2025-04-11 01:11:55,489 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
-2025-04-11 01:11:55,489 INFO:Using cached data for session_info
-2025-04-11 01:11:55,489 INFO:Using cached data for driver_info
-2025-04-11 01:11:55,491 DEBUG:Failed to parse timestamp '-1:57:37.891' in Ergastresponse.
-2025-04-11 01:11:55,495 INFO:Using cached data for session_status_data
-2025-04-11 01:11:55,495 INFO:Using cached data for lap_count
-2025-04-11 01:11:55,495 INFO:Using cached data for track_status_data
-2025-04-11 01:11:55,498 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:11:55,498 INFO:Using cached data for timing_app_data
-2025-04-11 01:11:55,498 INFO:Processing timing data...
-2025-04-11 01:11:55,787 INFO:Using cached data for car_data
-2025-04-11 01:11:55,815 INFO:Using cached data for position_data
-2025-04-11 01:11:56,284 INFO:Using cached data for weather_data
-2025-04-11 01:11:56,285 INFO:Using cached data for race_control_messages
-2025-04-11 01:11:56,307 INFO:Finished loading data for 19 drivers: ['55', '16', '4', '81', '11', '18', '22', '14', '27', '20', '23', '3', '10', '77', '24', '31', '63', '44', '1']
-2025-04-11 01:11:56,348 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
-2025-04-11 01:11:56,348 INFO:Using cached data for session_info
-2025-04-11 01:11:56,348 INFO:Using cached data for driver_info
-2025-04-11 01:11:56,350 DEBUG:Failed to parse timestamp '-1:57:37.891' in Ergastresponse.
-2025-04-11 01:11:56,355 INFO:Using cached data for session_status_data
-2025-04-11 01:11:56,355 INFO:Using cached data for lap_count
-2025-04-11 01:11:56,355 INFO:Using cached data for track_status_data
-2025-04-11 01:11:56,357 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:11:56,357 INFO:Using cached data for timing_app_data
-2025-04-11 01:11:56,358 INFO:Processing timing data...
-2025-04-11 01:11:56,652 INFO:Using cached data for car_data
-2025-04-11 01:11:56,682 INFO:Using cached data for position_data
-2025-04-11 01:11:57,130 INFO:Using cached data for weather_data
-2025-04-11 01:11:57,131 INFO:Using cached data for race_control_messages
-2025-04-11 01:11:57,152 INFO:Finished loading data for 19 drivers: ['55', '16', '4', '81', '11', '18', '22', '14', '27', '20', '23', '3', '10', '77', '24', '31', '63', '44', '1']
-2025-04-11 01:11:57,157 INFO:Processed Round 3 - Australian Grand Prix
-2025-04-11 01:12:57,180 INFO:Loading data for Japanese Grand Prix - Race [v3.5.3]
-2025-04-11 01:12:57,181 INFO:Using cached data for session_info
-2025-04-11 01:12:57,182 INFO:Using cached data for driver_info
-2025-04-11 01:12:57,535 INFO:Using cached data for weather_data
-2025-04-11 01:12:57,536 INFO:Using cached data for race_control_messages
-2025-04-11 01:12:57,537 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '4', '14', '63', '81', '44', '22', '27', '18', '20', '77', '31', '10', '2', '24', '3', '23']
-2025-04-11 01:12:57,550 INFO:Loading data for Japanese Grand Prix - Race [v3.5.3]
-2025-04-11 01:12:57,550 INFO:Using cached data for session_info
-2025-04-11 01:12:57,550 INFO:Using cached data for driver_info
-2025-04-11 01:12:57,560 INFO:Using cached data for session_status_data
-2025-04-11 01:12:57,560 INFO:Using cached data for lap_count
-2025-04-11 01:12:57,560 INFO:Using cached data for track_status_data
-2025-04-11 01:12:57,563 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:12:57,564 INFO:Using cached data for timing_app_data
-2025-04-11 01:12:57,564 INFO:Processing timing data...
-2025-04-11 01:12:58,210 INFO:Using cached data for car_data
-2025-04-11 01:12:58,251 INFO:Using cached data for position_data
-2025-04-11 01:12:58,821 INFO:Using cached data for weather_data
-2025-04-11 01:12:58,821 INFO:Using cached data for race_control_messages
-2025-04-11 01:12:58,836 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '4', '14', '63', '81', '44', '22', '27', '18', '20', '77', '31', '10', '2', '24', '3', '23']
-2025-04-11 01:12:58,836 INFO:[Race] Data verification complete.
-2025-04-11 01:12:58,842 INFO:Loading data for Japanese Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:12:58,843 INFO:Using cached data for session_info
-2025-04-11 01:12:58,843 INFO:Using cached data for driver_info
-2025-04-11 01:12:59,352 INFO:Using cached data for session_status_data
-2025-04-11 01:12:59,353 INFO:Using cached data for track_status_data
-2025-04-11 01:12:59,354 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:12:59,355 INFO:Using cached data for timing_app_data
-2025-04-11 01:12:59,355 INFO:Processing timing data...
-2025-04-11 01:12:59,520 INFO:Using cached data for car_data
-2025-04-11 01:12:59,536 INFO:Using cached data for position_data
-2025-04-11 01:12:59,806 INFO:Using cached data for weather_data
-2025-04-11 01:12:59,807 INFO:Using cached data for race_control_messages
-2025-04-11 01:12:59,817 INFO:Finished loading data for 20 drivers: ['1', '11', '4', '55', '14', '81', '44', '16', '63', '22', '3', '27', '77', '23', '31', '18', '10', '20', '2', '24']
-2025-04-11 01:12:59,817 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:12:59,821 INFO:No sprint session for 4
-2025-04-11 01:12:59,828 INFO:Loading data for Japanese Grand Prix - Race [v3.5.3]
-2025-04-11 01:12:59,828 INFO:Using cached data for session_info
-2025-04-11 01:12:59,829 INFO:Using cached data for driver_info
-2025-04-11 01:12:59,834 INFO:Using cached data for session_status_data
-2025-04-11 01:12:59,835 INFO:Using cached data for lap_count
-2025-04-11 01:12:59,835 INFO:Using cached data for track_status_data
-2025-04-11 01:12:59,836 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:12:59,836 INFO:Using cached data for timing_app_data
-2025-04-11 01:12:59,836 INFO:Processing timing data...
-2025-04-11 01:13:00,122 INFO:Using cached data for car_data
-2025-04-11 01:13:00,159 INFO:Using cached data for position_data
-2025-04-11 01:13:00,724 INFO:Using cached data for weather_data
-2025-04-11 01:13:00,725 INFO:Using cached data for race_control_messages
-2025-04-11 01:13:00,740 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '4', '14', '63', '81', '44', '22', '27', '18', '20', '77', '31', '10', '2', '24', '3', '23']
-2025-04-11 01:13:00,784 INFO:Loading data for Japanese Grand Prix - Race [v3.5.3]
-2025-04-11 01:13:00,784 INFO:Using cached data for session_info
-2025-04-11 01:13:00,784 INFO:Using cached data for driver_info
-2025-04-11 01:13:00,790 INFO:Using cached data for session_status_data
-2025-04-11 01:13:00,790 INFO:Using cached data for lap_count
-2025-04-11 01:13:00,790 INFO:Using cached data for track_status_data
-2025-04-11 01:13:00,792 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:13:00,793 INFO:Using cached data for timing_app_data
-2025-04-11 01:13:00,793 INFO:Processing timing data...
-2025-04-11 01:13:01,080 INFO:Using cached data for car_data
-2025-04-11 01:13:01,115 INFO:Using cached data for position_data
-2025-04-11 01:13:01,682 INFO:Using cached data for weather_data
-2025-04-11 01:13:01,682 INFO:Using cached data for race_control_messages
-2025-04-11 01:13:01,697 INFO:Finished loading data for 20 drivers: ['1', '11', '55', '16', '4', '14', '63', '81', '44', '22', '27', '18', '20', '77', '31', '10', '2', '24', '3', '23']
-2025-04-11 01:13:01,703 INFO:Processed Round 4 - Japanese Grand Prix
-2025-04-11 01:14:01,735 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
-2025-04-11 01:14:01,736 INFO:Using cached data for session_info
-2025-04-11 01:14:01,736 INFO:Using cached data for driver_info
-2025-04-11 01:14:02,870 INFO:Using cached data for weather_data
-2025-04-11 01:14:02,871 INFO:Using cached data for race_control_messages
-2025-04-11 01:14:02,871 INFO:Finished loading data for 20 drivers: ['1', '4', '11', '16', '55', '63', '14', '81', '44', '27', '31', '23', '10', '24', '18', '20', '2', '3', '22', '77']
-2025-04-11 01:14:02,883 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
-2025-04-11 01:14:02,884 INFO:Using cached data for session_info
-2025-04-11 01:14:02,884 INFO:Using cached data for driver_info
-2025-04-11 01:14:02,893 INFO:Using cached data for session_status_data
-2025-04-11 01:14:02,894 INFO:Using cached data for lap_count
-2025-04-11 01:14:02,894 INFO:Using cached data for track_status_data
-2025-04-11 01:14:02,897 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:14:02,898 INFO:Using cached data for timing_app_data
-2025-04-11 01:14:02,898 INFO:Processing timing data...
-2025-04-11 01:14:03,604 INFO:Using cached data for car_data
-2025-04-11 01:14:03,648 INFO:Using cached data for position_data
-2025-04-11 01:14:04,184 INFO:Using cached data for weather_data
-2025-04-11 01:14:04,184 INFO:Using cached data for race_control_messages
-2025-04-11 01:14:04,186 WARNING:Driver 1 completed the race distance 00:08.313000 before the recorded end of the session.
-2025-04-11 01:14:04,207 INFO:Finished loading data for 20 drivers: ['1', '4', '11', '16', '55', '63', '14', '81', '44', '27', '31', '23', '10', '24', '18', '20', '2', '3', '22', '77']
-2025-04-11 01:14:04,207 INFO:[Race] Data verification complete.
-2025-04-11 01:14:04,213 INFO:Loading data for Chinese Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:14:04,214 INFO:Using cached data for session_info
-2025-04-11 01:14:04,214 INFO:Using cached data for driver_info
-2025-04-11 01:14:04,844 INFO:Using cached data for session_status_data
-2025-04-11 01:14:04,845 INFO:Using cached data for track_status_data
-2025-04-11 01:14:04,849 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:14:04,850 INFO:Using cached data for timing_app_data
-2025-04-11 01:14:04,850 INFO:Processing timing data...
-2025-04-11 01:14:05,045 INFO:Using cached data for car_data
-2025-04-11 01:14:05,063 INFO:Using cached data for position_data
-2025-04-11 01:14:05,364 INFO:Using cached data for weather_data
-2025-04-11 01:14:05,364 INFO:Using cached data for race_control_messages
-2025-04-11 01:14:05,376 INFO:Finished loading data for 20 drivers: ['1', '11', '14', '4', '81', '16', '55', '63', '27', '77', '18', '3', '31', '23', '10', '24', '20', '44', '22', '2']
-2025-04-11 01:14:05,376 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:14:05,380 INFO:Loading data for Chinese Grand Prix - Sprint [v3.5.3]
-2025-04-11 01:14:05,380 INFO:Using cached data for session_info
-2025-04-11 01:14:05,381 INFO:Using cached data for driver_info
-2025-04-11 01:14:06,218 DEBUG:Failed to parse timestamp '-1:57:34.853' in Ergastresponse.
-2025-04-11 01:14:06,231 INFO:Using cached data for session_status_data
-2025-04-11 01:14:06,231 INFO:Using cached data for lap_count
-2025-04-11 01:14:06,231 INFO:Using cached data for track_status_data
-2025-04-11 01:14:06,236 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:14:06,236 INFO:Using cached data for timing_app_data
-2025-04-11 01:14:06,236 INFO:Processing timing data...
-2025-04-11 01:14:06,393 INFO:Using cached data for car_data
-2025-04-11 01:14:06,412 INFO:Using cached data for position_data
-2025-04-11 01:14:06,679 INFO:Using cached data for weather_data
-2025-04-11 01:14:06,680 INFO:Using cached data for race_control_messages
-2025-04-11 01:14:06,693 INFO:Finished loading data for 20 drivers: ['1', '44', '11', '16', '55', '4', '81', '63', '24', '20', '3', '77', '31', '18', '10', '22', '23', '2', '27', '14']
-2025-04-11 01:14:06,693 INFO:[Sprint] Data verification complete.
-2025-04-11 01:14:06,700 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
-2025-04-11 01:14:06,700 INFO:Using cached data for session_info
-2025-04-11 01:14:06,701 INFO:Using cached data for driver_info
-2025-04-11 01:14:06,707 INFO:Using cached data for session_status_data
-2025-04-11 01:14:06,707 INFO:Using cached data for lap_count
-2025-04-11 01:14:06,707 INFO:Using cached data for track_status_data
-2025-04-11 01:14:06,710 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:14:06,711 INFO:Using cached data for timing_app_data
-2025-04-11 01:14:06,711 INFO:Processing timing data...
-2025-04-11 01:14:07,007 INFO:Using cached data for car_data
-2025-04-11 01:14:07,040 INFO:Using cached data for position_data
-2025-04-11 01:14:07,581 INFO:Using cached data for weather_data
-2025-04-11 01:14:07,582 INFO:Using cached data for race_control_messages
-2025-04-11 01:14:07,583 WARNING:Driver 1 completed the race distance 00:08.313000 before the recorded end of the session.
-2025-04-11 01:14:07,605 INFO:Finished loading data for 20 drivers: ['1', '4', '11', '16', '55', '63', '14', '81', '44', '27', '31', '23', '10', '24', '18', '20', '2', '3', '22', '77']
-2025-04-11 01:14:07,642 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
-2025-04-11 01:14:07,642 INFO:Using cached data for session_info
-2025-04-11 01:14:07,642 INFO:Using cached data for driver_info
-2025-04-11 01:14:07,648 INFO:Using cached data for session_status_data
-2025-04-11 01:14:07,648 INFO:Using cached data for lap_count
-2025-04-11 01:14:07,648 INFO:Using cached data for track_status_data
-2025-04-11 01:14:07,651 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:14:07,651 INFO:Using cached data for timing_app_data
-2025-04-11 01:14:07,651 INFO:Processing timing data...
-2025-04-11 01:14:07,945 INFO:Using cached data for car_data
-2025-04-11 01:14:07,978 INFO:Using cached data for position_data
-2025-04-11 01:14:08,493 INFO:Using cached data for weather_data
-2025-04-11 01:14:08,494 INFO:Using cached data for race_control_messages
-2025-04-11 01:14:08,495 WARNING:Driver 1 completed the race distance 00:08.313000 before the recorded end of the session.
-2025-04-11 01:14:08,518 INFO:Finished loading data for 20 drivers: ['1', '4', '11', '16', '55', '63', '14', '81', '44', '27', '31', '23', '10', '24', '18', '20', '2', '3', '22', '77']
-2025-04-11 01:14:08,523 INFO:Processed Round 5 - Chinese Grand Prix
-2025-04-11 01:15:08,728 INFO:Loading data for Miami Grand Prix - Race [v3.5.3]
-2025-04-11 01:15:08,729 INFO:Using cached data for session_info
-2025-04-11 01:15:08,730 INFO:Using cached data for driver_info
-2025-04-11 01:15:09,181 INFO:Using cached data for weather_data
-2025-04-11 01:15:09,182 INFO:Using cached data for race_control_messages
-2025-04-11 01:15:09,183 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '11', '55', '44', '22', '63', '14', '31', '27', '10', '81', '24', '3', '77', '18', '23', '20', '2']
-2025-04-11 01:15:09,197 INFO:Loading data for Miami Grand Prix - Race [v3.5.3]
-2025-04-11 01:15:09,198 INFO:Using cached data for session_info
-2025-04-11 01:15:09,198 INFO:Using cached data for driver_info
-2025-04-11 01:15:09,208 INFO:Using cached data for session_status_data
-2025-04-11 01:15:09,209 INFO:Using cached data for lap_count
-2025-04-11 01:15:09,209 INFO:Using cached data for track_status_data
-2025-04-11 01:15:09,213 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:15:09,214 INFO:Using cached data for timing_app_data
-2025-04-11 01:15:09,214 INFO:Processing timing data...
-2025-04-11 01:15:09,899 INFO:Using cached data for car_data
-2025-04-11 01:15:09,940 INFO:Using cached data for position_data
-2025-04-11 01:15:10,444 INFO:Using cached data for weather_data
-2025-04-11 01:15:10,444 INFO:Using cached data for race_control_messages
-2025-04-11 01:15:10,467 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '11', '55', '44', '22', '63', '14', '31', '27', '10', '81', '24', '3', '77', '18', '23', '20', '2']
-2025-04-11 01:15:10,468 INFO:[Race] Data verification complete.
-2025-04-11 01:15:10,474 INFO:Loading data for Miami Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:15:10,475 INFO:Using cached data for session_info
-2025-04-11 01:15:10,475 INFO:Using cached data for driver_info
-2025-04-11 01:15:11,064 INFO:Using cached data for session_status_data
-2025-04-11 01:15:11,065 INFO:Using cached data for track_status_data
-2025-04-11 01:15:11,066 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:15:11,067 INFO:Using cached data for timing_app_data
-2025-04-11 01:15:11,067 INFO:Processing timing data...
-2025-04-11 01:15:11,263 INFO:Using cached data for car_data
-2025-04-11 01:15:11,280 INFO:Using cached data for position_data
-2025-04-11 01:15:11,547 INFO:Using cached data for weather_data
-2025-04-11 01:15:11,548 INFO:Using cached data for race_control_messages
-2025-04-11 01:15:11,559 INFO:Finished loading data for 20 drivers: ['1', '16', '55', '11', '4', '81', '63', '44', '27', '22', '18', '10', '31', '23', '14', '77', '2', '3', '20', '24']
-2025-04-11 01:15:11,559 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:15:11,563 INFO:Loading data for Miami Grand Prix - Sprint [v3.5.3]
-2025-04-11 01:15:11,563 INFO:Using cached data for session_info
-2025-04-11 01:15:11,563 INFO:Using cached data for driver_info
-2025-04-11 01:15:12,018 INFO:Using cached data for session_status_data
-2025-04-11 01:15:12,018 INFO:Using cached data for lap_count
-2025-04-11 01:15:12,018 INFO:Using cached data for track_status_data
-2025-04-11 01:15:12,023 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:15:12,023 INFO:Using cached data for timing_app_data
-2025-04-11 01:15:12,024 INFO:Processing timing data...
-2025-04-11 01:15:12,198 INFO:Using cached data for car_data
-2025-04-11 01:15:12,217 INFO:Using cached data for position_data
-2025-04-11 01:15:12,504 INFO:Using cached data for weather_data
-2025-04-11 01:15:12,505 INFO:Using cached data for race_control_messages
-2025-04-11 01:15:12,518 INFO:Finished loading data for 20 drivers: ['1', '16', '11', '3', '55', '81', '27', '22', '10', '2', '24', '63', '23', '77', '31', '44', '14', '20', '18', '4']
-2025-04-11 01:15:12,518 INFO:[Sprint] Data verification complete.
-2025-04-11 01:15:12,525 INFO:Loading data for Miami Grand Prix - Race [v3.5.3]
-2025-04-11 01:15:12,525 INFO:Using cached data for session_info
-2025-04-11 01:15:12,525 INFO:Using cached data for driver_info
-2025-04-11 01:15:12,531 INFO:Using cached data for session_status_data
-2025-04-11 01:15:12,531 INFO:Using cached data for lap_count
-2025-04-11 01:15:12,531 INFO:Using cached data for track_status_data
-2025-04-11 01:15:12,533 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:15:12,533 INFO:Using cached data for timing_app_data
-2025-04-11 01:15:12,533 INFO:Processing timing data...
-2025-04-11 01:15:12,882 INFO:Using cached data for car_data
-2025-04-11 01:15:12,920 INFO:Using cached data for position_data
-2025-04-11 01:15:13,402 INFO:Using cached data for weather_data
-2025-04-11 01:15:13,402 INFO:Using cached data for race_control_messages
-2025-04-11 01:15:13,427 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '11', '55', '44', '22', '63', '14', '31', '27', '10', '81', '24', '3', '77', '18', '23', '20', '2']
-2025-04-11 01:15:13,467 INFO:Loading data for Miami Grand Prix - Race [v3.5.3]
-2025-04-11 01:15:13,468 INFO:Using cached data for session_info
-2025-04-11 01:15:13,468 INFO:Using cached data for driver_info
-2025-04-11 01:15:13,474 INFO:Using cached data for session_status_data
-2025-04-11 01:15:13,474 INFO:Using cached data for lap_count
-2025-04-11 01:15:13,474 INFO:Using cached data for track_status_data
-2025-04-11 01:15:13,476 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:15:13,476 INFO:Using cached data for timing_app_data
-2025-04-11 01:15:13,476 INFO:Processing timing data...
-2025-04-11 01:15:13,788 INFO:Using cached data for car_data
-2025-04-11 01:15:13,818 INFO:Using cached data for position_data
-2025-04-11 01:15:14,295 INFO:Using cached data for weather_data
-2025-04-11 01:15:14,295 INFO:Using cached data for race_control_messages
-2025-04-11 01:15:14,319 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '11', '55', '44', '22', '63', '14', '31', '27', '10', '81', '24', '3', '77', '18', '23', '20', '2']
-2025-04-11 01:15:14,324 INFO:Processed Round 6 - Miami Grand Prix
-2025-04-11 01:16:14,346 INFO:Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
-2025-04-11 01:16:14,347 INFO:Using cached data for session_info
-2025-04-11 01:16:14,348 INFO:Using cached data for driver_info
-2025-04-11 01:16:14,732 INFO:Using cached data for weather_data
-2025-04-11 01:16:14,733 INFO:Using cached data for race_control_messages
-2025-04-11 01:16:14,734 INFO:Finished loading data for 20 drivers: ['1', '4', '16', '81', '55', '44', '63', '11', '18', '22', '27', '20', '3', '31', '24', '10', '2', '77', '14', '23']
-2025-04-11 01:16:14,748 INFO:Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
-2025-04-11 01:16:14,748 INFO:Using cached data for session_info
-2025-04-11 01:16:14,748 INFO:Using cached data for driver_info
-2025-04-11 01:16:14,787 INFO:Using cached data for session_status_data
-2025-04-11 01:16:14,788 INFO:Using cached data for lap_count
-2025-04-11 01:16:14,788 INFO:Using cached data for track_status_data
-2025-04-11 01:16:14,792 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:16:14,792 INFO:Using cached data for timing_app_data
-2025-04-11 01:16:14,792 INFO:Processing timing data...
-2025-04-11 01:16:15,495 INFO:Using cached data for car_data
-2025-04-11 01:16:15,529 INFO:Using cached data for position_data
-2025-04-11 01:16:15,984 INFO:Using cached data for weather_data
-2025-04-11 01:16:15,985 INFO:Using cached data for race_control_messages
-2025-04-11 01:16:16,001 INFO:Finished loading data for 20 drivers: ['1', '4', '16', '81', '55', '44', '63', '11', '18', '22', '27', '20', '3', '31', '24', '10', '2', '77', '14', '23']
-2025-04-11 01:16:16,001 INFO:[Race] Data verification complete.
-2025-04-11 01:16:16,006 INFO:Loading data for Emilia Romagna Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:16:16,007 INFO:Using cached data for session_info
-2025-04-11 01:16:16,008 INFO:Using cached data for driver_info
-2025-04-11 01:16:16,541 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:16:16,555 INFO:Using cached data for session_status_data
-2025-04-11 01:16:16,556 INFO:Using cached data for track_status_data
-2025-04-11 01:16:16,557 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:16:16,558 INFO:Using cached data for timing_app_data
-2025-04-11 01:16:16,558 INFO:Processing timing data...
-2025-04-11 01:16:16,735 WARNING:Driver  2: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:16:16,746 INFO:Using cached data for car_data
-2025-04-11 01:16:16,760 INFO:Using cached data for position_data
-2025-04-11 01:16:17,012 INFO:Using cached data for weather_data
-2025-04-11 01:16:17,013 INFO:Using cached data for race_control_messages
-2025-04-11 01:16:17,025 INFO:Finished loading data for 20 drivers: ['1', '81', '4', '16', '55', '63', '22', '44', '3', '27', '11', '31', '18', '23', '10', '77', '24', '20', '14', '2']
-2025-04-11 01:16:17,025 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:16:17,029 INFO:No sprint session for 7
-2025-04-11 01:16:17,059 INFO:Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
-2025-04-11 01:16:17,059 INFO:Using cached data for session_info
-2025-04-11 01:16:17,059 INFO:Using cached data for driver_info
-2025-04-11 01:16:17,065 INFO:Using cached data for session_status_data
-2025-04-11 01:16:17,066 INFO:Using cached data for lap_count
-2025-04-11 01:16:17,066 INFO:Using cached data for track_status_data
-2025-04-11 01:16:17,068 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:16:17,068 INFO:Using cached data for timing_app_data
-2025-04-11 01:16:17,068 INFO:Processing timing data...
-2025-04-11 01:16:17,381 INFO:Using cached data for car_data
-2025-04-11 01:16:17,408 INFO:Using cached data for position_data
-2025-04-11 01:16:17,868 INFO:Using cached data for weather_data
-2025-04-11 01:16:17,869 INFO:Using cached data for race_control_messages
-2025-04-11 01:16:17,885 INFO:Finished loading data for 20 drivers: ['1', '4', '16', '81', '55', '44', '63', '11', '18', '22', '27', '20', '3', '31', '24', '10', '2', '77', '14', '23']
-2025-04-11 01:16:17,928 INFO:Loading data for Emilia Romagna Grand Prix - Race [v3.5.3]
-2025-04-11 01:16:17,928 INFO:Using cached data for session_info
-2025-04-11 01:16:17,928 INFO:Using cached data for driver_info
-2025-04-11 01:16:17,934 INFO:Using cached data for session_status_data
-2025-04-11 01:16:17,934 INFO:Using cached data for lap_count
-2025-04-11 01:16:17,934 INFO:Using cached data for track_status_data
-2025-04-11 01:16:17,936 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:16:17,936 INFO:Using cached data for timing_app_data
-2025-04-11 01:16:17,936 INFO:Processing timing data...
-2025-04-11 01:16:18,250 INFO:Using cached data for car_data
-2025-04-11 01:16:18,275 INFO:Using cached data for position_data
-2025-04-11 01:16:18,728 INFO:Using cached data for weather_data
-2025-04-11 01:16:18,728 INFO:Using cached data for race_control_messages
-2025-04-11 01:16:18,745 INFO:Finished loading data for 20 drivers: ['1', '4', '16', '81', '55', '44', '63', '11', '18', '22', '27', '20', '3', '31', '24', '10', '2', '77', '14', '23']
-2025-04-11 01:16:18,750 INFO:Processed Round 7 - Emilia Romagna Grand Prix
-2025-04-11 01:17:18,768 INFO:Loading data for Monaco Grand Prix - Race [v3.5.3]
-2025-04-11 01:17:18,769 INFO:Using cached data for session_info
-2025-04-11 01:17:18,769 INFO:Using cached data for driver_info
-2025-04-11 01:17:19,226 INFO:Using cached data for weather_data
-2025-04-11 01:17:19,227 INFO:Using cached data for race_control_messages
-2025-04-11 01:17:19,228 INFO:Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '14', '3', '77', '18', '2', '24', '31', '11', '27', '20']
-2025-04-11 01:17:19,241 INFO:Loading data for Monaco Grand Prix - Race [v3.5.3]
-2025-04-11 01:17:19,241 INFO:Using cached data for session_info
-2025-04-11 01:17:19,241 INFO:Using cached data for driver_info
-2025-04-11 01:17:19,251 INFO:Using cached data for session_status_data
-2025-04-11 01:17:19,251 INFO:Using cached data for lap_count
-2025-04-11 01:17:19,252 INFO:Using cached data for track_status_data
-2025-04-11 01:17:19,257 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:17:19,258 INFO:Using cached data for timing_app_data
-2025-04-11 01:17:19,258 INFO:Processing timing data...
-2025-04-11 01:17:20,088 INFO:Using cached data for car_data
-2025-04-11 01:17:20,148 INFO:Using cached data for position_data
-2025-04-11 01:17:20,794 INFO:Using cached data for weather_data
-2025-04-11 01:17:20,795 INFO:Using cached data for race_control_messages
-2025-04-11 01:17:20,808 INFO:Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '14', '3', '77', '18', '2', '24', '31', '11', '27', '20']
-2025-04-11 01:17:20,809 INFO:[Race] Data verification complete.
-2025-04-11 01:17:20,814 INFO:Loading data for Monaco Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:17:20,815 INFO:Using cached data for session_info
-2025-04-11 01:17:20,816 INFO:Using cached data for driver_info
-2025-04-11 01:17:21,311 INFO:Using cached data for session_status_data
-2025-04-11 01:17:21,312 INFO:Using cached data for track_status_data
-2025-04-11 01:17:21,314 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:17:21,317 INFO:Using cached data for timing_app_data
-2025-04-11 01:17:21,317 INFO:Processing timing data...
-2025-04-11 01:17:21,514 WARNING:Driver  3: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:17:21,559 INFO:Using cached data for car_data
-2025-04-11 01:17:21,576 INFO:Using cached data for position_data
-2025-04-11 01:17:21,832 INFO:Using cached data for weather_data
-2025-04-11 01:17:21,833 INFO:Using cached data for race_control_messages
-2025-04-11 01:17:21,855 INFO:Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '31', '3', '18', '27', '14', '2', '20', '11', '77', '24']
-2025-04-11 01:17:21,855 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:17:21,885 INFO:No sprint session for 8
-2025-04-11 01:17:21,892 INFO:Loading data for Monaco Grand Prix - Race [v3.5.3]
-2025-04-11 01:17:21,892 INFO:Using cached data for session_info
-2025-04-11 01:17:21,892 INFO:Using cached data for driver_info
-2025-04-11 01:17:21,898 INFO:Using cached data for session_status_data
-2025-04-11 01:17:21,898 INFO:Using cached data for lap_count
-2025-04-11 01:17:21,898 INFO:Using cached data for track_status_data
-2025-04-11 01:17:21,902 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:17:21,902 INFO:Using cached data for timing_app_data
-2025-04-11 01:17:21,902 INFO:Processing timing data...
-2025-04-11 01:17:22,258 INFO:Using cached data for car_data
-2025-04-11 01:17:22,302 INFO:Using cached data for position_data
-2025-04-11 01:17:22,927 INFO:Using cached data for weather_data
-2025-04-11 01:17:22,928 INFO:Using cached data for race_control_messages
-2025-04-11 01:17:22,942 INFO:Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '14', '3', '77', '18', '2', '24', '31', '11', '27', '20']
-2025-04-11 01:17:22,990 INFO:Loading data for Monaco Grand Prix - Race [v3.5.3]
-2025-04-11 01:17:22,990 INFO:Using cached data for session_info
-2025-04-11 01:17:22,990 INFO:Using cached data for driver_info
-2025-04-11 01:17:22,996 INFO:Using cached data for session_status_data
-2025-04-11 01:17:22,996 INFO:Using cached data for lap_count
-2025-04-11 01:17:22,996 INFO:Using cached data for track_status_data
-2025-04-11 01:17:22,998 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:17:22,999 INFO:Using cached data for timing_app_data
-2025-04-11 01:17:22,999 INFO:Processing timing data...
-2025-04-11 01:17:23,342 INFO:Using cached data for car_data
-2025-04-11 01:17:23,391 INFO:Using cached data for position_data
-2025-04-11 01:17:24,028 INFO:Using cached data for weather_data
-2025-04-11 01:17:24,029 INFO:Using cached data for race_control_messages
-2025-04-11 01:17:24,043 INFO:Finished loading data for 20 drivers: ['16', '81', '55', '4', '63', '1', '44', '22', '23', '10', '14', '3', '77', '18', '2', '24', '31', '11', '27', '20']
-2025-04-11 01:17:24,048 INFO:Processed Round 8 - Monaco Grand Prix
-2025-04-11 01:18:24,066 INFO:Loading data for Canadian Grand Prix - Race [v3.5.3]
-2025-04-11 01:18:24,067 INFO:Using cached data for session_info
-2025-04-11 01:18:24,067 INFO:Using cached data for driver_info
-2025-04-11 01:18:24,498 INFO:Using cached data for weather_data
-2025-04-11 01:18:24,499 INFO:Using cached data for race_control_messages
-2025-04-11 01:18:24,499 INFO:Finished loading data for 20 drivers: ['1', '4', '63', '44', '81', '14', '18', '3', '10', '31', '27', '20', '77', '22', '24', '55', '23', '11', '16', '2']
-2025-04-11 01:18:24,512 INFO:Loading data for Canadian Grand Prix - Race [v3.5.3]
-2025-04-11 01:18:24,513 INFO:Using cached data for session_info
-2025-04-11 01:18:24,513 INFO:Using cached data for driver_info
-2025-04-11 01:18:24,522 INFO:Using cached data for session_status_data
-2025-04-11 01:18:24,523 INFO:Using cached data for lap_count
-2025-04-11 01:18:24,523 INFO:Using cached data for track_status_data
-2025-04-11 01:18:24,527 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:18:24,528 INFO:Using cached data for timing_app_data
-2025-04-11 01:18:24,528 INFO:Processing timing data...
-2025-04-11 01:18:25,314 INFO:Using cached data for car_data
-2025-04-11 01:18:25,346 INFO:Using cached data for position_data
-2025-04-11 01:18:25,738 INFO:Using cached data for weather_data
-2025-04-11 01:18:25,739 INFO:Using cached data for race_control_messages
-2025-04-11 01:18:25,780 INFO:Finished loading data for 20 drivers: ['1', '4', '63', '44', '81', '14', '18', '3', '10', '31', '27', '20', '77', '22', '24', '55', '23', '11', '16', '2']
-2025-04-11 01:18:25,781 INFO:[Race] Data verification complete.
-2025-04-11 01:18:25,786 INFO:Loading data for Canadian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:18:25,787 INFO:Using cached data for session_info
-2025-04-11 01:18:25,787 INFO:Using cached data for driver_info
-2025-04-11 01:18:26,280 INFO:Using cached data for session_status_data
-2025-04-11 01:18:26,281 INFO:Using cached data for track_status_data
-2025-04-11 01:18:26,282 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:18:26,286 INFO:Using cached data for timing_app_data
-2025-04-11 01:18:26,286 INFO:Processing timing data...
-2025-04-11 01:18:26,496 INFO:Using cached data for car_data
-2025-04-11 01:18:26,514 INFO:Using cached data for position_data
-2025-04-11 01:18:26,772 INFO:Using cached data for weather_data
-2025-04-11 01:18:26,773 INFO:Using cached data for race_control_messages
-2025-04-11 01:18:26,805 INFO:Finished loading data for 20 drivers: ['63', '1', '4', '81', '3', '14', '44', '22', '18', '23', '16', '55', '2', '20', '10', '11', '77', '31', '27', '24']
-2025-04-11 01:18:26,805 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:18:26,809 INFO:No sprint session for 9
-2025-04-11 01:18:26,816 INFO:Loading data for Canadian Grand Prix - Race [v3.5.3]
-2025-04-11 01:18:26,816 INFO:Using cached data for session_info
-2025-04-11 01:18:26,816 INFO:Using cached data for driver_info
-2025-04-11 01:18:26,823 INFO:Using cached data for session_status_data
-2025-04-11 01:18:26,823 INFO:Using cached data for lap_count
-2025-04-11 01:18:26,823 INFO:Using cached data for track_status_data
-2025-04-11 01:18:26,825 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:18:26,825 INFO:Using cached data for timing_app_data
-2025-04-11 01:18:26,825 INFO:Processing timing data...
-2025-04-11 01:18:27,222 INFO:Using cached data for car_data
-2025-04-11 01:18:27,251 INFO:Using cached data for position_data
-2025-04-11 01:18:27,626 INFO:Using cached data for weather_data
-2025-04-11 01:18:27,627 INFO:Using cached data for race_control_messages
-2025-04-11 01:18:27,669 INFO:Finished loading data for 20 drivers: ['1', '4', '63', '44', '81', '14', '18', '3', '10', '31', '27', '20', '77', '22', '24', '55', '23', '11', '16', '2']
-2025-04-11 01:18:27,710 INFO:Loading data for Canadian Grand Prix - Race [v3.5.3]
-2025-04-11 01:18:27,710 INFO:Using cached data for session_info
-2025-04-11 01:18:27,710 INFO:Using cached data for driver_info
-2025-04-11 01:18:27,716 INFO:Using cached data for session_status_data
-2025-04-11 01:18:27,717 INFO:Using cached data for lap_count
-2025-04-11 01:18:27,717 INFO:Using cached data for track_status_data
-2025-04-11 01:18:27,720 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:18:27,720 INFO:Using cached data for timing_app_data
-2025-04-11 01:18:27,720 INFO:Processing timing data...
-2025-04-11 01:18:28,118 INFO:Using cached data for car_data
-2025-04-11 01:18:28,143 INFO:Using cached data for position_data
-2025-04-11 01:18:28,531 INFO:Using cached data for weather_data
-2025-04-11 01:18:28,532 INFO:Using cached data for race_control_messages
-2025-04-11 01:18:28,574 INFO:Finished loading data for 20 drivers: ['1', '4', '63', '44', '81', '14', '18', '3', '10', '31', '27', '20', '77', '22', '24', '55', '23', '11', '16', '2']
-2025-04-11 01:18:28,579 INFO:Processed Round 9 - Canadian Grand Prix
-2025-04-11 01:19:28,600 INFO:Loading data for Spanish Grand Prix - Race [v3.5.3]
-2025-04-11 01:19:28,601 INFO:Using cached data for session_info
-2025-04-11 01:19:28,602 INFO:Using cached data for driver_info
-2025-04-11 01:19:29,052 INFO:Using cached data for weather_data
-2025-04-11 01:19:29,053 INFO:Using cached data for race_control_messages
-2025-04-11 01:19:29,054 INFO:Finished loading data for 20 drivers: ['1', '4', '44', '63', '16', '55', '81', '11', '10', '31', '27', '14', '24', '18', '3', '77', '20', '23', '22', '2']
-2025-04-11 01:19:29,066 INFO:Loading data for Spanish Grand Prix - Race [v3.5.3]
-2025-04-11 01:19:29,066 INFO:Using cached data for session_info
-2025-04-11 01:19:29,066 INFO:Using cached data for driver_info
-2025-04-11 01:19:29,076 INFO:Using cached data for session_status_data
-2025-04-11 01:19:29,076 INFO:Using cached data for lap_count
-2025-04-11 01:19:29,077 INFO:Using cached data for track_status_data
-2025-04-11 01:19:29,082 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:19:29,082 INFO:Using cached data for timing_app_data
-2025-04-11 01:19:29,082 INFO:Processing timing data...
-2025-04-11 01:19:29,780 INFO:Using cached data for car_data
-2025-04-11 01:19:29,816 INFO:Using cached data for position_data
-2025-04-11 01:19:30,309 INFO:Using cached data for weather_data
-2025-04-11 01:19:30,310 INFO:Using cached data for race_control_messages
-2025-04-11 01:19:30,311 WARNING:Driver 1 completed the race distance 00:00.015000 before the recorded end of the session.
-2025-04-11 01:19:30,327 INFO:Finished loading data for 20 drivers: ['1', '4', '44', '63', '16', '55', '81', '11', '10', '31', '27', '14', '24', '18', '3', '77', '20', '23', '22', '2']
-2025-04-11 01:19:30,327 INFO:[Race] Data verification complete.
-2025-04-11 01:19:30,333 INFO:Loading data for Spanish Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:19:30,334 INFO:Using cached data for session_info
-2025-04-11 01:19:30,334 INFO:Using cached data for driver_info
-2025-04-11 01:19:30,815 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:19:30,828 INFO:Using cached data for session_status_data
-2025-04-11 01:19:30,829 INFO:Using cached data for track_status_data
-2025-04-11 01:19:30,830 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:19:30,835 INFO:Using cached data for timing_app_data
-2025-04-11 01:19:30,835 INFO:Processing timing data...
-2025-04-11 01:19:31,008 INFO:Using cached data for car_data
-2025-04-11 01:19:31,024 INFO:Using cached data for position_data
-2025-04-11 01:19:31,295 INFO:Using cached data for weather_data
-2025-04-11 01:19:31,295 INFO:Using cached data for race_control_messages
-2025-04-11 01:19:31,306 INFO:Finished loading data for 20 drivers: ['4', '1', '44', '63', '16', '55', '10', '11', '31', '81', '14', '77', '27', '18', '24', '20', '22', '3', '23', '2']
-2025-04-11 01:19:31,306 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:19:31,310 INFO:No sprint session for 10
-2025-04-11 01:19:31,316 INFO:Loading data for Spanish Grand Prix - Race [v3.5.3]
-2025-04-11 01:19:31,316 INFO:Using cached data for session_info
-2025-04-11 01:19:31,316 INFO:Using cached data for driver_info
-2025-04-11 01:19:31,322 INFO:Using cached data for session_status_data
-2025-04-11 01:19:31,323 INFO:Using cached data for lap_count
-2025-04-11 01:19:31,323 INFO:Using cached data for track_status_data
-2025-04-11 01:19:31,326 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:19:31,326 INFO:Using cached data for timing_app_data
-2025-04-11 01:19:31,326 INFO:Processing timing data...
-2025-04-11 01:19:31,663 INFO:Using cached data for car_data
-2025-04-11 01:19:31,689 INFO:Using cached data for position_data
-2025-04-11 01:19:32,172 INFO:Using cached data for weather_data
-2025-04-11 01:19:32,173 INFO:Using cached data for race_control_messages
-2025-04-11 01:19:32,174 WARNING:Driver 1 completed the race distance 00:00.015000 before the recorded end of the session.
-2025-04-11 01:19:32,190 INFO:Finished loading data for 20 drivers: ['1', '4', '44', '63', '16', '55', '81', '11', '10', '31', '27', '14', '24', '18', '3', '77', '20', '23', '22', '2']
-2025-04-11 01:19:32,234 INFO:Loading data for Spanish Grand Prix - Race [v3.5.3]
-2025-04-11 01:19:32,235 INFO:Using cached data for session_info
-2025-04-11 01:19:32,235 INFO:Using cached data for driver_info
-2025-04-11 01:19:32,240 INFO:Using cached data for session_status_data
-2025-04-11 01:19:32,241 INFO:Using cached data for lap_count
-2025-04-11 01:19:32,241 INFO:Using cached data for track_status_data
-2025-04-11 01:19:32,243 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:19:32,243 INFO:Using cached data for timing_app_data
-2025-04-11 01:19:32,243 INFO:Processing timing data...
-2025-04-11 01:19:32,579 INFO:Using cached data for car_data
-2025-04-11 01:19:32,608 INFO:Using cached data for position_data
-2025-04-11 01:19:33,088 INFO:Using cached data for weather_data
-2025-04-11 01:19:33,089 INFO:Using cached data for race_control_messages
-2025-04-11 01:19:33,090 WARNING:Driver 1 completed the race distance 00:00.015000 before the recorded end of the session.
-2025-04-11 01:19:33,106 INFO:Finished loading data for 20 drivers: ['1', '4', '44', '63', '16', '55', '81', '11', '10', '31', '27', '14', '24', '18', '3', '77', '20', '23', '22', '2']
-2025-04-11 01:19:33,111 INFO:Processed Round 10 - Spanish Grand Prix
-2025-04-11 01:20:33,313 INFO:Loading data for Austrian Grand Prix - Race [v3.5.3]
-2025-04-11 01:20:33,313 INFO:Using cached data for session_info
-2025-04-11 01:20:33,314 INFO:Using cached data for driver_info
-2025-04-11 01:20:33,805 DEBUG:Failed to parse timestamp '-1:52:13.256' in Ergastresponse.
-2025-04-11 01:20:33,818 INFO:Using cached data for weather_data
-2025-04-11 01:20:33,819 INFO:Using cached data for race_control_messages
-2025-04-11 01:20:33,819 INFO:Finished loading data for 20 drivers: ['63', '81', '55', '44', '1', '27', '11', '20', '3', '10', '16', '31', '18', '22', '23', '77', '24', '14', '2', '4']
-2025-04-11 01:20:33,833 INFO:Loading data for Austrian Grand Prix - Race [v3.5.3]
-2025-04-11 01:20:33,833 INFO:Using cached data for session_info
-2025-04-11 01:20:33,833 INFO:Using cached data for driver_info
-2025-04-11 01:20:33,836 DEBUG:Failed to parse timestamp '-1:52:13.256' in Ergastresponse.
-2025-04-11 01:20:33,843 INFO:Using cached data for session_status_data
-2025-04-11 01:20:33,843 INFO:Using cached data for lap_count
-2025-04-11 01:20:33,843 INFO:Using cached data for track_status_data
-2025-04-11 01:20:33,848 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:20:33,849 INFO:Using cached data for timing_app_data
-2025-04-11 01:20:33,849 INFO:Processing timing data...
-2025-04-11 01:20:34,605 INFO:Using cached data for car_data
-2025-04-11 01:20:34,643 INFO:Using cached data for position_data
-2025-04-11 01:20:35,113 INFO:Using cached data for weather_data
-2025-04-11 01:20:35,114 INFO:Using cached data for race_control_messages
-2025-04-11 01:20:35,132 INFO:Finished loading data for 20 drivers: ['63', '81', '55', '44', '1', '27', '11', '20', '3', '10', '16', '31', '18', '22', '23', '77', '24', '14', '2', '4']
-2025-04-11 01:20:35,133 INFO:[Race] Data verification complete.
-2025-04-11 01:20:35,138 INFO:Loading data for Austrian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:20:35,139 INFO:Using cached data for session_info
-2025-04-11 01:20:35,139 INFO:Using cached data for driver_info
-2025-04-11 01:20:36,006 INFO:Using cached data for session_status_data
-2025-04-11 01:20:36,007 INFO:Using cached data for track_status_data
-2025-04-11 01:20:36,008 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:20:36,008 INFO:Using cached data for timing_app_data
-2025-04-11 01:20:36,008 INFO:Processing timing data...
-2025-04-11 01:20:36,207 INFO:Using cached data for car_data
-2025-04-11 01:20:36,223 INFO:Using cached data for position_data
-2025-04-11 01:20:36,474 INFO:Using cached data for weather_data
-2025-04-11 01:20:36,474 INFO:Using cached data for race_control_messages
-2025-04-11 01:20:36,487 INFO:Finished loading data for 20 drivers: ['1', '4', '63', '55', '44', '16', '81', '11', '27', '31', '3', '20', '10', '22', '14', '23', '18', '77', '2', '24']
-2025-04-11 01:20:36,487 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:20:36,491 INFO:Loading data for Austrian Grand Prix - Sprint [v3.5.3]
-2025-04-11 01:20:36,491 INFO:Using cached data for session_info
-2025-04-11 01:20:36,491 INFO:Using cached data for driver_info
-2025-04-11 01:20:37,054 INFO:Using cached data for session_status_data
-2025-04-11 01:20:37,054 INFO:Using cached data for lap_count
-2025-04-11 01:20:37,055 INFO:Using cached data for track_status_data
-2025-04-11 01:20:37,059 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:20:37,060 INFO:Using cached data for timing_app_data
-2025-04-11 01:20:37,060 INFO:Processing timing data...
-2025-04-11 01:20:37,233 INFO:Using cached data for car_data
-2025-04-11 01:20:37,251 INFO:Using cached data for position_data
-2025-04-11 01:20:37,530 INFO:Using cached data for weather_data
-2025-04-11 01:20:37,530 INFO:Using cached data for race_control_messages
-2025-04-11 01:20:37,542 INFO:Finished loading data for 20 drivers: ['1', '81', '4', '63', '55', '44', '16', '11', '20', '18', '31', '10', '22', '3', '14', '2', '23', '77', '27', '24']
-2025-04-11 01:20:37,542 INFO:[Sprint] Data verification complete.
-2025-04-11 01:20:37,549 INFO:Loading data for Austrian Grand Prix - Race [v3.5.3]
-2025-04-11 01:20:37,549 INFO:Using cached data for session_info
-2025-04-11 01:20:37,550 INFO:Using cached data for driver_info
-2025-04-11 01:20:37,551 DEBUG:Failed to parse timestamp '-1:52:13.256' in Ergastresponse.
-2025-04-11 01:20:37,556 INFO:Using cached data for session_status_data
-2025-04-11 01:20:37,556 INFO:Using cached data for lap_count
-2025-04-11 01:20:37,556 INFO:Using cached data for track_status_data
-2025-04-11 01:20:37,558 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:20:37,558 INFO:Using cached data for timing_app_data
-2025-04-11 01:20:37,558 INFO:Processing timing data...
-2025-04-11 01:20:37,910 INFO:Using cached data for car_data
-2025-04-11 01:20:37,937 INFO:Using cached data for position_data
-2025-04-11 01:20:38,399 INFO:Using cached data for weather_data
-2025-04-11 01:20:38,399 INFO:Using cached data for race_control_messages
-2025-04-11 01:20:38,417 INFO:Finished loading data for 20 drivers: ['63', '81', '55', '44', '1', '27', '11', '20', '3', '10', '16', '31', '18', '22', '23', '77', '24', '14', '2', '4']
-2025-04-11 01:20:38,463 INFO:Loading data for Austrian Grand Prix - Race [v3.5.3]
-2025-04-11 01:20:38,463 INFO:Using cached data for session_info
-2025-04-11 01:20:38,463 INFO:Using cached data for driver_info
-2025-04-11 01:20:38,465 DEBUG:Failed to parse timestamp '-1:52:13.256' in Ergastresponse.
-2025-04-11 01:20:38,469 INFO:Using cached data for session_status_data
-2025-04-11 01:20:38,469 INFO:Using cached data for lap_count
-2025-04-11 01:20:38,469 INFO:Using cached data for track_status_data
-2025-04-11 01:20:38,472 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:20:38,472 INFO:Using cached data for timing_app_data
-2025-04-11 01:20:38,472 INFO:Processing timing data...
-2025-04-11 01:20:38,830 INFO:Using cached data for car_data
-2025-04-11 01:20:38,864 INFO:Using cached data for position_data
-2025-04-11 01:20:39,339 INFO:Using cached data for weather_data
-2025-04-11 01:20:39,339 INFO:Using cached data for race_control_messages
-2025-04-11 01:20:39,358 INFO:Finished loading data for 20 drivers: ['63', '81', '55', '44', '1', '27', '11', '20', '3', '10', '16', '31', '18', '22', '23', '77', '24', '14', '2', '4']
-2025-04-11 01:20:39,362 INFO:Processed Round 11 - Austrian Grand Prix
-2025-04-11 01:21:39,382 INFO:Loading data for British Grand Prix - Race [v3.5.3]
-2025-04-11 01:21:39,384 INFO:Using cached data for session_info
-2025-04-11 01:21:39,385 INFO:Using cached data for driver_info
-2025-04-11 01:21:39,753 INFO:Using cached data for weather_data
-2025-04-11 01:21:39,754 INFO:Using cached data for race_control_messages
-2025-04-11 01:21:39,755 INFO:Finished loading data for 20 drivers: ['44', '1', '4', '81', '55', '27', '18', '14', '23', '22', '2', '20', '3', '16', '77', '31', '11', '24', '63', '10']
-2025-04-11 01:21:39,769 INFO:Loading data for British Grand Prix - Race [v3.5.3]
-2025-04-11 01:21:39,769 INFO:Using cached data for session_info
-2025-04-11 01:21:39,769 INFO:Using cached data for driver_info
-2025-04-11 01:21:39,779 INFO:Using cached data for session_status_data
-2025-04-11 01:21:39,779 INFO:Using cached data for lap_count
-2025-04-11 01:21:39,779 INFO:Using cached data for track_status_data
-2025-04-11 01:21:39,782 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:21:39,783 INFO:Using cached data for timing_app_data
-2025-04-11 01:21:39,783 INFO:Processing timing data...
-2025-04-11 01:21:40,575 INFO:Using cached data for car_data
-2025-04-11 01:21:40,612 INFO:Using cached data for position_data
-2025-04-11 01:21:41,105 INFO:Using cached data for weather_data
-2025-04-11 01:21:41,106 INFO:Using cached data for race_control_messages
-2025-04-11 01:21:41,121 INFO:Finished loading data for 20 drivers: ['44', '1', '4', '81', '55', '27', '18', '14', '23', '22', '2', '20', '3', '16', '77', '31', '11', '24', '63', '10']
-2025-04-11 01:21:41,121 INFO:[Race] Data verification complete.
-2025-04-11 01:21:41,128 INFO:Loading data for British Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:21:41,128 INFO:Using cached data for session_info
-2025-04-11 01:21:41,129 INFO:Using cached data for driver_info
-2025-04-11 01:21:41,598 INFO:Using cached data for session_status_data
-2025-04-11 01:21:41,599 INFO:Using cached data for track_status_data
-2025-04-11 01:21:41,604 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:21:41,608 INFO:Using cached data for timing_app_data
-2025-04-11 01:21:41,608 INFO:Processing timing data...
-2025-04-11 01:21:41,838 INFO:Using cached data for car_data
-2025-04-11 01:21:41,855 INFO:Using cached data for position_data
-2025-04-11 01:21:42,147 INFO:Using cached data for weather_data
-2025-04-11 01:21:42,148 INFO:Using cached data for race_control_messages
-2025-04-11 01:21:42,162 INFO:Finished loading data for 20 drivers: ['63', '44', '4', '1', '81', '27', '55', '18', '23', '14', '16', '2', '22', '24', '3', '77', '20', '31', '11', '10']
-2025-04-11 01:21:42,162 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:21:42,166 INFO:No sprint session for 12
-2025-04-11 01:21:42,172 INFO:Loading data for British Grand Prix - Race [v3.5.3]
-2025-04-11 01:21:42,173 INFO:Using cached data for session_info
-2025-04-11 01:21:42,173 INFO:Using cached data for driver_info
-2025-04-11 01:21:42,179 INFO:Using cached data for session_status_data
-2025-04-11 01:21:42,179 INFO:Using cached data for lap_count
-2025-04-11 01:21:42,179 INFO:Using cached data for track_status_data
-2025-04-11 01:21:42,180 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:21:42,180 INFO:Using cached data for timing_app_data
-2025-04-11 01:21:42,180 INFO:Processing timing data...
-2025-04-11 01:21:42,467 INFO:Using cached data for car_data
-2025-04-11 01:21:42,498 INFO:Using cached data for position_data
-2025-04-11 01:21:42,975 INFO:Using cached data for weather_data
-2025-04-11 01:21:42,976 INFO:Using cached data for race_control_messages
-2025-04-11 01:21:42,991 INFO:Finished loading data for 20 drivers: ['44', '1', '4', '81', '55', '27', '18', '14', '23', '22', '2', '20', '3', '16', '77', '31', '11', '24', '63', '10']
-2025-04-11 01:21:43,038 INFO:Loading data for British Grand Prix - Race [v3.5.3]
-2025-04-11 01:21:43,038 INFO:Using cached data for session_info
-2025-04-11 01:21:43,038 INFO:Using cached data for driver_info
-2025-04-11 01:21:43,044 INFO:Using cached data for session_status_data
-2025-04-11 01:21:43,044 INFO:Using cached data for lap_count
-2025-04-11 01:21:43,045 INFO:Using cached data for track_status_data
-2025-04-11 01:21:43,047 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:21:43,047 INFO:Using cached data for timing_app_data
-2025-04-11 01:21:43,047 INFO:Processing timing data...
-2025-04-11 01:21:43,338 INFO:Using cached data for car_data
-2025-04-11 01:21:43,369 INFO:Using cached data for position_data
-2025-04-11 01:21:43,832 INFO:Using cached data for weather_data
-2025-04-11 01:21:43,832 INFO:Using cached data for race_control_messages
-2025-04-11 01:21:43,847 INFO:Finished loading data for 20 drivers: ['44', '1', '4', '81', '55', '27', '18', '14', '23', '22', '2', '20', '3', '16', '77', '31', '11', '24', '63', '10']
-2025-04-11 01:21:43,852 INFO:Processed Round 12 - British Grand Prix
-2025-04-11 01:22:43,873 INFO:Loading data for Hungarian Grand Prix - Race [v3.5.3]
-2025-04-11 01:22:43,874 INFO:Using cached data for session_info
-2025-04-11 01:22:43,874 INFO:Using cached data for driver_info
-2025-04-11 01:22:44,256 INFO:Using cached data for weather_data
-2025-04-11 01:22:44,257 INFO:Using cached data for race_control_messages
-2025-04-11 01:22:44,258 INFO:Finished loading data for 20 drivers: ['81', '4', '44', '16', '1', '55', '11', '63', '22', '18', '14', '3', '27', '23', '20', '77', '2', '31', '24', '10']
-2025-04-11 01:22:44,270 INFO:Loading data for Hungarian Grand Prix - Race [v3.5.3]
-2025-04-11 01:22:44,271 INFO:Using cached data for session_info
-2025-04-11 01:22:44,271 INFO:Using cached data for driver_info
-2025-04-11 01:22:44,280 INFO:Using cached data for session_status_data
-2025-04-11 01:22:44,280 INFO:Using cached data for lap_count
-2025-04-11 01:22:44,280 INFO:Using cached data for track_status_data
-2025-04-11 01:22:44,284 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:22:44,286 INFO:Using cached data for timing_app_data
-2025-04-11 01:22:44,286 INFO:Processing timing data...
-2025-04-11 01:22:45,024 INFO:Using cached data for car_data
-2025-04-11 01:22:45,060 INFO:Using cached data for position_data
-2025-04-11 01:22:45,620 INFO:Using cached data for weather_data
-2025-04-11 01:22:45,621 INFO:Using cached data for race_control_messages
-2025-04-11 01:22:45,637 INFO:Finished loading data for 20 drivers: ['81', '4', '44', '16', '1', '55', '11', '63', '22', '18', '14', '3', '27', '23', '20', '77', '2', '31', '24', '10']
-2025-04-11 01:22:45,637 INFO:[Race] Data verification complete.
-2025-04-11 01:22:45,643 INFO:Loading data for Hungarian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:22:45,644 INFO:Using cached data for session_info
-2025-04-11 01:22:45,645 INFO:Using cached data for driver_info
-2025-04-11 01:22:46,155 INFO:Using cached data for session_status_data
-2025-04-11 01:22:46,156 INFO:Using cached data for track_status_data
-2025-04-11 01:22:46,157 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:22:46,158 INFO:Using cached data for timing_app_data
-2025-04-11 01:22:46,158 INFO:Processing timing data...
-2025-04-11 01:22:46,370 INFO:Using cached data for car_data
-2025-04-11 01:22:46,391 INFO:Using cached data for position_data
-2025-04-11 01:22:46,736 INFO:Using cached data for weather_data
-2025-04-11 01:22:46,736 INFO:Using cached data for race_control_messages
-2025-04-11 01:22:46,747 INFO:Finished loading data for 20 drivers: ['4', '81', '1', '55', '44', '16', '14', '18', '3', '22', '27', '77', '23', '2', '20', '11', '63', '24', '31', '10']
-2025-04-11 01:22:46,747 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:22:46,751 INFO:No sprint session for 13
-2025-04-11 01:22:46,758 INFO:Loading data for Hungarian Grand Prix - Race [v3.5.3]
-2025-04-11 01:22:46,758 INFO:Using cached data for session_info
-2025-04-11 01:22:46,758 INFO:Using cached data for driver_info
-2025-04-11 01:22:46,764 INFO:Using cached data for session_status_data
-2025-04-11 01:22:46,764 INFO:Using cached data for lap_count
-2025-04-11 01:22:46,764 INFO:Using cached data for track_status_data
-2025-04-11 01:22:46,766 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:22:46,766 INFO:Using cached data for timing_app_data
-2025-04-11 01:22:46,766 INFO:Processing timing data...
-2025-04-11 01:22:47,115 INFO:Using cached data for car_data
-2025-04-11 01:22:47,143 INFO:Using cached data for position_data
-2025-04-11 01:22:47,637 INFO:Using cached data for weather_data
-2025-04-11 01:22:47,637 INFO:Using cached data for race_control_messages
-2025-04-11 01:22:47,652 INFO:Finished loading data for 20 drivers: ['81', '4', '44', '16', '1', '55', '11', '63', '22', '18', '14', '3', '27', '23', '20', '77', '2', '31', '24', '10']
-2025-04-11 01:22:47,694 INFO:Loading data for Hungarian Grand Prix - Race [v3.5.3]
-2025-04-11 01:22:47,694 INFO:Using cached data for session_info
-2025-04-11 01:22:47,694 INFO:Using cached data for driver_info
-2025-04-11 01:22:47,700 INFO:Using cached data for session_status_data
-2025-04-11 01:22:47,700 INFO:Using cached data for lap_count
-2025-04-11 01:22:47,700 INFO:Using cached data for track_status_data
-2025-04-11 01:22:47,702 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:22:47,703 INFO:Using cached data for timing_app_data
-2025-04-11 01:22:47,703 INFO:Processing timing data...
-2025-04-11 01:22:48,049 INFO:Using cached data for car_data
-2025-04-11 01:22:48,076 INFO:Using cached data for position_data
-2025-04-11 01:22:48,570 INFO:Using cached data for weather_data
-2025-04-11 01:22:48,570 INFO:Using cached data for race_control_messages
-2025-04-11 01:22:48,584 INFO:Finished loading data for 20 drivers: ['81', '4', '44', '16', '1', '55', '11', '63', '22', '18', '14', '3', '27', '23', '20', '77', '2', '31', '24', '10']
-2025-04-11 01:22:48,588 INFO:Processed Round 13 - Hungarian Grand Prix
-2025-04-11 01:23:48,609 INFO:Loading data for Belgian Grand Prix - Race [v3.5.3]
-2025-04-11 01:23:48,611 INFO:Using cached data for session_info
-2025-04-11 01:23:48,612 INFO:Using cached data for driver_info
-2025-04-11 01:23:48,962 DEBUG:Failed to parse timestamp '-1:59:59.474' in Ergastresponse.
-2025-04-11 01:23:48,975 INFO:Using cached data for weather_data
-2025-04-11 01:23:48,976 INFO:Using cached data for race_control_messages
-2025-04-11 01:23:48,977 INFO:Finished loading data for 20 drivers: ['44', '81', '16', '1', '4', '55', '11', '14', '31', '3', '18', '23', '10', '20', '77', '22', '2', '27', '24', '63']
-2025-04-11 01:23:48,991 INFO:Loading data for Belgian Grand Prix - Race [v3.5.3]
-2025-04-11 01:23:48,991 INFO:Using cached data for session_info
-2025-04-11 01:23:48,991 INFO:Using cached data for driver_info
-2025-04-11 01:23:48,994 DEBUG:Failed to parse timestamp '-1:59:59.474' in Ergastresponse.
-2025-04-11 01:23:49,000 INFO:Using cached data for session_status_data
-2025-04-11 01:23:49,001 INFO:Using cached data for lap_count
-2025-04-11 01:23:49,001 INFO:Using cached data for track_status_data
-2025-04-11 01:23:49,007 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:23:49,007 INFO:Using cached data for timing_app_data
-2025-04-11 01:23:49,007 INFO:Processing timing data...
-2025-04-11 01:23:49,656 INFO:Using cached data for car_data
-2025-04-11 01:23:49,686 INFO:Using cached data for position_data
-2025-04-11 01:23:50,131 INFO:Using cached data for weather_data
-2025-04-11 01:23:50,132 INFO:Using cached data for race_control_messages
-2025-04-11 01:23:50,146 INFO:Finished loading data for 20 drivers: ['44', '81', '16', '1', '4', '55', '11', '14', '31', '3', '18', '23', '10', '20', '77', '22', '2', '27', '24', '63']
-2025-04-11 01:23:50,147 INFO:[Race] Data verification complete.
-2025-04-11 01:23:50,152 INFO:Loading data for Belgian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:23:50,152 INFO:Using cached data for session_info
-2025-04-11 01:23:50,153 INFO:Using cached data for driver_info
-2025-04-11 01:23:50,702 INFO:Using cached data for session_status_data
-2025-04-11 01:23:50,702 INFO:Using cached data for track_status_data
-2025-04-11 01:23:50,704 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:23:50,708 INFO:Using cached data for timing_app_data
-2025-04-11 01:23:50,709 INFO:Processing timing data...
-2025-04-11 01:23:50,899 INFO:Using cached data for car_data
-2025-04-11 01:23:50,914 INFO:Using cached data for position_data
-2025-04-11 01:23:51,189 INFO:Using cached data for weather_data
-2025-04-11 01:23:51,189 INFO:Using cached data for race_control_messages
-2025-04-11 01:23:51,201 INFO:Finished loading data for 20 drivers: ['1', '16', '11', '44', '4', '81', '63', '55', '14', '31', '23', '10', '3', '77', '18', '27', '20', '22', '2', '24']
-2025-04-11 01:23:51,201 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:23:51,205 INFO:No sprint session for 14
-2025-04-11 01:23:51,211 INFO:Loading data for Belgian Grand Prix - Race [v3.5.3]
-2025-04-11 01:23:51,211 INFO:Using cached data for session_info
-2025-04-11 01:23:51,211 INFO:Using cached data for driver_info
-2025-04-11 01:23:51,213 DEBUG:Failed to parse timestamp '-1:59:59.474' in Ergastresponse.
-2025-04-11 01:23:51,217 INFO:Using cached data for session_status_data
-2025-04-11 01:23:51,217 INFO:Using cached data for lap_count
-2025-04-11 01:23:51,217 INFO:Using cached data for track_status_data
-2025-04-11 01:23:51,219 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:23:51,219 INFO:Using cached data for timing_app_data
-2025-04-11 01:23:51,219 INFO:Processing timing data...
-2025-04-11 01:23:51,480 INFO:Using cached data for car_data
-2025-04-11 01:23:51,507 INFO:Using cached data for position_data
-2025-04-11 01:23:51,947 INFO:Using cached data for weather_data
-2025-04-11 01:23:51,948 INFO:Using cached data for race_control_messages
-2025-04-11 01:23:51,962 INFO:Finished loading data for 20 drivers: ['44', '81', '16', '1', '4', '55', '11', '14', '31', '3', '18', '23', '10', '20', '77', '22', '2', '27', '24', '63']
-2025-04-11 01:23:52,008 INFO:Loading data for Belgian Grand Prix - Race [v3.5.3]
-2025-04-11 01:23:52,008 INFO:Using cached data for session_info
-2025-04-11 01:23:52,008 INFO:Using cached data for driver_info
-2025-04-11 01:23:52,011 DEBUG:Failed to parse timestamp '-1:59:59.474' in Ergastresponse.
-2025-04-11 01:23:52,015 INFO:Using cached data for session_status_data
-2025-04-11 01:23:52,015 INFO:Using cached data for lap_count
-2025-04-11 01:23:52,016 INFO:Using cached data for track_status_data
-2025-04-11 01:23:52,017 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:23:52,017 INFO:Using cached data for timing_app_data
-2025-04-11 01:23:52,017 INFO:Processing timing data...
-2025-04-11 01:23:52,279 INFO:Using cached data for car_data
-2025-04-11 01:23:52,304 INFO:Using cached data for position_data
-2025-04-11 01:23:52,732 INFO:Using cached data for weather_data
-2025-04-11 01:23:52,732 INFO:Using cached data for race_control_messages
-2025-04-11 01:23:52,746 INFO:Finished loading data for 20 drivers: ['44', '81', '16', '1', '4', '55', '11', '14', '31', '3', '18', '23', '10', '20', '77', '22', '2', '27', '24', '63']
-2025-04-11 01:23:52,751 INFO:Processed Round 14 - Belgian Grand Prix
-2025-04-11 01:24:52,775 INFO:Loading data for Dutch Grand Prix - Race [v3.5.3]
-2025-04-11 01:24:52,776 INFO:Using cached data for session_info
-2025-04-11 01:24:52,776 INFO:Using cached data for driver_info
-2025-04-11 01:24:53,155 INFO:Using cached data for weather_data
-2025-04-11 01:24:53,156 INFO:Using cached data for race_control_messages
-2025-04-11 01:24:53,156 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '81', '55', '11', '63', '44', '10', '14', '27', '3', '18', '23', '31', '2', '22', '20', '77', '24']
-2025-04-11 01:24:53,170 INFO:Loading data for Dutch Grand Prix - Race [v3.5.3]
-2025-04-11 01:24:53,170 INFO:Using cached data for session_info
-2025-04-11 01:24:53,170 INFO:Using cached data for driver_info
-2025-04-11 01:24:53,180 INFO:Using cached data for session_status_data
-2025-04-11 01:24:53,180 INFO:Using cached data for lap_count
-2025-04-11 01:24:53,180 INFO:Using cached data for track_status_data
-2025-04-11 01:24:53,185 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:24:53,188 INFO:Using cached data for timing_app_data
-2025-04-11 01:24:53,188 INFO:Processing timing data...
-2025-04-11 01:24:53,897 INFO:Using cached data for car_data
-2025-04-11 01:24:53,930 INFO:Using cached data for position_data
-2025-04-11 01:24:54,431 INFO:Using cached data for weather_data
-2025-04-11 01:24:54,432 INFO:Using cached data for race_control_messages
-2025-04-11 01:24:54,445 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '81', '55', '11', '63', '44', '10', '14', '27', '3', '18', '23', '31', '2', '22', '20', '77', '24']
-2025-04-11 01:24:54,446 INFO:[Race] Data verification complete.
-2025-04-11 01:24:54,451 INFO:Loading data for Dutch Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:24:54,452 INFO:Using cached data for session_info
-2025-04-11 01:24:54,452 INFO:Using cached data for driver_info
-2025-04-11 01:24:55,029 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:24:55,029 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:24:55,041 INFO:Using cached data for session_status_data
-2025-04-11 01:24:55,042 INFO:Using cached data for track_status_data
-2025-04-11 01:24:55,046 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:24:55,050 INFO:Using cached data for timing_app_data
-2025-04-11 01:24:55,050 INFO:Processing timing data...
-2025-04-11 01:24:55,194 WARNING:No lap data for driver 2
-2025-04-11 01:24:55,219 WARNING:Failed to perform lap accuracy check - all laps marked as inaccurate (driver 2)
-2025-04-11 01:24:55,233 INFO:Using cached data for car_data
-2025-04-11 01:24:55,249 INFO:Using cached data for position_data
-2025-04-11 01:24:55,516 INFO:Using cached data for weather_data
-2025-04-11 01:24:55,517 INFO:Using cached data for race_control_messages
-2025-04-11 01:24:55,526 INFO:Finished loading data for 20 drivers: ['4', '1', '81', '63', '11', '16', '14', '18', '10', '55', '23', '44', '22', '27', '20', '3', '31', '77', '24', '2']
-2025-04-11 01:24:55,526 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:24:55,531 INFO:No sprint session for 15
-2025-04-11 01:24:55,537 INFO:Loading data for Dutch Grand Prix - Race [v3.5.3]
-2025-04-11 01:24:55,537 INFO:Using cached data for session_info
-2025-04-11 01:24:55,537 INFO:Using cached data for driver_info
-2025-04-11 01:24:55,543 INFO:Using cached data for session_status_data
-2025-04-11 01:24:55,543 INFO:Using cached data for lap_count
-2025-04-11 01:24:55,543 INFO:Using cached data for track_status_data
-2025-04-11 01:24:55,545 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:24:55,546 INFO:Using cached data for timing_app_data
-2025-04-11 01:24:55,546 INFO:Processing timing data...
-2025-04-11 01:24:55,896 INFO:Using cached data for car_data
-2025-04-11 01:24:55,923 INFO:Using cached data for position_data
-2025-04-11 01:24:56,422 INFO:Using cached data for weather_data
-2025-04-11 01:24:56,422 INFO:Using cached data for race_control_messages
-2025-04-11 01:24:56,435 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '81', '55', '11', '63', '44', '10', '14', '27', '3', '18', '23', '31', '2', '22', '20', '77', '24']
-2025-04-11 01:24:56,521 INFO:Loading data for Dutch Grand Prix - Race [v3.5.3]
-2025-04-11 01:24:56,521 INFO:Using cached data for session_info
-2025-04-11 01:24:56,521 INFO:Using cached data for driver_info
-2025-04-11 01:24:56,529 INFO:Using cached data for session_status_data
-2025-04-11 01:24:56,530 INFO:Using cached data for lap_count
-2025-04-11 01:24:56,530 INFO:Using cached data for track_status_data
-2025-04-11 01:24:56,532 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:24:56,532 INFO:Using cached data for timing_app_data
-2025-04-11 01:24:56,532 INFO:Processing timing data...
-2025-04-11 01:24:56,885 INFO:Using cached data for car_data
-2025-04-11 01:24:56,913 INFO:Using cached data for position_data
-2025-04-11 01:24:57,394 INFO:Using cached data for weather_data
-2025-04-11 01:24:57,395 INFO:Using cached data for race_control_messages
-2025-04-11 01:24:57,408 INFO:Finished loading data for 20 drivers: ['4', '1', '16', '81', '55', '11', '63', '44', '10', '14', '27', '3', '18', '23', '31', '2', '22', '20', '77', '24']
-2025-04-11 01:24:57,412 INFO:Processed Round 15 - Dutch Grand Prix
-2025-04-11 01:25:57,582 INFO:Loading data for Italian Grand Prix - Race [v3.5.3]
-2025-04-11 01:25:57,583 INFO:Using cached data for session_info
-2025-04-11 01:25:57,583 INFO:Using cached data for driver_info
-2025-04-11 01:25:58,076 INFO:Using cached data for weather_data
-2025-04-11 01:25:58,078 INFO:Using cached data for race_control_messages
-2025-04-11 01:25:58,078 INFO:Finished loading data for 20 drivers: ['16', '81', '4', '55', '44', '1', '63', '11', '23', '20', '14', '43', '3', '31', '10', '77', '27', '24', '18', '22']
-2025-04-11 01:25:58,093 INFO:Loading data for Italian Grand Prix - Race [v3.5.3]
-2025-04-11 01:25:58,093 INFO:Using cached data for session_info
-2025-04-11 01:25:58,093 INFO:Using cached data for driver_info
-2025-04-11 01:25:58,103 INFO:Using cached data for session_status_data
-2025-04-11 01:25:58,103 INFO:Using cached data for lap_count
-2025-04-11 01:25:58,104 INFO:Using cached data for track_status_data
-2025-04-11 01:25:58,108 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:25:58,109 INFO:Using cached data for timing_app_data
-2025-04-11 01:25:58,109 INFO:Processing timing data...
-2025-04-11 01:25:58,760 INFO:Using cached data for car_data
-2025-04-11 01:25:58,802 INFO:Using cached data for position_data
-2025-04-11 01:25:59,253 INFO:Using cached data for weather_data
-2025-04-11 01:25:59,253 INFO:Using cached data for race_control_messages
-2025-04-11 01:25:59,270 INFO:Finished loading data for 20 drivers: ['16', '81', '4', '55', '44', '1', '63', '11', '23', '20', '14', '43', '3', '31', '10', '77', '27', '24', '18', '22']
-2025-04-11 01:25:59,270 INFO:[Race] Data verification complete.
-2025-04-11 01:25:59,276 INFO:Loading data for Italian Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:25:59,277 INFO:Using cached data for session_info
-2025-04-11 01:25:59,278 INFO:Using cached data for driver_info
-2025-04-11 01:26:00,012 INFO:Using cached data for session_status_data
-2025-04-11 01:26:00,013 INFO:Using cached data for track_status_data
-2025-04-11 01:26:00,018 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:26:00,019 INFO:Using cached data for timing_app_data
-2025-04-11 01:26:00,019 INFO:Processing timing data...
-2025-04-11 01:26:00,202 INFO:Using cached data for car_data
-2025-04-11 01:26:00,219 INFO:Using cached data for position_data
-2025-04-11 01:26:00,498 INFO:Using cached data for weather_data
-2025-04-11 01:26:00,498 INFO:Using cached data for race_control_messages
-2025-04-11 01:26:00,511 INFO:Finished loading data for 20 drivers: ['4', '81', '63', '16', '55', '44', '1', '11', '23', '27', '14', '3', '20', '10', '31', '22', '18', '43', '77', '24']
-2025-04-11 01:26:00,511 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:26:00,515 INFO:No sprint session for 16
-2025-04-11 01:26:00,522 INFO:Loading data for Italian Grand Prix - Race [v3.5.3]
-2025-04-11 01:26:00,522 INFO:Using cached data for session_info
-2025-04-11 01:26:00,522 INFO:Using cached data for driver_info
-2025-04-11 01:26:00,529 INFO:Using cached data for session_status_data
-2025-04-11 01:26:00,529 INFO:Using cached data for lap_count
-2025-04-11 01:26:00,529 INFO:Using cached data for track_status_data
-2025-04-11 01:26:00,531 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:26:00,531 INFO:Using cached data for timing_app_data
-2025-04-11 01:26:00,531 INFO:Processing timing data...
-2025-04-11 01:26:00,833 INFO:Using cached data for car_data
-2025-04-11 01:26:00,861 INFO:Using cached data for position_data
-2025-04-11 01:26:01,294 INFO:Using cached data for weather_data
-2025-04-11 01:26:01,294 INFO:Using cached data for race_control_messages
-2025-04-11 01:26:01,310 INFO:Finished loading data for 20 drivers: ['16', '81', '4', '55', '44', '1', '63', '11', '23', '20', '14', '43', '3', '31', '10', '77', '27', '24', '18', '22']
-2025-04-11 01:26:01,361 INFO:Loading data for Italian Grand Prix - Race [v3.5.3]
-2025-04-11 01:26:01,361 INFO:Using cached data for session_info
-2025-04-11 01:26:01,361 INFO:Using cached data for driver_info
-2025-04-11 01:26:01,367 INFO:Using cached data for session_status_data
-2025-04-11 01:26:01,367 INFO:Using cached data for lap_count
-2025-04-11 01:26:01,367 INFO:Using cached data for track_status_data
-2025-04-11 01:26:01,371 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:26:01,371 INFO:Using cached data for timing_app_data
-2025-04-11 01:26:01,371 INFO:Processing timing data...
-2025-04-11 01:26:01,672 INFO:Using cached data for car_data
-2025-04-11 01:26:01,699 INFO:Using cached data for position_data
-2025-04-11 01:26:02,130 INFO:Using cached data for weather_data
-2025-04-11 01:26:02,130 INFO:Using cached data for race_control_messages
-2025-04-11 01:26:02,147 INFO:Finished loading data for 20 drivers: ['16', '81', '4', '55', '44', '1', '63', '11', '23', '20', '14', '43', '3', '31', '10', '77', '27', '24', '18', '22']
-2025-04-11 01:26:02,151 INFO:Processed Round 16 - Italian Grand Prix
-2025-04-11 01:27:02,174 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
-2025-04-11 01:27:02,174 INFO:Using cached data for session_info
-2025-04-11 01:27:02,175 INFO:Using cached data for driver_info
-2025-04-11 01:27:02,980 DEBUG:Failed to parse timestamp '-1:55:43.191' in Ergastresponse.
-2025-04-11 01:27:02,980 DEBUG:Failed to parse timestamp '-1:55:43.761' in Ergastresponse.
-2025-04-11 01:27:02,980 DEBUG:Failed to parse timestamp '-1:50:23.073' in Ergastresponse.
-2025-04-11 01:27:02,991 INFO:Using cached data for weather_data
-2025-04-11 01:27:02,992 INFO:Using cached data for race_control_messages
-2025-04-11 01:27:02,993 INFO:Finished loading data for 20 drivers: ['81', '16', '63', '4', '1', '14', '23', '43', '44', '50', '27', '10', '3', '24', '31', '77', '11', '55', '18', '22']
-2025-04-11 01:27:03,006 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
-2025-04-11 01:27:03,006 INFO:Using cached data for session_info
-2025-04-11 01:27:03,006 INFO:Using cached data for driver_info
-2025-04-11 01:27:03,008 DEBUG:Failed to parse timestamp '-1:55:43.191' in Ergastresponse.
-2025-04-11 01:27:03,009 DEBUG:Failed to parse timestamp '-1:55:43.761' in Ergastresponse.
-2025-04-11 01:27:03,009 DEBUG:Failed to parse timestamp '-1:50:23.073' in Ergastresponse.
-2025-04-11 01:27:03,015 INFO:Using cached data for session_status_data
-2025-04-11 01:27:03,016 INFO:Using cached data for lap_count
-2025-04-11 01:27:03,016 INFO:Using cached data for track_status_data
-2025-04-11 01:27:03,020 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:27:03,020 INFO:Using cached data for timing_app_data
-2025-04-11 01:27:03,020 INFO:Processing timing data...
-2025-04-11 01:27:03,716 INFO:Using cached data for car_data
-2025-04-11 01:27:03,752 INFO:Using cached data for position_data
-2025-04-11 01:27:04,240 INFO:Using cached data for weather_data
-2025-04-11 01:27:04,241 INFO:Using cached data for race_control_messages
-2025-04-11 01:27:04,271 INFO:Finished loading data for 20 drivers: ['81', '16', '63', '4', '1', '14', '23', '43', '44', '50', '27', '10', '3', '24', '31', '77', '11', '55', '18', '22']
-2025-04-11 01:27:04,271 INFO:[Race] Data verification complete.
-2025-04-11 01:27:04,276 INFO:Loading data for Azerbaijan Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:27:04,277 INFO:Using cached data for session_info
-2025-04-11 01:27:04,277 INFO:Using cached data for driver_info
-2025-04-11 01:27:04,761 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:27:04,773 INFO:Using cached data for session_status_data
-2025-04-11 01:27:04,774 INFO:Using cached data for track_status_data
-2025-04-11 01:27:04,775 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:27:04,775 INFO:Using cached data for timing_app_data
-2025-04-11 01:27:04,775 INFO:Processing timing data...
-2025-04-11 01:27:04,970 INFO:Using cached data for car_data
-2025-04-11 01:27:04,986 INFO:Using cached data for position_data
-2025-04-11 01:27:05,267 INFO:Using cached data for weather_data
-2025-04-11 01:27:05,268 INFO:Using cached data for race_control_messages
-2025-04-11 01:27:05,282 INFO:Finished loading data for 20 drivers: ['16', '81', '55', '11', '63', '1', '44', '14', '43', '23', '50', '22', '27', '18', '3', '10', '4', '77', '24', '31']
-2025-04-11 01:27:05,282 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:27:05,286 INFO:No sprint session for 17
-2025-04-11 01:27:05,294 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
-2025-04-11 01:27:05,294 INFO:Using cached data for session_info
-2025-04-11 01:27:05,294 INFO:Using cached data for driver_info
-2025-04-11 01:27:05,296 DEBUG:Failed to parse timestamp '-1:55:43.191' in Ergastresponse.
-2025-04-11 01:27:05,296 DEBUG:Failed to parse timestamp '-1:55:43.761' in Ergastresponse.
-2025-04-11 01:27:05,296 DEBUG:Failed to parse timestamp '-1:50:23.073' in Ergastresponse.
-2025-04-11 01:27:05,301 INFO:Using cached data for session_status_data
-2025-04-11 01:27:05,302 INFO:Using cached data for lap_count
-2025-04-11 01:27:05,302 INFO:Using cached data for track_status_data
-2025-04-11 01:27:05,306 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:27:05,306 INFO:Using cached data for timing_app_data
-2025-04-11 01:27:05,306 INFO:Processing timing data...
-2025-04-11 01:27:05,599 INFO:Using cached data for car_data
-2025-04-11 01:27:05,633 INFO:Using cached data for position_data
-2025-04-11 01:27:06,126 INFO:Using cached data for weather_data
-2025-04-11 01:27:06,126 INFO:Using cached data for race_control_messages
-2025-04-11 01:27:06,155 INFO:Finished loading data for 20 drivers: ['81', '16', '63', '4', '1', '14', '23', '43', '44', '50', '27', '10', '3', '24', '31', '77', '11', '55', '18', '22']
-2025-04-11 01:27:06,201 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
-2025-04-11 01:27:06,201 INFO:Using cached data for session_info
-2025-04-11 01:27:06,201 INFO:Using cached data for driver_info
-2025-04-11 01:27:06,203 DEBUG:Failed to parse timestamp '-1:55:43.191' in Ergastresponse.
-2025-04-11 01:27:06,203 DEBUG:Failed to parse timestamp '-1:55:43.761' in Ergastresponse.
-2025-04-11 01:27:06,204 DEBUG:Failed to parse timestamp '-1:50:23.073' in Ergastresponse.
-2025-04-11 01:27:06,208 INFO:Using cached data for session_status_data
-2025-04-11 01:27:06,209 INFO:Using cached data for lap_count
-2025-04-11 01:27:06,209 INFO:Using cached data for track_status_data
-2025-04-11 01:27:06,212 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:27:06,212 INFO:Using cached data for timing_app_data
-2025-04-11 01:27:06,212 INFO:Processing timing data...
-2025-04-11 01:27:06,507 INFO:Using cached data for car_data
-2025-04-11 01:27:06,536 INFO:Using cached data for position_data
-2025-04-11 01:27:07,007 INFO:Using cached data for weather_data
-2025-04-11 01:27:07,007 INFO:Using cached data for race_control_messages
-2025-04-11 01:27:07,037 INFO:Finished loading data for 20 drivers: ['81', '16', '63', '4', '1', '14', '23', '43', '44', '50', '27', '10', '3', '24', '31', '77', '11', '55', '18', '22']
-2025-04-11 01:27:07,042 INFO:Processed Round 17 - Azerbaijan Grand Prix
-2025-04-11 01:28:07,065 INFO:Loading data for Singapore Grand Prix - Race [v3.5.3]
-2025-04-11 01:28:07,066 INFO:Using cached data for session_info
-2025-04-11 01:28:07,066 INFO:Using cached data for driver_info
-2025-04-11 01:28:07,533 DEBUG:Failed to parse timestamp '-1:55:59.335' in Ergastresponse.
-2025-04-11 01:28:07,546 INFO:Using cached data for weather_data
-2025-04-11 01:28:07,547 INFO:Using cached data for race_control_messages
-2025-04-11 01:28:07,547 INFO:Finished loading data for 20 drivers: ['4', '1', '81', '63', '16', '44', '55', '14', '27', '11', '43', '22', '31', '18', '24', '77', '10', '3', '20', '23']
-2025-04-11 01:28:07,561 INFO:Loading data for Singapore Grand Prix - Race [v3.5.3]
-2025-04-11 01:28:07,561 INFO:Using cached data for session_info
-2025-04-11 01:28:07,561 INFO:Using cached data for driver_info
-2025-04-11 01:28:07,563 DEBUG:Failed to parse timestamp '-1:55:59.335' in Ergastresponse.
-2025-04-11 01:28:07,570 INFO:Using cached data for session_status_data
-2025-04-11 01:28:07,571 INFO:Using cached data for lap_count
-2025-04-11 01:28:07,571 INFO:Using cached data for track_status_data
-2025-04-11 01:28:07,575 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:28:07,578 INFO:Using cached data for timing_app_data
-2025-04-11 01:28:07,578 INFO:Processing timing data...
-2025-04-11 01:28:08,277 INFO:Using cached data for car_data
-2025-04-11 01:28:08,321 INFO:Using cached data for position_data
-2025-04-11 01:28:08,867 INFO:Using cached data for weather_data
-2025-04-11 01:28:08,868 INFO:Using cached data for race_control_messages
-2025-04-11 01:28:08,886 INFO:Finished loading data for 20 drivers: ['4', '1', '81', '63', '16', '44', '55', '14', '27', '11', '43', '22', '31', '18', '24', '77', '10', '3', '20', '23']
-2025-04-11 01:28:08,886 INFO:[Race] Data verification complete.
-2025-04-11 01:28:08,892 INFO:Loading data for Singapore Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:28:08,893 INFO:Using cached data for session_info
-2025-04-11 01:28:08,893 INFO:Using cached data for driver_info
-2025-04-11 01:28:09,515 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:28:09,515 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:28:09,527 INFO:Using cached data for session_status_data
-2025-04-11 01:28:09,528 INFO:Using cached data for track_status_data
-2025-04-11 01:28:09,529 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:28:09,530 INFO:Using cached data for timing_app_data
-2025-04-11 01:28:09,530 INFO:Processing timing data...
-2025-04-11 01:28:09,717 INFO:Using cached data for car_data
-2025-04-11 01:28:09,734 INFO:Using cached data for position_data
-2025-04-11 01:28:10,033 INFO:Using cached data for weather_data
-2025-04-11 01:28:10,033 INFO:Using cached data for race_control_messages
-2025-04-11 01:28:10,045 INFO:Finished loading data for 20 drivers: ['4', '1', '44', '63', '81', '27', '14', '22', '16', '55', '23', '43', '11', '20', '31', '3', '18', '10', '77', '24']
-2025-04-11 01:28:10,046 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:28:10,050 INFO:No sprint session for 18
-2025-04-11 01:28:10,056 INFO:Loading data for Singapore Grand Prix - Race [v3.5.3]
-2025-04-11 01:28:10,056 INFO:Using cached data for session_info
-2025-04-11 01:28:10,056 INFO:Using cached data for driver_info
-2025-04-11 01:28:10,058 DEBUG:Failed to parse timestamp '-1:55:59.335' in Ergastresponse.
-2025-04-11 01:28:10,062 INFO:Using cached data for session_status_data
-2025-04-11 01:28:10,062 INFO:Using cached data for lap_count
-2025-04-11 01:28:10,062 INFO:Using cached data for track_status_data
-2025-04-11 01:28:10,066 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:28:10,066 INFO:Using cached data for timing_app_data
-2025-04-11 01:28:10,066 INFO:Processing timing data...
-2025-04-11 01:28:10,383 INFO:Using cached data for car_data
-2025-04-11 01:28:10,413 INFO:Using cached data for position_data
-2025-04-11 01:28:10,961 INFO:Using cached data for weather_data
-2025-04-11 01:28:10,962 INFO:Using cached data for race_control_messages
-2025-04-11 01:28:10,979 INFO:Finished loading data for 20 drivers: ['4', '1', '81', '63', '16', '44', '55', '14', '27', '11', '43', '22', '31', '18', '24', '77', '10', '3', '20', '23']
-2025-04-11 01:28:11,024 INFO:Loading data for Singapore Grand Prix - Race [v3.5.3]
-2025-04-11 01:28:11,024 INFO:Using cached data for session_info
-2025-04-11 01:28:11,024 INFO:Using cached data for driver_info
-2025-04-11 01:28:11,025 DEBUG:Failed to parse timestamp '-1:55:59.335' in Ergastresponse.
-2025-04-11 01:28:11,030 INFO:Using cached data for session_status_data
-2025-04-11 01:28:11,030 INFO:Using cached data for lap_count
-2025-04-11 01:28:11,030 INFO:Using cached data for track_status_data
-2025-04-11 01:28:11,033 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:28:11,033 INFO:Using cached data for timing_app_data
-2025-04-11 01:28:11,033 INFO:Processing timing data...
-2025-04-11 01:28:11,348 INFO:Using cached data for car_data
-2025-04-11 01:28:11,384 INFO:Using cached data for position_data
-2025-04-11 01:28:11,901 INFO:Using cached data for weather_data
-2025-04-11 01:28:11,901 INFO:Using cached data for race_control_messages
-2025-04-11 01:28:11,918 INFO:Finished loading data for 20 drivers: ['4', '1', '81', '63', '16', '44', '55', '14', '27', '11', '43', '22', '31', '18', '24', '77', '10', '3', '20', '23']
-2025-04-11 01:28:11,922 INFO:Processed Round 18 - Singapore Grand Prix
-2025-04-11 01:29:11,938 INFO:Loading data for United States Grand Prix - Race [v3.5.3]
-2025-04-11 01:29:11,939 INFO:Using cached data for session_info
-2025-04-11 01:29:11,940 INFO:Using cached data for driver_info
-2025-04-11 01:29:12,406 INFO:Using cached data for weather_data
-2025-04-11 01:29:12,407 INFO:Using cached data for race_control_messages
-2025-04-11 01:29:12,407 INFO:Finished loading data for 20 drivers: ['16', '55', '1', '4', '81', '63', '11', '27', '30', '43', '20', '10', '14', '22', '18', '23', '77', '31', '24', '44']
-2025-04-11 01:29:12,421 INFO:Loading data for United States Grand Prix - Race [v3.5.3]
-2025-04-11 01:29:12,421 INFO:Using cached data for session_info
-2025-04-11 01:29:12,421 INFO:Using cached data for driver_info
-2025-04-11 01:29:12,430 INFO:Using cached data for session_status_data
-2025-04-11 01:29:12,430 INFO:Using cached data for lap_count
-2025-04-11 01:29:12,431 INFO:Using cached data for track_status_data
-2025-04-11 01:29:12,435 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:29:12,436 INFO:Using cached data for timing_app_data
-2025-04-11 01:29:12,436 INFO:Processing timing data...
-2025-04-11 01:29:13,098 INFO:Using cached data for car_data
-2025-04-11 01:29:13,145 INFO:Using cached data for position_data
-2025-04-11 01:29:13,676 INFO:Using cached data for weather_data
-2025-04-11 01:29:13,676 INFO:Using cached data for race_control_messages
-2025-04-11 01:29:13,710 INFO:Finished loading data for 20 drivers: ['16', '55', '1', '4', '81', '63', '11', '27', '30', '43', '20', '10', '14', '22', '18', '23', '77', '31', '24', '44']
-2025-04-11 01:29:13,711 INFO:[Race] Data verification complete.
-2025-04-11 01:29:13,717 INFO:Loading data for United States Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:29:13,717 INFO:Using cached data for session_info
-2025-04-11 01:29:13,717 INFO:Using cached data for driver_info
-2025-04-11 01:29:14,275 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:29:14,275 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:29:14,288 INFO:Using cached data for session_status_data
-2025-04-11 01:29:14,289 INFO:Using cached data for track_status_data
-2025-04-11 01:29:14,290 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:29:14,290 INFO:Using cached data for timing_app_data
-2025-04-11 01:29:14,290 INFO:Processing timing data...
-2025-04-11 01:29:14,474 INFO:Using cached data for car_data
-2025-04-11 01:29:14,490 INFO:Using cached data for position_data
-2025-04-11 01:29:14,772 INFO:Using cached data for weather_data
-2025-04-11 01:29:14,772 INFO:Using cached data for race_control_messages
-2025-04-11 01:29:14,785 INFO:Finished loading data for 20 drivers: ['4', '1', '55', '16', '81', '63', '10', '14', '20', '11', '22', '27', '31', '18', '30', '23', '43', '77', '44', '24']
-2025-04-11 01:29:14,785 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:29:14,789 INFO:Loading data for United States Grand Prix - Sprint [v3.5.3]
-2025-04-11 01:29:14,790 INFO:Using cached data for session_info
-2025-04-11 01:29:14,790 INFO:Using cached data for driver_info
-2025-04-11 01:29:15,357 INFO:Using cached data for session_status_data
-2025-04-11 01:29:15,357 INFO:Using cached data for lap_count
-2025-04-11 01:29:15,358 INFO:Using cached data for track_status_data
-2025-04-11 01:29:15,360 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:29:15,361 INFO:Using cached data for timing_app_data
-2025-04-11 01:29:15,361 INFO:Processing timing data...
-2025-04-11 01:29:15,526 INFO:Using cached data for car_data
-2025-04-11 01:29:15,543 INFO:Using cached data for position_data
-2025-04-11 01:29:15,823 INFO:Using cached data for weather_data
-2025-04-11 01:29:15,824 INFO:Using cached data for race_control_messages
-2025-04-11 01:29:15,844 INFO:Finished loading data for 20 drivers: ['1', '55', '4', '16', '63', '44', '20', '27', '11', '81', '22', '43', '18', '10', '31', '30', '23', '14', '24', '77']
-2025-04-11 01:29:15,844 INFO:[Sprint] Data verification complete.
-2025-04-11 01:29:15,851 INFO:Loading data for United States Grand Prix - Race [v3.5.3]
-2025-04-11 01:29:15,851 INFO:Using cached data for session_info
-2025-04-11 01:29:15,851 INFO:Using cached data for driver_info
-2025-04-11 01:29:15,858 INFO:Using cached data for session_status_data
-2025-04-11 01:29:15,858 INFO:Using cached data for lap_count
-2025-04-11 01:29:15,858 INFO:Using cached data for track_status_data
-2025-04-11 01:29:15,860 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:29:15,860 INFO:Using cached data for timing_app_data
-2025-04-11 01:29:15,860 INFO:Processing timing data...
-2025-04-11 01:29:16,166 INFO:Using cached data for car_data
-2025-04-11 01:29:16,205 INFO:Using cached data for position_data
-2025-04-11 01:29:16,722 INFO:Using cached data for weather_data
-2025-04-11 01:29:16,723 INFO:Using cached data for race_control_messages
-2025-04-11 01:29:16,756 INFO:Finished loading data for 20 drivers: ['16', '55', '1', '4', '81', '63', '11', '27', '30', '43', '20', '10', '14', '22', '18', '23', '77', '31', '24', '44']
-2025-04-11 01:29:16,790 INFO:Loading data for United States Grand Prix - Race [v3.5.3]
-2025-04-11 01:29:16,790 INFO:Using cached data for session_info
-2025-04-11 01:29:16,790 INFO:Using cached data for driver_info
-2025-04-11 01:29:16,796 INFO:Using cached data for session_status_data
-2025-04-11 01:29:16,796 INFO:Using cached data for lap_count
-2025-04-11 01:29:16,796 INFO:Using cached data for track_status_data
-2025-04-11 01:29:16,798 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:29:16,798 INFO:Using cached data for timing_app_data
-2025-04-11 01:29:16,798 INFO:Processing timing data...
-2025-04-11 01:29:17,102 INFO:Using cached data for car_data
-2025-04-11 01:29:17,140 INFO:Using cached data for position_data
-2025-04-11 01:29:17,648 INFO:Using cached data for weather_data
-2025-04-11 01:29:17,649 INFO:Using cached data for race_control_messages
-2025-04-11 01:29:17,683 INFO:Finished loading data for 20 drivers: ['16', '55', '1', '4', '81', '63', '11', '27', '30', '43', '20', '10', '14', '22', '18', '23', '77', '31', '24', '44']
-2025-04-11 01:29:17,687 INFO:Processed Round 19 - United States Grand Prix
-2025-04-11 01:30:17,710 INFO:Loading data for Mexico City Grand Prix - Race [v3.5.3]
-2025-04-11 01:30:17,712 INFO:Using cached data for session_info
-2025-04-11 01:30:17,712 INFO:Using cached data for driver_info
-2025-04-11 01:30:19,918 INFO:Using cached data for weather_data
-2025-04-11 01:30:19,920 INFO:Using cached data for race_control_messages
-2025-04-11 01:30:19,920 INFO:Finished loading data for 20 drivers: ['55', '4', '16', '44', '63', '1', '20', '81', '27', '10', '18', '43', '31', '77', '24', '30', '11', '14', '23', '22']
-2025-04-11 01:30:19,934 INFO:Loading data for Mexico City Grand Prix - Race [v3.5.3]
-2025-04-11 01:30:19,934 INFO:Using cached data for session_info
-2025-04-11 01:30:19,935 INFO:Using cached data for driver_info
-2025-04-11 01:30:19,944 INFO:Using cached data for session_status_data
-2025-04-11 01:30:19,944 INFO:Using cached data for lap_count
-2025-04-11 01:30:19,945 INFO:Using cached data for track_status_data
-2025-04-11 01:30:19,949 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:30:19,950 INFO:Using cached data for timing_app_data
-2025-04-11 01:30:19,950 INFO:Processing timing data...
-2025-04-11 01:30:20,662 INFO:Using cached data for car_data
-2025-04-11 01:30:20,726 INFO:Using cached data for position_data
-2025-04-11 01:30:21,271 INFO:Using cached data for weather_data
-2025-04-11 01:30:21,272 INFO:Using cached data for race_control_messages
-2025-04-11 01:30:21,288 INFO:Finished loading data for 20 drivers: ['55', '4', '16', '44', '63', '1', '20', '81', '27', '10', '18', '43', '31', '77', '24', '30', '11', '14', '23', '22']
-2025-04-11 01:30:21,288 INFO:[Race] Data verification complete.
-2025-04-11 01:30:21,294 INFO:Loading data for Mexico City Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:30:21,294 INFO:Using cached data for session_info
-2025-04-11 01:30:21,294 INFO:Using cached data for driver_info
-2025-04-11 01:30:22,072 INFO:Using cached data for session_status_data
-2025-04-11 01:30:22,073 INFO:Using cached data for track_status_data
-2025-04-11 01:30:22,074 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:30:22,075 INFO:Using cached data for timing_app_data
-2025-04-11 01:30:22,075 INFO:Processing timing data...
-2025-04-11 01:30:22,244 INFO:Using cached data for car_data
-2025-04-11 01:30:22,261 INFO:Using cached data for position_data
-2025-04-11 01:30:22,532 INFO:Using cached data for weather_data
-2025-04-11 01:30:22,532 INFO:Using cached data for race_control_messages
-2025-04-11 01:30:22,544 INFO:Finished loading data for 20 drivers: ['55', '1', '4', '16', '63', '44', '20', '10', '23', '27', '22', '30', '14', '18', '77', '43', '81', '11', '31', '24']
-2025-04-11 01:30:22,544 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:30:22,548 INFO:No sprint session for 20
-2025-04-11 01:30:22,555 INFO:Loading data for Mexico City Grand Prix - Race [v3.5.3]
-2025-04-11 01:30:22,555 INFO:Using cached data for session_info
-2025-04-11 01:30:22,555 INFO:Using cached data for driver_info
-2025-04-11 01:30:22,561 INFO:Using cached data for session_status_data
-2025-04-11 01:30:22,561 INFO:Using cached data for lap_count
-2025-04-11 01:30:22,561 INFO:Using cached data for track_status_data
-2025-04-11 01:30:22,562 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:30:22,562 INFO:Using cached data for timing_app_data
-2025-04-11 01:30:22,562 INFO:Processing timing data...
-2025-04-11 01:30:22,890 INFO:Using cached data for car_data
-2025-04-11 01:30:22,925 INFO:Using cached data for position_data
-2025-04-11 01:30:23,474 INFO:Using cached data for weather_data
-2025-04-11 01:30:23,475 INFO:Using cached data for race_control_messages
-2025-04-11 01:30:23,491 INFO:Finished loading data for 20 drivers: ['55', '4', '16', '44', '63', '1', '20', '81', '27', '10', '18', '43', '31', '77', '24', '30', '11', '14', '23', '22']
-2025-04-11 01:30:23,538 INFO:Loading data for Mexico City Grand Prix - Race [v3.5.3]
-2025-04-11 01:30:23,539 INFO:Using cached data for session_info
-2025-04-11 01:30:23,539 INFO:Using cached data for driver_info
-2025-04-11 01:30:23,545 INFO:Using cached data for session_status_data
-2025-04-11 01:30:23,545 INFO:Using cached data for lap_count
-2025-04-11 01:30:23,545 INFO:Using cached data for track_status_data
-2025-04-11 01:30:23,548 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:30:23,548 INFO:Using cached data for timing_app_data
-2025-04-11 01:30:23,548 INFO:Processing timing data...
-2025-04-11 01:30:23,878 INFO:Using cached data for car_data
-2025-04-11 01:30:23,918 INFO:Using cached data for position_data
-2025-04-11 01:30:24,435 INFO:Using cached data for weather_data
-2025-04-11 01:30:24,435 INFO:Using cached data for race_control_messages
-2025-04-11 01:30:24,452 INFO:Finished loading data for 20 drivers: ['55', '4', '16', '44', '63', '1', '20', '81', '27', '10', '18', '43', '31', '77', '24', '30', '11', '14', '23', '22']
-2025-04-11 01:30:24,457 INFO:Processed Round 20 - Mexico City Grand Prix
-2025-04-11 01:31:24,759 INFO:Loading data for São Paulo Grand Prix - Race [v3.5.3]
-2025-04-11 01:31:24,760 INFO:Using cached data for session_info
-2025-04-11 01:31:24,761 INFO:Using cached data for driver_info
-2025-04-11 01:31:25,114 INFO:Using cached data for weather_data
-2025-04-11 01:31:25,115 INFO:Using cached data for race_control_messages
-2025-04-11 01:31:25,116 INFO:Finished loading data for 20 drivers: ['1', '31', '10', '63', '16', '4', '22', '81', '30', '44', '11', '50', '77', '14', '24', '55', '43', '23', '18', '27']
-2025-04-11 01:31:25,127 INFO:Loading data for São Paulo Grand Prix - Race [v3.5.3]
-2025-04-11 01:31:25,127 INFO:Using cached data for session_info
-2025-04-11 01:31:25,127 INFO:Using cached data for driver_info
-2025-04-11 01:31:25,137 INFO:Using cached data for session_status_data
-2025-04-11 01:31:25,137 INFO:Using cached data for lap_count
-2025-04-11 01:31:25,138 INFO:Using cached data for track_status_data
-2025-04-11 01:31:25,140 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:31:25,143 INFO:Using cached data for timing_app_data
-2025-04-11 01:31:25,143 INFO:Processing timing data...
-2025-04-11 01:31:25,388 WARNING:No lap data for driver 23
-2025-04-11 01:31:25,489 WARNING:Failed to perform lap accuracy check - all laps marked as inaccurate (driver 23)
-2025-04-11 01:31:26,027 INFO:Using cached data for car_data
-2025-04-11 01:31:26,097 INFO:Using cached data for position_data
-2025-04-11 01:31:26,772 INFO:Using cached data for weather_data
-2025-04-11 01:31:26,772 INFO:Using cached data for race_control_messages
-2025-04-11 01:31:26,804 INFO:Finished loading data for 20 drivers: ['1', '31', '10', '63', '16', '4', '22', '81', '30', '44', '11', '50', '77', '14', '24', '55', '43', '23', '18', '27']
-2025-04-11 01:31:26,805 INFO:[Race] Data verification complete.
-2025-04-11 01:31:26,811 INFO:Loading data for São Paulo Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:31:26,811 INFO:Using cached data for session_info
-2025-04-11 01:31:26,811 INFO:Using cached data for driver_info
-2025-04-11 01:31:27,236 DEBUG:Failed to parse timestamp '' in Ergastresponse.
-2025-04-11 01:31:27,249 INFO:Using cached data for session_status_data
-2025-04-11 01:31:27,250 INFO:Using cached data for track_status_data
-2025-04-11 01:31:27,251 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:31:27,252 INFO:Using cached data for timing_app_data
-2025-04-11 01:31:27,252 INFO:Processing timing data...
-2025-04-11 01:31:27,497 INFO:Using cached data for car_data
-2025-04-11 01:31:27,518 INFO:Using cached data for position_data
-2025-04-11 01:31:27,892 INFO:Using cached data for weather_data
-2025-04-11 01:31:27,892 INFO:Using cached data for race_control_messages
-2025-04-11 01:31:27,918 INFO:Finished loading data for 20 drivers: ['4', '63', '22', '31', '30', '16', '23', '81', '14', '18', '77', '1', '11', '55', '10', '44', '50', '43', '27', '24']
-2025-04-11 01:31:27,918 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:31:27,923 INFO:Loading data for São Paulo Grand Prix - Sprint [v3.5.3]
-2025-04-11 01:31:27,923 INFO:Using cached data for session_info
-2025-04-11 01:31:27,924 INFO:Using cached data for driver_info
-2025-04-11 01:31:28,407 INFO:Using cached data for session_status_data
-2025-04-11 01:31:28,407 INFO:Using cached data for lap_count
-2025-04-11 01:31:28,408 INFO:Using cached data for track_status_data
-2025-04-11 01:31:28,410 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:31:28,411 INFO:Using cached data for timing_app_data
-2025-04-11 01:31:28,411 INFO:Processing timing data...
-2025-04-11 01:31:28,601 INFO:Using cached data for car_data
-2025-04-11 01:31:28,620 INFO:Using cached data for position_data
-2025-04-11 01:31:28,879 INFO:Using cached data for weather_data
-2025-04-11 01:31:28,880 INFO:Using cached data for race_control_messages
-2025-04-11 01:31:28,881 WARNING:Driver 4 completed the race distance 00:00.011000 before the recorded end of the session.
-2025-04-11 01:31:28,895 INFO:Finished loading data for 20 drivers: ['4', '81', '16', '1', '55', '63', '10', '11', '30', '23', '44', '43', '31', '50', '22', '77', '24', '14', '18', '27']
-2025-04-11 01:31:28,895 INFO:[Sprint] Data verification complete.
-2025-04-11 01:31:28,903 INFO:Loading data for São Paulo Grand Prix - Race [v3.5.3]
-2025-04-11 01:31:28,903 INFO:Using cached data for session_info
-2025-04-11 01:31:28,903 INFO:Using cached data for driver_info
-2025-04-11 01:31:28,909 INFO:Using cached data for session_status_data
-2025-04-11 01:31:28,909 INFO:Using cached data for lap_count
-2025-04-11 01:31:28,909 INFO:Using cached data for track_status_data
-2025-04-11 01:31:28,911 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:31:28,911 INFO:Using cached data for timing_app_data
-2025-04-11 01:31:28,911 INFO:Processing timing data...
-2025-04-11 01:31:29,138 WARNING:No lap data for driver 23
-2025-04-11 01:31:29,270 WARNING:Failed to perform lap accuracy check - all laps marked as inaccurate (driver 23)
-2025-04-11 01:31:29,294 INFO:Using cached data for car_data
-2025-04-11 01:31:29,347 INFO:Using cached data for position_data
-2025-04-11 01:31:29,989 INFO:Using cached data for weather_data
-2025-04-11 01:31:29,990 INFO:Using cached data for race_control_messages
-2025-04-11 01:31:30,024 INFO:Finished loading data for 20 drivers: ['1', '31', '10', '63', '16', '4', '22', '81', '30', '44', '11', '50', '77', '14', '24', '55', '43', '23', '18', '27']
-2025-04-11 01:31:30,071 INFO:Loading data for São Paulo Grand Prix - Race [v3.5.3]
-2025-04-11 01:31:30,071 INFO:Using cached data for session_info
-2025-04-11 01:31:30,071 INFO:Using cached data for driver_info
-2025-04-11 01:31:30,077 INFO:Using cached data for session_status_data
-2025-04-11 01:31:30,077 INFO:Using cached data for lap_count
-2025-04-11 01:31:30,077 INFO:Using cached data for track_status_data
-2025-04-11 01:31:30,079 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:31:30,079 INFO:Using cached data for timing_app_data
-2025-04-11 01:31:30,079 INFO:Processing timing data...
-2025-04-11 01:31:30,312 WARNING:No lap data for driver 23
-2025-04-11 01:31:30,413 WARNING:Failed to perform lap accuracy check - all laps marked as inaccurate (driver 23)
-2025-04-11 01:31:30,439 INFO:Using cached data for car_data
-2025-04-11 01:31:30,489 INFO:Using cached data for position_data
-2025-04-11 01:31:31,150 INFO:Using cached data for weather_data
-2025-04-11 01:31:31,151 INFO:Using cached data for race_control_messages
-2025-04-11 01:31:31,187 INFO:Finished loading data for 20 drivers: ['1', '31', '10', '63', '16', '4', '22', '81', '30', '44', '11', '50', '77', '14', '24', '55', '43', '23', '18', '27']
-2025-04-11 01:31:31,193 INFO:Processed Round 21 - São Paulo Grand Prix
-2025-04-11 01:32:31,207 INFO:Loading data for Las Vegas Grand Prix - Race [v3.5.3]
-2025-04-11 01:32:31,208 INFO:Using cached data for session_info
-2025-04-11 01:32:31,208 INFO:Using cached data for driver_info
-2025-04-11 01:32:31,597 INFO:Using cached data for weather_data
-2025-04-11 01:32:31,599 INFO:Using cached data for race_control_messages
-2025-04-11 01:32:31,599 INFO:Finished loading data for 20 drivers: ['63', '44', '55', '16', '1', '4', '81', '27', '22', '11', '14', '20', '24', '43', '18', '30', '31', '77', '23', '10']
-2025-04-11 01:32:31,613 INFO:Loading data for Las Vegas Grand Prix - Race [v3.5.3]
-2025-04-11 01:32:31,613 INFO:Using cached data for session_info
-2025-04-11 01:32:31,613 INFO:Using cached data for driver_info
-2025-04-11 01:32:31,623 INFO:Using cached data for session_status_data
-2025-04-11 01:32:31,623 INFO:Using cached data for lap_count
-2025-04-11 01:32:31,623 INFO:Using cached data for track_status_data
-2025-04-11 01:32:31,626 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:32:31,627 INFO:Using cached data for timing_app_data
-2025-04-11 01:32:31,627 INFO:Processing timing data...
-2025-04-11 01:32:31,859 WARNING:Driver 63: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:31,861 WARNING:Driver 44: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:31,864 WARNING:Driver 55: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:31,866 WARNING:Driver 16: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:31,869 WARNING:Driver  1: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:31,872 WARNING:Driver  4: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:31,874 WARNING:Driver 81: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:31,898 WARNING:Driver 30: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:31,903 WARNING:Driver 77: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:32,267 INFO:Using cached data for car_data
-2025-04-11 01:32:32,300 INFO:Using cached data for position_data
-2025-04-11 01:32:32,806 INFO:Using cached data for weather_data
-2025-04-11 01:32:32,806 INFO:Using cached data for race_control_messages
-2025-04-11 01:32:32,807 WARNING:Driver 63 completed the race distance 00:00.427000 before the recorded end of the session.
-2025-04-11 01:32:32,821 INFO:Finished loading data for 20 drivers: ['63', '44', '55', '16', '1', '4', '81', '27', '22', '11', '14', '20', '24', '43', '18', '30', '31', '77', '23', '10']
-2025-04-11 01:32:32,821 INFO:[Race] Data verification complete.
-2025-04-11 01:32:32,827 INFO:Loading data for Las Vegas Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:32:32,828 INFO:Using cached data for session_info
-2025-04-11 01:32:32,829 INFO:Using cached data for driver_info
-2025-04-11 01:32:33,332 INFO:Using cached data for session_status_data
-2025-04-11 01:32:33,333 INFO:Using cached data for track_status_data
-2025-04-11 01:32:33,334 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:32:33,335 INFO:Using cached data for timing_app_data
-2025-04-11 01:32:33,335 INFO:Processing timing data...
-2025-04-11 01:32:33,542 INFO:Using cached data for car_data
-2025-04-11 01:32:33,566 INFO:Using cached data for position_data
-2025-04-11 01:32:33,907 INFO:Using cached data for weather_data
-2025-04-11 01:32:33,908 INFO:Using cached data for race_control_messages
-2025-04-11 01:32:33,919 INFO:Finished loading data for 20 drivers: ['63', '55', '10', '16', '1', '4', '22', '81', '27', '44', '31', '20', '24', '43', '30', '11', '14', '23', '77', '18']
-2025-04-11 01:32:33,919 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:32:33,924 INFO:No sprint session for 22
-2025-04-11 01:32:33,930 INFO:Loading data for Las Vegas Grand Prix - Race [v3.5.3]
-2025-04-11 01:32:33,930 INFO:Using cached data for session_info
-2025-04-11 01:32:33,930 INFO:Using cached data for driver_info
-2025-04-11 01:32:33,936 INFO:Using cached data for session_status_data
-2025-04-11 01:32:33,936 INFO:Using cached data for lap_count
-2025-04-11 01:32:33,936 INFO:Using cached data for track_status_data
-2025-04-11 01:32:33,938 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:32:33,938 INFO:Using cached data for timing_app_data
-2025-04-11 01:32:33,938 INFO:Processing timing data...
-2025-04-11 01:32:34,157 WARNING:Driver 63: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:34,160 WARNING:Driver 44: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:34,162 WARNING:Driver 55: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:34,165 WARNING:Driver 16: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:34,168 WARNING:Driver  1: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:34,170 WARNING:Driver  4: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:34,173 WARNING:Driver 81: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:34,196 WARNING:Driver 30: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:34,201 WARNING:Driver 77: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:34,221 INFO:Using cached data for car_data
-2025-04-11 01:32:34,250 INFO:Using cached data for position_data
-2025-04-11 01:32:34,744 INFO:Using cached data for weather_data
-2025-04-11 01:32:34,745 INFO:Using cached data for race_control_messages
-2025-04-11 01:32:34,746 WARNING:Driver 63 completed the race distance 00:00.427000 before the recorded end of the session.
-2025-04-11 01:32:34,759 INFO:Finished loading data for 20 drivers: ['63', '44', '55', '16', '1', '4', '81', '27', '22', '11', '14', '20', '24', '43', '18', '30', '31', '77', '23', '10']
-2025-04-11 01:32:34,803 INFO:Loading data for Las Vegas Grand Prix - Race [v3.5.3]
-2025-04-11 01:32:34,803 INFO:Using cached data for session_info
-2025-04-11 01:32:34,803 INFO:Using cached data for driver_info
-2025-04-11 01:32:34,810 INFO:Using cached data for session_status_data
-2025-04-11 01:32:34,810 INFO:Using cached data for lap_count
-2025-04-11 01:32:34,810 INFO:Using cached data for track_status_data
-2025-04-11 01:32:34,811 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:32:34,811 INFO:Using cached data for timing_app_data
-2025-04-11 01:32:34,811 INFO:Processing timing data...
-2025-04-11 01:32:35,030 WARNING:Driver 63: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:35,033 WARNING:Driver 44: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:35,036 WARNING:Driver 55: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:35,038 WARNING:Driver 16: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:35,041 WARNING:Driver  1: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:35,043 WARNING:Driver  4: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:35,046 WARNING:Driver 81: Lap timing integrity check failed for 1 lap(s)
-2025-04-11 01:32:35,069 WARNING:Driver 30: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:35,075 WARNING:Driver 77: Lap timing integrity check failed for 2 lap(s)
-2025-04-11 01:32:35,102 INFO:Using cached data for car_data
-2025-04-11 01:32:35,133 INFO:Using cached data for position_data
-2025-04-11 01:32:35,593 INFO:Using cached data for weather_data
-2025-04-11 01:32:35,594 INFO:Using cached data for race_control_messages
-2025-04-11 01:32:35,595 WARNING:Driver 63 completed the race distance 00:00.427000 before the recorded end of the session.
-2025-04-11 01:32:35,607 INFO:Finished loading data for 20 drivers: ['63', '44', '55', '16', '1', '4', '81', '27', '22', '11', '14', '20', '24', '43', '18', '30', '31', '77', '23', '10']
-2025-04-11 01:32:35,614 INFO:Processed Round 22 - Las Vegas Grand Prix
-2025-04-11 01:33:35,637 INFO:Loading data for Qatar Grand Prix - Race [v3.5.3]
-2025-04-11 01:33:35,638 INFO:Using cached data for session_info
-2025-04-11 01:33:35,639 INFO:Using cached data for driver_info
-2025-04-11 01:33:36,055 INFO:Using cached data for weather_data
-2025-04-11 01:33:36,056 INFO:Using cached data for race_control_messages
-2025-04-11 01:33:36,057 INFO:Finished loading data for 20 drivers: ['1', '16', '81', '63', '10', '55', '14', '24', '20', '4', '77', '44', '22', '30', '23', '27', '11', '18', '43', '31']
-2025-04-11 01:33:36,071 INFO:Loading data for Qatar Grand Prix - Race [v3.5.3]
-2025-04-11 01:33:36,071 INFO:Using cached data for session_info
-2025-04-11 01:33:36,071 INFO:Using cached data for driver_info
-2025-04-11 01:33:36,081 INFO:Using cached data for session_status_data
-2025-04-11 01:33:36,081 INFO:Using cached data for lap_count
-2025-04-11 01:33:36,082 INFO:Using cached data for track_status_data
-2025-04-11 01:33:36,085 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:33:36,086 INFO:Using cached data for timing_app_data
-2025-04-11 01:33:36,086 INFO:Processing timing data...
-2025-04-11 01:33:36,782 INFO:Using cached data for car_data
-2025-04-11 01:33:36,853 INFO:Using cached data for position_data
-2025-04-11 01:33:37,382 INFO:Using cached data for weather_data
-2025-04-11 01:33:37,383 INFO:Using cached data for race_control_messages
-2025-04-11 01:33:37,419 INFO:Finished loading data for 20 drivers: ['1', '16', '81', '63', '10', '55', '14', '24', '20', '4', '77', '44', '22', '30', '23', '27', '11', '18', '43', '31']
-2025-04-11 01:33:37,419 INFO:[Race] Data verification complete.
-2025-04-11 01:33:37,425 INFO:Loading data for Qatar Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:33:37,426 INFO:Using cached data for session_info
-2025-04-11 01:33:37,426 INFO:Using cached data for driver_info
-2025-04-11 01:33:38,024 INFO:Using cached data for session_status_data
-2025-04-11 01:33:38,024 INFO:Using cached data for track_status_data
-2025-04-11 01:33:38,026 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:33:38,027 INFO:Using cached data for timing_app_data
-2025-04-11 01:33:38,027 INFO:Processing timing data...
-2025-04-11 01:33:38,238 INFO:Using cached data for car_data
-2025-04-11 01:33:38,273 INFO:Using cached data for position_data
-2025-04-11 01:33:38,573 INFO:Using cached data for weather_data
-2025-04-11 01:33:38,574 INFO:Using cached data for race_control_messages
-2025-04-11 01:33:38,586 INFO:Finished loading data for 20 drivers: ['1', '63', '4', '81', '16', '44', '55', '14', '11', '20', '10', '24', '77', '22', '18', '23', '30', '27', '43', '31']
-2025-04-11 01:33:38,586 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:33:38,590 INFO:Loading data for Qatar Grand Prix - Sprint [v3.5.3]
-2025-04-11 01:33:38,591 INFO:Using cached data for session_info
-2025-04-11 01:33:38,591 INFO:Using cached data for driver_info
-2025-04-11 01:33:39,069 INFO:Using cached data for session_status_data
-2025-04-11 01:33:39,069 INFO:Using cached data for lap_count
-2025-04-11 01:33:39,070 INFO:Using cached data for track_status_data
-2025-04-11 01:33:39,072 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:33:39,073 INFO:Using cached data for timing_app_data
-2025-04-11 01:33:39,073 INFO:Processing timing data...
-2025-04-11 01:33:39,246 INFO:Using cached data for car_data
-2025-04-11 01:33:39,265 INFO:Using cached data for position_data
-2025-04-11 01:33:39,516 INFO:Using cached data for weather_data
-2025-04-11 01:33:39,517 INFO:Using cached data for race_control_messages
-2025-04-11 01:33:39,541 INFO:Finished loading data for 20 drivers: ['81', '4', '63', '55', '16', '44', '27', '1', '10', '20', '14', '77', '18', '31', '23', '30', '22', '43', '24', '11']
-2025-04-11 01:33:39,541 INFO:[Sprint] Data verification complete.
-2025-04-11 01:33:39,548 INFO:Loading data for Qatar Grand Prix - Race [v3.5.3]
-2025-04-11 01:33:39,548 INFO:Using cached data for session_info
-2025-04-11 01:33:39,549 INFO:Using cached data for driver_info
-2025-04-11 01:33:39,555 INFO:Using cached data for session_status_data
-2025-04-11 01:33:39,555 INFO:Using cached data for lap_count
-2025-04-11 01:33:39,555 INFO:Using cached data for track_status_data
-2025-04-11 01:33:39,558 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:33:39,559 INFO:Using cached data for timing_app_data
-2025-04-11 01:33:39,559 INFO:Processing timing data...
-2025-04-11 01:33:39,889 INFO:Using cached data for car_data
-2025-04-11 01:33:39,947 INFO:Using cached data for position_data
-2025-04-11 01:33:40,469 INFO:Using cached data for weather_data
-2025-04-11 01:33:40,470 INFO:Using cached data for race_control_messages
-2025-04-11 01:33:40,506 INFO:Finished loading data for 20 drivers: ['1', '16', '81', '63', '10', '55', '14', '24', '20', '4', '77', '44', '22', '30', '23', '27', '11', '18', '43', '31']
-2025-04-11 01:33:40,542 INFO:Loading data for Qatar Grand Prix - Race [v3.5.3]
-2025-04-11 01:33:40,542 INFO:Using cached data for session_info
-2025-04-11 01:33:40,542 INFO:Using cached data for driver_info
-2025-04-11 01:33:40,549 INFO:Using cached data for session_status_data
-2025-04-11 01:33:40,549 INFO:Using cached data for lap_count
-2025-04-11 01:33:40,549 INFO:Using cached data for track_status_data
-2025-04-11 01:33:40,550 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:33:40,551 INFO:Using cached data for timing_app_data
-2025-04-11 01:33:40,551 INFO:Processing timing data...
-2025-04-11 01:33:40,884 INFO:Using cached data for car_data
-2025-04-11 01:33:40,946 INFO:Using cached data for position_data
-2025-04-11 01:33:41,483 INFO:Using cached data for weather_data
-2025-04-11 01:33:41,484 INFO:Using cached data for race_control_messages
-2025-04-11 01:33:41,520 INFO:Finished loading data for 20 drivers: ['1', '16', '81', '63', '10', '55', '14', '24', '20', '4', '77', '44', '22', '30', '23', '27', '11', '18', '43', '31']
-2025-04-11 01:33:41,526 INFO:Processed Round 23 - Qatar Grand Prix
-2025-04-11 01:34:41,545 INFO:Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
-2025-04-11 01:34:41,547 INFO:Using cached data for session_info
-2025-04-11 01:34:41,547 INFO:Using cached data for driver_info
-2025-04-11 01:34:41,915 DEBUG:Failed to parse timestamp '-1:58:03.658' in Ergastresponse.
-2025-04-11 01:34:41,929 INFO:Using cached data for weather_data
-2025-04-11 01:34:41,931 INFO:Using cached data for race_control_messages
-2025-04-11 01:34:41,931 INFO:Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
-2025-04-11 01:34:41,945 INFO:Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
-2025-04-11 01:34:41,945 INFO:Using cached data for session_info
-2025-04-11 01:34:41,945 INFO:Using cached data for driver_info
-2025-04-11 01:34:41,948 DEBUG:Failed to parse timestamp '-1:58:03.658' in Ergastresponse.
-2025-04-11 01:34:41,955 INFO:Using cached data for session_status_data
-2025-04-11 01:34:41,955 INFO:Using cached data for lap_count
-2025-04-11 01:34:41,955 INFO:Using cached data for track_status_data
-2025-04-11 01:34:41,959 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:34:41,961 INFO:Using cached data for timing_app_data
-2025-04-11 01:34:41,961 INFO:Processing timing data...
-2025-04-11 01:34:42,677 INFO:Using cached data for car_data
-2025-04-11 01:34:42,751 INFO:Using cached data for position_data
-2025-04-11 01:34:43,293 INFO:Using cached data for weather_data
-2025-04-11 01:34:43,294 INFO:Using cached data for race_control_messages
-2025-04-11 01:34:43,322 INFO:Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
-2025-04-11 01:34:43,322 INFO:[Race] Data verification complete.
-2025-04-11 01:34:43,328 INFO:Loading data for Abu Dhabi Grand Prix - Qualifying [v3.5.3]
-2025-04-11 01:34:43,329 INFO:Using cached data for session_info
-2025-04-11 01:34:43,329 INFO:Using cached data for driver_info
-2025-04-11 01:34:43,855 INFO:Using cached data for session_status_data
-2025-04-11 01:34:43,855 INFO:Using cached data for track_status_data
-2025-04-11 01:34:43,856 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:34:43,857 INFO:Using cached data for timing_app_data
-2025-04-11 01:34:43,857 INFO:Processing timing data...
-2025-04-11 01:34:44,040 INFO:Using cached data for car_data
-2025-04-11 01:34:44,057 INFO:Using cached data for position_data
-2025-04-11 01:34:44,325 INFO:Using cached data for weather_data
-2025-04-11 01:34:44,326 INFO:Using cached data for race_control_messages
-2025-04-11 01:34:44,337 INFO:Finished loading data for 20 drivers: ['4', '81', '55', '27', '1', '10', '63', '14', '77', '11', '22', '30', '18', '16', '20', '23', '24', '44', '43', '61']
-2025-04-11 01:34:44,337 INFO:[Qualifying] Data verification complete.
-2025-04-11 01:34:44,341 INFO:No sprint session for 24
-2025-04-11 01:34:44,348 INFO:Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
-2025-04-11 01:34:44,348 INFO:Using cached data for session_info
-2025-04-11 01:34:44,348 INFO:Using cached data for driver_info
-2025-04-11 01:34:44,350 DEBUG:Failed to parse timestamp '-1:58:03.658' in Ergastresponse.
-2025-04-11 01:34:44,354 INFO:Using cached data for session_status_data
-2025-04-11 01:34:44,355 INFO:Using cached data for lap_count
-2025-04-11 01:34:44,355 INFO:Using cached data for track_status_data
-2025-04-11 01:34:44,356 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:34:44,356 INFO:Using cached data for timing_app_data
-2025-04-11 01:34:44,356 INFO:Processing timing data...
-2025-04-11 01:34:44,666 INFO:Using cached data for car_data
-2025-04-11 01:34:44,725 INFO:Using cached data for position_data
-2025-04-11 01:34:45,298 INFO:Using cached data for weather_data
-2025-04-11 01:34:45,299 INFO:Using cached data for race_control_messages
-2025-04-11 01:34:45,327 INFO:Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
-2025-04-11 01:34:45,368 INFO:Loading data for Abu Dhabi Grand Prix - Race [v3.5.3]
-2025-04-11 01:34:45,369 INFO:Using cached data for session_info
-2025-04-11 01:34:45,369 INFO:Using cached data for driver_info
-2025-04-11 01:34:45,370 DEBUG:Failed to parse timestamp '-1:58:03.658' in Ergastresponse.
-2025-04-11 01:34:45,376 INFO:Using cached data for session_status_data
-2025-04-11 01:34:45,376 INFO:Using cached data for lap_count
-2025-04-11 01:34:45,376 INFO:Using cached data for track_status_data
-2025-04-11 01:34:45,379 INFO:Using cached data for _extended_timing_data
-2025-04-11 01:34:45,380 INFO:Using cached data for timing_app_data
-2025-04-11 01:34:45,380 INFO:Processing timing data...
-2025-04-11 01:34:45,686 INFO:Using cached data for car_data
-2025-04-11 01:34:45,744 INFO:Using cached data for position_data
-2025-04-11 01:34:46,261 INFO:Using cached data for weather_data
-2025-04-11 01:34:46,262 INFO:Using cached data for race_control_messages
-2025-04-11 01:34:46,290 INFO:Finished loading data for 20 drivers: ['4', '55', '16', '44', '63', '1', '10', '27', '14', '81', '23', '22', '24', '18', '61', '20', '30', '77', '43', '11']
-2025-04-11 01:34:46,295 INFO:Processed Round 24 - Abu Dhabi Grand Prix
-2025-04-11 01:35:46,461 INFO:Saved full season driver data: 2024_fantasy_driver_data.xlsx
-2025-04-11 01:35:46,475 INFO:Saved full season constructor data: 2024_fantasy_constructor_data.xlsx
-2025-04-11 01:35:46,569 INFO: Combined file saved: GeneratedSpreadsheets/all_seasons_fantasy_driver_data.xlsx
-2025-04-11 01:35:46,589 INFO: Combined file saved: GeneratedSpreadsheets/all_seasons_fantasy_constructor_data.xlsx
+2025-04-17 22:35:08,980 INFO:Starting season 2019...
+2025-04-17 22:35:09,721 INFO:
+===== Starting Processing for Round 1 - Australian Grand Prix =====
+2025-04-17 22:35:09,728 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-04-17 22:35:09,729 INFO:Using cached data for session_info
+2025-04-17 22:35:09,729 INFO:Using cached data for driver_info
+2025-04-17 22:35:10,598 INFO:Using cached data for session_status_data
+2025-04-17 22:35:10,599 INFO:Using cached data for lap_count
+2025-04-17 22:35:10,599 INFO:Using cached data for track_status_data
+2025-04-17 22:35:10,604 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:35:10,605 INFO:Using cached data for timing_app_data
+2025-04-17 22:35:10,606 INFO:Processing timing data...
+2025-04-17 22:35:10,886 WARNING:Driver 16: Lap timing integrity check failed for 1 lap(s)
+2025-04-17 22:35:11,336 INFO:Using cached data for car_data
+2025-04-17 22:35:11,355 INFO:Using cached data for position_data
+2025-04-17 22:35:11,754 INFO:Using cached data for weather_data
+2025-04-17 22:35:11,755 INFO:Using cached data for race_control_messages
+2025-04-17 22:35:11,756 WARNING:Driver 77 completed the race distance 00:00.387000 before the recorded end of the session.
+2025-04-17 22:35:11,776 INFO:Finished loading data for 20 drivers: ['77', '44', '33', '5', '16', '20', '27', '7', '18', '26', '10', '4', '11', '23', '99', '63', '88', '8', '3', '55']
+2025-04-17 22:35:11,776 INFO:[Race] Data verification complete.
+2025-04-17 22:35:11,782 INFO:Loading data for Australian Grand Prix - Qualifying [v3.5.3]
+2025-04-17 22:35:11,782 INFO:Using cached data for session_info
+2025-04-17 22:35:11,782 INFO:Using cached data for driver_info
+2025-04-17 22:35:12,378 INFO:Using cached data for session_status_data
+2025-04-17 22:35:12,379 INFO:Using cached data for track_status_data
+2025-04-17 22:35:12,380 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:35:12,381 INFO:Using cached data for timing_app_data
+2025-04-17 22:35:12,381 INFO:Processing timing data...
+2025-04-17 22:35:12,599 INFO:Using cached data for car_data
+2025-04-17 22:35:12,610 INFO:Using cached data for position_data
+2025-04-17 22:35:12,885 INFO:Using cached data for weather_data
+2025-04-17 22:35:12,886 INFO:Using cached data for race_control_messages
+2025-04-17 22:35:12,897 INFO:Finished loading data for 20 drivers: ['44', '77', '5', '33', '16', '8', '20', '4', '7', '11', '27', '3', '23', '99', '26', '18', '10', '55', '63', '88']
+2025-04-17 22:35:12,897 INFO:[Qualifying] Data verification complete.
+2025-04-17 22:35:12,901 INFO:No sprint session for 1
+2025-04-17 22:35:12,909 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-04-17 22:35:12,909 INFO:Using cached data for session_info
+2025-04-17 22:35:12,909 INFO:Using cached data for driver_info
+2025-04-17 22:35:12,915 INFO:Using cached data for session_status_data
+2025-04-17 22:35:12,915 INFO:Using cached data for lap_count
+2025-04-17 22:35:12,915 INFO:Using cached data for track_status_data
+2025-04-17 22:35:12,917 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:35:12,917 INFO:Using cached data for timing_app_data
+2025-04-17 22:35:12,917 INFO:Processing timing data...
+2025-04-17 22:35:13,173 WARNING:Driver 16: Lap timing integrity check failed for 1 lap(s)
+2025-04-17 22:35:13,229 INFO:Using cached data for car_data
+2025-04-17 22:35:13,242 INFO:Using cached data for position_data
+2025-04-17 22:35:13,638 INFO:Using cached data for weather_data
+2025-04-17 22:35:13,639 INFO:Using cached data for race_control_messages
+2025-04-17 22:35:13,640 WARNING:Driver 77 completed the race distance 00:00.387000 before the recorded end of the session.
+2025-04-17 22:35:13,658 INFO:Finished loading data for 20 drivers: ['77', '44', '33', '5', '16', '20', '27', '7', '18', '26', '10', '4', '11', '23', '99', '63', '88', '8', '3', '55']
+2025-04-17 22:35:13,698 INFO:Loading data for Australian Grand Prix - Race [v3.5.3]
+2025-04-17 22:35:13,698 INFO:Using cached data for session_info
+2025-04-17 22:35:13,698 INFO:Using cached data for driver_info
+2025-04-17 22:35:13,704 INFO:Using cached data for session_status_data
+2025-04-17 22:35:13,704 INFO:Using cached data for lap_count
+2025-04-17 22:35:13,704 INFO:Using cached data for track_status_data
+2025-04-17 22:35:13,706 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:35:13,706 INFO:Using cached data for timing_app_data
+2025-04-17 22:35:13,706 INFO:Processing timing data...
+2025-04-17 22:35:13,959 WARNING:Driver 16: Lap timing integrity check failed for 1 lap(s)
+2025-04-17 22:35:14,020 INFO:Using cached data for car_data
+2025-04-17 22:35:14,032 INFO:Using cached data for position_data
+2025-04-17 22:35:14,422 INFO:Using cached data for weather_data
+2025-04-17 22:35:14,423 INFO:Using cached data for race_control_messages
+2025-04-17 22:35:14,424 WARNING:Driver 77 completed the race distance 00:00.387000 before the recorded end of the session.
+2025-04-17 22:35:14,441 INFO:Finished loading data for 20 drivers: ['77', '44', '33', '5', '16', '20', '27', '7', '18', '26', '10', '4', '11', '23', '99', '63', '88', '8', '3', '55']
+2025-04-17 22:35:14,448 INFO:Processed Round 1 - Australian Grand Prix
+2025-04-17 22:36:14,471 INFO:
+===== Starting Processing for Round 2 - Bahrain Grand Prix =====
+2025-04-17 22:36:14,480 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-04-17 22:36:14,482 INFO:Using cached data for session_info
+2025-04-17 22:36:14,482 INFO:Using cached data for driver_info
+2025-04-17 22:36:15,341 INFO:Using cached data for session_status_data
+2025-04-17 22:36:15,341 INFO:Using cached data for lap_count
+2025-04-17 22:36:15,342 INFO:Using cached data for track_status_data
+2025-04-17 22:36:15,346 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:36:15,348 INFO:Using cached data for timing_app_data
+2025-04-17 22:36:15,348 INFO:Processing timing data...
+2025-04-17 22:36:16,129 INFO:Using cached data for car_data
+2025-04-17 22:36:16,149 INFO:Using cached data for position_data
+2025-04-17 22:36:16,570 INFO:Using cached data for weather_data
+2025-04-17 22:36:16,570 INFO:Using cached data for race_control_messages
+2025-04-17 22:36:16,571 WARNING:Driver 44 completed the race distance 00:00.070000 before the recorded end of the session.
+2025-04-17 22:36:16,601 INFO:Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '4', '7', '10', '23', '11', '99', '26', '20', '18', '63', '88', '27', '3', '55', '8']
+2025-04-17 22:36:16,602 INFO:[Race] Data verification complete.
+2025-04-17 22:36:16,607 INFO:Loading data for Bahrain Grand Prix - Qualifying [v3.5.3]
+2025-04-17 22:36:16,607 INFO:Using cached data for session_info
+2025-04-17 22:36:16,607 INFO:Using cached data for driver_info
+2025-04-17 22:36:17,102 INFO:Using cached data for session_status_data
+2025-04-17 22:36:17,103 INFO:Using cached data for track_status_data
+2025-04-17 22:36:17,106 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:36:17,106 INFO:Using cached data for timing_app_data
+2025-04-17 22:36:17,106 INFO:Processing timing data...
+2025-04-17 22:36:17,284 INFO:Using cached data for car_data
+2025-04-17 22:36:17,296 INFO:Using cached data for position_data
+2025-04-17 22:36:17,578 INFO:Using cached data for weather_data
+2025-04-17 22:36:17,579 INFO:Using cached data for race_control_messages
+2025-04-17 22:36:17,591 INFO:Finished loading data for 20 drivers: ['16', '5', '44', '77', '33', '20', '55', '8', '7', '4', '3', '23', '10', '11', '26', '99', '27', '18', '63', '88']
+2025-04-17 22:36:17,591 INFO:[Qualifying] Data verification complete.
+2025-04-17 22:36:17,595 INFO:No sprint session for 2
+2025-04-17 22:36:17,604 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-04-17 22:36:17,604 INFO:Using cached data for session_info
+2025-04-17 22:36:17,605 INFO:Using cached data for driver_info
+2025-04-17 22:36:17,612 INFO:Using cached data for session_status_data
+2025-04-17 22:36:17,612 INFO:Using cached data for lap_count
+2025-04-17 22:36:17,612 INFO:Using cached data for track_status_data
+2025-04-17 22:36:17,614 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:36:17,614 INFO:Using cached data for timing_app_data
+2025-04-17 22:36:17,614 INFO:Processing timing data...
+2025-04-17 22:36:17,990 INFO:Using cached data for car_data
+2025-04-17 22:36:18,004 INFO:Using cached data for position_data
+2025-04-17 22:36:18,493 INFO:Using cached data for weather_data
+2025-04-17 22:36:18,494 INFO:Using cached data for race_control_messages
+2025-04-17 22:36:18,495 WARNING:Driver 44 completed the race distance 00:00.070000 before the recorded end of the session.
+2025-04-17 22:36:18,529 INFO:Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '4', '7', '10', '23', '11', '99', '26', '20', '18', '63', '88', '27', '3', '55', '8']
+2025-04-17 22:36:18,588 INFO:Loading data for Bahrain Grand Prix - Race [v3.5.3]
+2025-04-17 22:36:18,588 INFO:Using cached data for session_info
+2025-04-17 22:36:18,588 INFO:Using cached data for driver_info
+2025-04-17 22:36:18,596 INFO:Using cached data for session_status_data
+2025-04-17 22:36:18,596 INFO:Using cached data for lap_count
+2025-04-17 22:36:18,596 INFO:Using cached data for track_status_data
+2025-04-17 22:36:18,598 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:36:18,598 INFO:Using cached data for timing_app_data
+2025-04-17 22:36:18,598 INFO:Processing timing data...
+2025-04-17 22:36:18,983 INFO:Using cached data for car_data
+2025-04-17 22:36:18,998 INFO:Using cached data for position_data
+2025-04-17 22:36:19,474 INFO:Using cached data for weather_data
+2025-04-17 22:36:19,475 INFO:Using cached data for race_control_messages
+2025-04-17 22:36:19,476 WARNING:Driver 44 completed the race distance 00:00.070000 before the recorded end of the session.
+2025-04-17 22:36:19,512 INFO:Finished loading data for 20 drivers: ['44', '77', '16', '33', '5', '4', '7', '10', '23', '11', '99', '26', '20', '18', '63', '88', '27', '3', '55', '8']
+2025-04-17 22:36:19,518 INFO:Processed Round 2 - Bahrain Grand Prix
+2025-04-17 22:37:19,537 INFO:
+===== Starting Processing for Round 3 - Chinese Grand Prix =====
+2025-04-17 22:37:19,547 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
+2025-04-17 22:37:19,547 INFO:Using cached data for session_info
+2025-04-17 22:37:19,548 INFO:Using cached data for driver_info
+2025-04-17 22:37:20,218 INFO:Using cached data for session_status_data
+2025-04-17 22:37:20,219 INFO:Using cached data for lap_count
+2025-04-17 22:37:20,219 INFO:Using cached data for track_status_data
+2025-04-17 22:37:20,224 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:37:20,225 INFO:Using cached data for timing_app_data
+2025-04-17 22:37:20,225 INFO:Processing timing data...
+2025-04-17 22:37:21,060 INFO:Using cached data for car_data
+2025-04-17 22:37:21,080 INFO:Using cached data for position_data
+2025-04-17 22:37:21,510 INFO:Using cached data for weather_data
+2025-04-17 22:37:21,510 INFO:Using cached data for race_control_messages
+2025-04-17 22:37:21,511 WARNING:Driver 44 completed the race distance 00:00.423000 before the recorded end of the session.
+2025-04-17 22:37:21,522 INFO:Finished loading data for 20 drivers: ['44', '77', '5', '33', '16', '10', '3', '11', '7', '23', '8', '18', '20', '55', '99', '63', '88', '4', '26', '27']
+2025-04-17 22:37:21,523 INFO:[Race] Data verification complete.
+2025-04-17 22:37:21,528 INFO:Loading data for Chinese Grand Prix - Qualifying [v3.5.3]
+2025-04-17 22:37:21,528 INFO:Using cached data for session_info
+2025-04-17 22:37:21,528 INFO:Using cached data for driver_info
+2025-04-17 22:37:22,059 INFO:Using cached data for session_status_data
+2025-04-17 22:37:22,060 INFO:Using cached data for track_status_data
+2025-04-17 22:37:22,061 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:37:22,062 INFO:Using cached data for timing_app_data
+2025-04-17 22:37:22,062 INFO:Processing timing data...
+2025-04-17 22:37:22,205 WARNING:No lap data for driver 23
+2025-04-17 22:37:22,231 WARNING:Failed to perform lap accuracy check - all laps marked as inaccurate (driver 23)
+2025-04-17 22:37:22,244 INFO:Using cached data for car_data
+2025-04-17 22:37:22,278 INFO:Using cached data for position_data
+2025-04-17 22:37:22,556 INFO:Using cached data for weather_data
+2025-04-17 22:37:22,556 INFO:Using cached data for race_control_messages
+2025-04-17 22:37:22,566 INFO:Finished loading data for 20 drivers: ['77', '44', '5', '16', '33', '10', '3', '27', '20', '8', '26', '11', '7', '55', '4', '18', '63', '88', '23', '99']
+2025-04-17 22:37:22,566 INFO:[Qualifying] Data verification complete.
+2025-04-17 22:37:22,569 INFO:No sprint session for 3
+2025-04-17 22:37:22,576 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
+2025-04-17 22:37:22,577 INFO:Using cached data for session_info
+2025-04-17 22:37:22,577 INFO:Using cached data for driver_info
+2025-04-17 22:37:22,583 INFO:Using cached data for session_status_data
+2025-04-17 22:37:22,583 INFO:Using cached data for lap_count
+2025-04-17 22:37:22,583 INFO:Using cached data for track_status_data
+2025-04-17 22:37:22,585 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:37:22,586 INFO:Using cached data for timing_app_data
+2025-04-17 22:37:22,586 INFO:Processing timing data...
+2025-04-17 22:37:22,899 INFO:Using cached data for car_data
+2025-04-17 22:37:22,911 INFO:Using cached data for position_data
+2025-04-17 22:37:23,334 INFO:Using cached data for weather_data
+2025-04-17 22:37:23,335 INFO:Using cached data for race_control_messages
+2025-04-17 22:37:23,336 WARNING:Driver 44 completed the race distance 00:00.423000 before the recorded end of the session.
+2025-04-17 22:37:23,347 INFO:Finished loading data for 20 drivers: ['44', '77', '5', '33', '16', '10', '3', '11', '7', '23', '8', '18', '20', '55', '99', '63', '88', '4', '26', '27']
+2025-04-17 22:37:23,403 INFO:Loading data for Chinese Grand Prix - Race [v3.5.3]
+2025-04-17 22:37:23,403 INFO:Using cached data for session_info
+2025-04-17 22:37:23,403 INFO:Using cached data for driver_info
+2025-04-17 22:37:23,410 INFO:Using cached data for session_status_data
+2025-04-17 22:37:23,410 INFO:Using cached data for lap_count
+2025-04-17 22:37:23,410 INFO:Using cached data for track_status_data
+2025-04-17 22:37:23,411 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:37:23,412 INFO:Using cached data for timing_app_data
+2025-04-17 22:37:23,412 INFO:Processing timing data...
+2025-04-17 22:37:23,730 INFO:Using cached data for car_data
+2025-04-17 22:37:23,745 INFO:Using cached data for position_data
+2025-04-17 22:37:24,158 INFO:Using cached data for weather_data
+2025-04-17 22:37:24,158 INFO:Using cached data for race_control_messages
+2025-04-17 22:37:24,159 WARNING:Driver 44 completed the race distance 00:00.423000 before the recorded end of the session.
+2025-04-17 22:37:24,170 INFO:Finished loading data for 20 drivers: ['44', '77', '5', '33', '16', '10', '3', '11', '7', '23', '8', '18', '20', '55', '99', '63', '88', '4', '26', '27']
+2025-04-17 22:37:24,175 INFO:Processed Round 3 - Chinese Grand Prix
+2025-04-17 22:38:24,194 INFO:
+===== Starting Processing for Round 4 - Azerbaijan Grand Prix =====
+2025-04-17 22:38:24,201 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-04-17 22:38:24,202 INFO:Using cached data for session_info
+2025-04-17 22:38:24,202 INFO:Using cached data for driver_info
+2025-04-17 22:38:24,717 INFO:Using cached data for session_status_data
+2025-04-17 22:38:24,718 INFO:Using cached data for lap_count
+2025-04-17 22:38:24,719 INFO:Using cached data for track_status_data
+2025-04-17 22:38:24,724 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:38:24,726 INFO:Using cached data for timing_app_data
+2025-04-17 22:38:24,726 INFO:Processing timing data...
+2025-04-17 22:38:25,671 INFO:Using cached data for car_data
+2025-04-17 22:38:25,691 INFO:Using cached data for position_data
+2025-04-17 22:38:26,115 INFO:Using cached data for weather_data
+2025-04-17 22:38:26,116 INFO:Using cached data for race_control_messages
+2025-04-17 22:38:26,117 WARNING:Driver 77 completed the race distance 00:00.075000 before the recorded end of the session.
+2025-04-17 22:38:26,136 INFO:Finished loading data for 20 drivers: ['77', '44', '5', '33', '16', '11', '55', '4', '18', '7', '23', '99', '20', '27', '63', '88', '10', '8', '26', '3']
+2025-04-17 22:38:26,137 INFO:[Race] Data verification complete.
+2025-04-17 22:38:26,142 INFO:Loading data for Azerbaijan Grand Prix - Qualifying [v3.5.3]
+2025-04-17 22:38:26,142 INFO:Using cached data for session_info
+2025-04-17 22:38:26,142 INFO:Using cached data for driver_info
+2025-04-17 22:38:26,659 DEBUG:Failed to parse timestamp '' in Ergastresponse.
+2025-04-17 22:38:26,660 DEBUG:Failed to parse timestamp '' in Ergastresponse.
+2025-04-17 22:38:26,673 INFO:Using cached data for session_status_data
+2025-04-17 22:38:26,673 INFO:Using cached data for track_status_data
+2025-04-17 22:38:26,675 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:38:26,675 INFO:Using cached data for timing_app_data
+2025-04-17 22:38:26,675 INFO:Processing timing data...
+2025-04-17 22:38:26,883 INFO:Using cached data for car_data
+2025-04-17 22:38:26,899 INFO:Using cached data for position_data
+2025-04-17 22:38:27,322 INFO:Using cached data for weather_data
+2025-04-17 22:38:27,322 INFO:Using cached data for race_control_messages
+2025-04-17 22:38:27,333 INFO:Finished loading data for 20 drivers: ['77', '44', '5', '33', '11', '26', '4', '99', '16', '55', '3', '23', '20', '18', '8', '27', '63', '88', '7', '10']
+2025-04-17 22:38:27,333 INFO:[Qualifying] Data verification complete.
+2025-04-17 22:38:27,337 INFO:No sprint session for 4
+2025-04-17 22:38:27,345 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-04-17 22:38:27,346 INFO:Using cached data for session_info
+2025-04-17 22:38:27,346 INFO:Using cached data for driver_info
+2025-04-17 22:38:27,352 INFO:Using cached data for session_status_data
+2025-04-17 22:38:27,352 INFO:Using cached data for lap_count
+2025-04-17 22:38:27,352 INFO:Using cached data for track_status_data
+2025-04-17 22:38:27,354 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:38:27,354 INFO:Using cached data for timing_app_data
+2025-04-17 22:38:27,354 INFO:Processing timing data...
+2025-04-17 22:38:27,659 INFO:Using cached data for car_data
+2025-04-17 22:38:27,672 INFO:Using cached data for position_data
+2025-04-17 22:38:28,095 INFO:Using cached data for weather_data
+2025-04-17 22:38:28,095 INFO:Using cached data for race_control_messages
+2025-04-17 22:38:28,096 WARNING:Driver 77 completed the race distance 00:00.075000 before the recorded end of the session.
+2025-04-17 22:38:28,117 INFO:Finished loading data for 20 drivers: ['77', '44', '5', '33', '16', '11', '55', '4', '18', '7', '23', '99', '20', '27', '63', '88', '10', '8', '26', '3']
+2025-04-17 22:38:28,161 INFO:Loading data for Azerbaijan Grand Prix - Race [v3.5.3]
+2025-04-17 22:38:28,161 INFO:Using cached data for session_info
+2025-04-17 22:38:28,161 INFO:Using cached data for driver_info
+2025-04-17 22:38:28,168 INFO:Using cached data for session_status_data
+2025-04-17 22:38:28,168 INFO:Using cached data for lap_count
+2025-04-17 22:38:28,168 INFO:Using cached data for track_status_data
+2025-04-17 22:38:28,170 INFO:Using cached data for _extended_timing_data
+2025-04-17 22:38:28,170 INFO:Using cached data for timing_app_data
+2025-04-17 22:38:28,170 INFO:Processing timing data...
+2025-04-17 22:38:28,480 INFO:Using cached data for car_data
+2025-04-17 22:38:28,493 INFO:Using cached data for position_data
+2025-04-17 22:38:28,905 INFO:Using cached data for weather_data
+2025-04-17 22:38:28,905 INFO:Using cached data for race_control_messages
+2025-04-17 22:38:28,906 WARNING:Driver 77 completed the race distance 00:00.075000 before the recorded end of the session.
+2025-04-17 22:38:28,926 INFO:Finished loading data for 20 drivers: ['77', '44', '5', '33', '16', '11', '55', '4', '18', '7', '23', '99', '20', '27', '63', '88', '10', '8', '26', '3']
+2025-04-17 22:38:28,931 INFO:Processed Round 4 - Azerbaijan Grand Prix
