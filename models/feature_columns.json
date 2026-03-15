@@ -1,0 +1,22 @@
+[
+  "qualifying_pos",
+  "grid",
+  "had_sprint",
+  "round_pct",
+  "driver_pts_rolling3",
+  "driver_pts_rolling5",
+  "driver_dnf_rolling5",
+  "driver_quali_rolling3",
+  "driver_race_count",
+  "driver_pts_std_rolling5",
+  "quali_delta_from_teammate",
+  "constructor_pts_rolling3",
+  "circuit_driver_avg",
+  "circuit_avg_pts",
+  "circuit_dnf_rate",
+  "track_temp_avg",
+  "air_temp_avg",
+  "humidity_avg",
+  "rainfall_avg",
+  "wind_speed_avg"
+]

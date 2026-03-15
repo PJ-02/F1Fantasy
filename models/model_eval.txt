@@ -1,0 +1,27 @@
+RandomForest            MAE=8.92  R²=0.287  within±5pts=45%  within±10pts=74%
+GradientBoosting        MAE=9.60  R²=0.219  within±5pts=38%  within±10pts=70%
+
+Feature importances (GradientBoosting):
+  qualifying_pos                 0.1943
+  driver_quali_rolling3          0.0795
+  circuit_avg_pts                0.0782
+  constructor_pts_rolling3       0.0724
+  driver_pts_std_rolling5        0.0665
+  driver_pts_rolling5            0.0636
+  driver_pts_rolling3            0.0587
+  grid                           0.0554
+  circuit_dnf_rate               0.0498
+  circuit_driver_avg             0.0414
+  driver_race_count              0.0384
+  air_temp_avg                   0.0342
+  wind_speed_avg                 0.0330
+  quali_delta_from_teammate      0.0298
+  humidity_avg                   0.0281
+  track_temp_avg                 0.0269
+  round_pct                      0.0238
+  rainfall_avg                   0.0173
+  had_sprint                     0.0070
+  driver_dnf_rolling5            0.0019
+
+Precision@3 (overlap of predicted/actual top 3): 56%
+Precision@5 (overlap of predicted/actual top 5): 70%
