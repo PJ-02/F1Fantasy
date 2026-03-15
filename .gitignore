@@ -40,3 +40,7 @@ GeneratedSpreadsheets/
 # Misc
 *.bak
 *.swp
+
+# Claude Code
+.claude/
+CLAUDE.md
