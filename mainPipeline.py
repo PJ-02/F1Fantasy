@@ -12,6 +12,7 @@ from DataRetrieval.qualifying import get_qualifying_results_fastf1
 from DataRetrieval.sprint import get_sprint_results_fastf1
 from DataRetrieval.pitstops import get_team_fastest_pitstops
 from DataRetrieval.telemetry import get_driver_telemetry
+from DataRetrieval.practice import get_practice_pace
 
 from Scoring.preprocess import preprocess_driver_data
 from Scoring.driverFantasyPoints import calculate_fantasy_points
@@ -111,7 +112,7 @@ def process_race(season, round_no):
             avg_weather = {k: None for k in ['track_temp_avg', 'air_temp_avg', 'humidity_avg', 'pressure_avg', 'rainfall_avg', 'wind_speed_avg', 'wind_direction_avg']}
 
         # Pitstop data (pass already-loaded session to avoid double load)
-        pitstop_df = get_team_fastest_pitstops(session)
+        pitstop_df = get_team_fastest_pitstops(session, season=season, round_no=round_no)
         constructor_data = calculate_constructor_points(final_data, pitstop_df)
 
         # Add metadata
@@ -130,6 +131,16 @@ def process_race(season, round_no):
         # Add sprint flag
         final_data['had_sprint'] = had_sprint
         constructor_data['had_sprint'] = had_sprint
+
+        # Practice session pace data (pre-race feature — happens before qualifying/race)
+        for fp_type in ['FP1', 'FP2', 'FP3']:
+            fp_df = get_practice_pace(season, round_no, fp_type)
+            if not fp_df.empty and 'driver_id' in fp_df.columns:
+                final_data = final_data.merge(fp_df, on='driver_id', how='left')
+            else:
+                prefix = fp_type.lower()
+                final_data[f'{prefix}_gap_pct'] = None
+                final_data[f'{prefix}_laps']    = None
 
         # Saving data to cache
         os.makedirs("cache/pickles", exist_ok=True)

@@ -1,17 +1,31 @@
 import pandas as pd
 
 from Utils.common import logger
+from DataRetrieval.pitstops_openf1 import get_openf1_pitstops
 
-def get_team_fastest_pitstops(session):
-    """
-    Extract fastest pit lane time per constructor from an already-loaded race session.
 
-    NOTE: FastF1 exposes pit LANE traversal time (entry to exit, typically 18–35s),
-    not the stationary stop time (2–4s) used in the official F1 Fantasy scoring thresholds.
-    As a result, pitstop bonus points in constructorFantasyPoints.py will always be 0
-    with this data source. The time values are still stored in the pickle and are useful
-    as relative ML features (team ranking by pit speed).
+def get_team_fastest_pitstops(session, season: int = None, round_no: int = None):
     """
+    Return fastest pit stop time per constructor.
+
+    Strategy (in order):
+    1. OpenF1 API — provides true stationary stop_duration (~2–4s).
+       Available from Austin 2024 (2024 R19) onwards.  When OpenF1 data is
+       usable, pitstop bonus points in constructorFantasyPoints.py are scored
+       correctly against the 2s/2.2s/2.5s/3s thresholds.
+    2. FastF1 fallback — returns pit LANE traversal time (~18–35s).
+       With this data pitstop bonuses will always be 0, but the relative
+       team ranking is still useful as an ML feature.
+    """
+    # Try OpenF1 first when season/round are provided
+    if season is not None and round_no is not None:
+        openf1_df = get_openf1_pitstops(season, round_no)
+        if not openf1_df.empty:
+            logger.info(f"Using OpenF1 stationary pit times for {season} R{round_no}")
+            return openf1_df
+        logger.debug(f"OpenF1 unavailable for {season} R{round_no} — falling back to FastF1 traversal times")
+
+    # FastF1 fallback
     try:
         # PitInTime and PitOutTime are on separate consecutive rows per driver:
         # the pit-in lap has PitInTime set; the following lap has PitOutTime set.

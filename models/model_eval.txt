@@ -1,27 +1,49 @@
-RandomForest            MAE=8.92  R²=0.287  within±5pts=45%  within±10pts=74%
-GradientBoosting        MAE=9.60  R²=0.219  within±5pts=38%  within±10pts=70%
+Baseline (v1 RandomForest): MAE=8.83
 
-Feature importances (GradientBoosting):
-  qualifying_pos                 0.1943
-  driver_quali_rolling3          0.0795
-  circuit_avg_pts                0.0782
-  constructor_pts_rolling3       0.0724
-  driver_pts_std_rolling5        0.0665
-  driver_pts_rolling5            0.0636
-  driver_pts_rolling3            0.0587
-  grid                           0.0554
-  circuit_dnf_rate               0.0498
-  circuit_driver_avg             0.0414
-  driver_race_count              0.0384
-  air_temp_avg                   0.0342
-  wind_speed_avg                 0.0330
-  quali_delta_from_teammate      0.0298
-  humidity_avg                   0.0281
-  track_temp_avg                 0.0269
-  round_pct                      0.0238
-  rainfall_avg                   0.0173
-  had_sprint                     0.0070
-  driver_dnf_rolling5            0.0019
+RandomForest    MAE=11.10 (-2.27 vs baseline)  R²=0.240  ±5pts=33%  ±10pts=59%
+XGBoost         MAE=11.38 (-2.55 vs baseline)  R²=0.211  ±5pts=31%  ±10pts=59%
+LightGBM        MAE=11.36 (-2.53 vs baseline)  R²=0.211  ±5pts=32%  ±10pts=57%
 
-Precision@3 (overlap of predicted/actual top 3): 56%
-Precision@5 (overlap of predicted/actual top 5): 70%
+Feature importances (RandomForest):
+  qualifying_pos                   0.2881
+  driver_quali_ewm3                0.0782
+  driver_pts_rolling10             0.0719
+  constructor_pts_ewm5             0.0501
+  grid                             0.0369
+  driver_pts_std_rolling5          0.0296
+  constructor_pts_rolling3         0.0271
+  constructor_season_pts_so_far    0.0260
+  driver_quali_rolling3            0.0255
+  driver_pts_ewm5                  0.0250
+  driver_wet_pts_avg               0.0219
+  circuit_avg_pts                  0.0214
+  teammate_pts_delta_rolling5      0.0210
+  driver_season_pts_so_far         0.0191
+  circuit_dnf_rate                 0.0184
+  circuit_driver_avg               0.0184
+  air_temp_avg                     0.0177
+  driver_form_momentum             0.0174
+  humidity_avg                     0.0173
+  driver_pts_rolling5              0.0167
+  wind_speed_avg                   0.0167
+  driver_pts_rolling3              0.0164
+  driver_race_count                0.0161
+  round_pct                        0.0159
+  track_temp_avg                   0.0143
+  quali_delta_from_teammate        0.0141
+  rainfall_avg                     0.0113
+  wet_specialist_score             0.0111
+  driver_age                       0.0108
+  fp1_gap_pct                      0.0099
+  driver_fl_rate_rolling10         0.0040
+  had_sprint                       0.0032
+  fp2_gap_pct                      0.0023
+  is_street_circuit                0.0023
+  years_in_f1                      0.0016
+  driver_dnf_rolling5              0.0010
+  quali_session_reached            0.0007
+  is_high_altitude                 0.0004
+  new_team_flag                    0.0001
+
+Precision@3 (overlap of predicted/actual top 3): 62%  (baseline: 56%)
+Precision@5 (overlap of predicted/actual top 5): 68%  (baseline: 70%)
